@@ -29,7 +29,7 @@ export default function ContactPage() {
             style={{ background: 'rgba(0,180,216,0.15)', color: '#00B4D8', border: '1px solid rgba(0,180,216,0.3)' }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-current" />
-            Contact
+            {t.nav.contact}
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-5" style={{ color: '#ffffff' }}>
             {t.contact.heroTitle}
@@ -241,10 +241,10 @@ export default function ContactPage() {
               style={{ background: 'linear-gradient(135deg, #1E6FD9, #00B4D8)' }}
             >
               <p className="text-sm font-semibold mb-2" style={{ color: 'rgba(255,255,255,0.9)' }}>
-                💡 Ready to start?
+                {t.contact.readyTitle}
               </p>
               <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                Every great product starts with a conversation. Send us a message and we&apos;ll get back to you quickly.
+                {t.contact.readyText}
               </p>
             </div>
           </div>

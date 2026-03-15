@@ -53,6 +53,7 @@ export const tr = {
   projects: {
     heroTitle: 'Projelerimiz',
     heroSubtitle: 'WowSyler ekibinin geliştirdiği yenilikçi ürünler.',
+    heroBadge: 'Portföy',
     statusLive: 'Yayında',
     statusDev: 'Geliştirme Aşamasında',
     visitSite: 'Siteyi Ziyaret Et',
@@ -93,6 +94,10 @@ export const tr = {
     },
     expertiseTitle: 'Uzmanlık Alanlarımız',
     expertiseSubtitle: 'Olağanüstü sonuçlar sunmak için ustalaştığımız teknolojiler.',
+    statsProjects: 'Proje',
+    statsTech: 'Teknoloji',
+    statsLanguages: 'Dil',
+    heroBadge: 'Hakkımızda',
   },
   contact: {
     heroTitle: 'İletişim',
@@ -115,10 +120,13 @@ export const tr = {
     responseTimeVal: '24 saat içinde',
     location: 'Konum',
     locationVal: 'Türkiye',
+    readyTitle: '💡 Başlamaya hazır mısınız?',
+    readyText: 'Her harika ürün bir konuşmayla başlar. Bize mesaj gönderin, en kısa sürede geri dönelim.',
   },
   services: {
     heroTitle: 'Hizmetlerimiz',
     heroSubtitle: 'Fikrinizi kavramdan üretime taşımak için kapsamlı yazılım geliştirme hizmetleri.',
+    heroBadge: 'Hizmetler',
     webTitle: 'Web Geliştirme',
     webDesc: 'Modern, hızlı ve ölçeklenebilir web uygulamaları geliştiriyoruz. Ekibimiz güçlü frontend\'ler için React/Next.js, kurumsal SPAlar için Angular ve .NET entegreli web uygulamaları için Blazor konusunda derin uzmanlığa sahiptir.',
     webFeatures: ['Next.js & React', 'Angular', 'Blazor / .NET Core', 'RESTful & GraphQL API\'ler', 'Statik & SSR siteler', 'E-ticaret çözümleri'],

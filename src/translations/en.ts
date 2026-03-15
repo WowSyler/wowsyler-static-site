@@ -53,6 +53,7 @@ export const en = {
   projects: {
     heroTitle: 'Our Projects',
     heroSubtitle: 'Innovative products built by the WowSyler team.',
+    heroBadge: 'Portfolio',
     statusLive: 'Live',
     statusDev: 'In Development',
     visitSite: 'Visit Website',
@@ -93,6 +94,10 @@ export const en = {
     },
     expertiseTitle: 'Our Expertise',
     expertiseSubtitle: 'Technologies we\'ve mastered to deliver outstanding results.',
+    statsProjects: 'Projects',
+    statsTech: 'Technologies',
+    statsLanguages: 'Languages',
+    heroBadge: 'About Us',
   },
   contact: {
     heroTitle: 'Contact Us',
@@ -115,10 +120,13 @@ export const en = {
     responseTimeVal: 'Within 24 hours',
     location: 'Location',
     locationVal: 'Turkey',
+    readyTitle: '💡 Ready to start?',
+    readyText: 'Every great product starts with a conversation. Send us a message and we\'ll get back to you quickly.',
   },
   services: {
     heroTitle: 'Our Services',
     heroSubtitle: 'Comprehensive software development services to take your idea from concept to production.',
+    heroBadge: 'Services',
     webTitle: 'Web Development',
     webDesc: 'We build modern, fast, and scalable web applications. Our team has deep expertise in React/Next.js for powerful frontends, Angular for enterprise-grade SPAs, and Blazor for .NET-integrated web apps. Every project is built with SEO, performance, and accessibility in mind.',
     webFeatures: ['Next.js & React', 'Angular', 'Blazor / .NET Core', 'RESTful & GraphQL APIs', 'Static & SSR sites', 'E-commerce solutions'],

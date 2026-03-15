@@ -62,7 +62,7 @@ export default function AboutPage() {
             style={{ background: 'rgba(0,180,216,0.15)', color: '#00B4D8', border: '1px solid rgba(0,180,216,0.3)' }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-current" />
-            WowSyler
+            {t.about.heroBadge}
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-5" style={{ color: '#ffffff' }}>
             {t.about.heroTitle}
@@ -109,7 +109,7 @@ export default function AboutPage() {
               </p>
 
               <div className="mt-8 grid grid-cols-3 gap-4 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-                {[['3', 'Projects'], ['5+', 'Technologies'], ['2', 'Languages']].map(([num, label]) => (
+                {[['3', t.about.statsProjects], ['5+', t.about.statsTech], ['2', t.about.statsLanguages]].map(([num, label]) => (
                   <div key={label} className="text-center">
                     <p className="text-2xl font-bold" style={{ color: '#00B4D8' }}>{num}</p>
                     <p className="text-xs mt-1" style={{ color: '#64748B' }}>{label}</p>

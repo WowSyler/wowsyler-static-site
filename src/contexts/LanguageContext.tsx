@@ -15,22 +15,25 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | null>(null);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>('tr');
-  const [mounted, setMounted] = useState(false);
+  const [state, setState] = useState<{ locale: Locale; mounted: boolean }>({
+    locale: 'tr',
+    mounted: false,
+  });
 
   useEffect(() => {
-    const saved = localStorage.getItem('locale') as Locale;
-    if (saved === 'en' || saved === 'tr') setLocaleState(saved);
-    setMounted(true);
+    const saved = localStorage.getItem('locale');
+    const locale: Locale = (saved === 'en' || saved === 'tr') ? saved : 'tr';
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- reading localStorage is a genuine side-effect requiring useEffect for SSR safety
+    setState({ locale, mounted: true });
   }, []);
 
   const setLocale = (l: Locale) => {
-    setLocaleState(l);
+    setState((prev) => ({ ...prev, locale: l }));
     localStorage.setItem('locale', l);
   };
 
   // Use default locale until mounted to avoid hydration mismatch
-  const activeLocale = mounted ? locale : 'tr';
+  const activeLocale = state.mounted ? state.locale : 'tr';
   const t = activeLocale === 'en' ? en : tr;
 
   return (
