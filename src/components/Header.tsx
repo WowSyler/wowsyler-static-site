@@ -22,10 +22,10 @@ export default function Header() {
 
   const navLinks = [
     { href: `/${locale}/`, label: t.nav.home },
-    { href: `/${locale}/services`, label: t.nav.services },
-    { href: `/${locale}/projects`, label: t.nav.projects },
-    { href: `/${locale}/${aboutSlug}`, label: t.nav.about },
-    { href: `/${locale}/contact`, label: t.nav.contact },
+    { href: `/${locale}/services/`, label: t.nav.services },
+    { href: `/${locale}/projects/`, label: t.nav.projects },
+    { href: `/${locale}/${aboutSlug}/`, label: t.nav.about },
+    { href: `/${locale}/contact/`, label: t.nav.contact },
   ];
 
   return (

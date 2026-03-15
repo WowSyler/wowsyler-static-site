@@ -3,12 +3,12 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const techGroups = [
-  { label: 'Frontend', items: ['Next.js', 'Angular', 'Blazor', 'React', 'TypeScript'] },
-  { label: 'Backend', items: ['.NET Core', 'Go', 'Node.js', 'Python'] },
-  { label: 'Database', items: ['PostgreSQL', 'Redis', 'RabbitMQ'] },
-  { label: 'DevOps', items: ['Docker', 'Docker Compose', 'CI/CD', 'Self-hosted', 'Cloud'] },
-  { label: 'AI', items: ['AI Agents', 'LLM Integration', 'Automation'] },
+const techGroupsData = [
+  { key: 'frontend' as const, items: ['Next.js', 'Angular', 'Blazor', 'React', 'TypeScript'] },
+  { key: 'backend' as const, items: ['.NET Core', 'Go', 'Node.js', 'Python'] },
+  { key: 'database' as const, items: ['PostgreSQL', 'Redis', 'RabbitMQ'] },
+  { key: 'devops' as const, items: ['Docker', 'Docker Compose', 'CI/CD', 'Self-hosted', 'Cloud'] },
+  { key: 'ai' as const, items: ['AI Agents', 'LLM Integration', 'Automation'] },
 ];
 
 const valueIcons = [
@@ -162,14 +162,14 @@ export default function AboutView() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {techGroups.map((group) => (
+            {techGroupsData.map((group) => (
               <div
-                key={group.label}
+                key={group.key}
                 className="rounded-2xl p-6"
                 style={{ background: '#ffffff', border: '1px solid #E2E8F0' }}
               >
                 <h4 className="font-bold text-sm uppercase tracking-wider mb-4" style={{ color: '#0A2342' }}>
-                  {group.label}
+                  {t.about.techGroups[group.key]}
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {group.items.map((item) => (

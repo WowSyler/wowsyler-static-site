@@ -29,7 +29,7 @@ export default function ContactView() {
             style={{ background: 'rgba(0,180,216,0.15)', color: '#00B4D8', border: '1px solid rgba(0,180,216,0.3)' }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-current" />
-            {t.nav.contact}
+            {t.contact.heroBadge}
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-5" style={{ color: '#ffffff' }}>
             {t.contact.heroTitle}

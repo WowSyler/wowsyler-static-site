@@ -1,7 +1,7 @@
 'use client';
 import React, { createContext, useContext, useState } from 'react';
-import { en } from '@/translations/en';
-import { tr } from '@/translations/tr';
+import en from '@/translations/en.json';
+import tr from '@/translations/tr.json';
 
 type Locale = 'en' | 'tr';
 type Translations = typeof en;

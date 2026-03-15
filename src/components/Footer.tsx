@@ -43,9 +43,9 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {[
                 { href: `/${locale}/`, label: t.nav.home },
-                { href: `/${locale}/${aboutSlug}`, label: t.nav.about },
-                { href: `/${locale}/projects`, label: t.nav.projects },
-                { href: `/${locale}/contact`, label: t.nav.contact },
+                { href: `/${locale}/${aboutSlug}/`, label: t.nav.about },
+                { href: `/${locale}/projects/`, label: t.nav.projects },
+                { href: `/${locale}/contact/`, label: t.nav.contact },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -75,7 +75,7 @@ export default function Footer() {
               ].map((s) => (
                 <li key={s}>
                   <Link
-                    href={`/${locale}/services`}
+                    href={`/${locale}/services/`}
                     className="text-sm transition-colors hover:text-white"
                     style={{ color: '#94A3B8' }}
                   >
