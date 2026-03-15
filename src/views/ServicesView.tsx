@@ -157,7 +157,7 @@ export default function ServicesView() {
             {t.services.ctaText}
           </p>
           <Link
-            href={`/${locale}/contact`}
+            href={`/${locale}/contact/`}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm transition-all"
             style={{ background: '#00B4D8', color: '#ffffff' }}
             onMouseEnter={(e) => (e.currentTarget.style.background = '#0096B7')}

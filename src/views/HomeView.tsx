@@ -107,7 +107,7 @@ export default function HomeView() {
             style={{ background: 'rgba(0,180,216,0.15)', color: '#00B4D8', border: '1px solid rgba(0,180,216,0.3)' }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-current" />
-            WowSyler Teknoloji
+            {t.home.heroBadge}
           </div>
 
           <h1
@@ -126,7 +126,7 @@ export default function HomeView() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href={`/${locale}/projects`}
+              href={`/${locale}/projects/`}
               className="px-8 py-4 rounded-xl font-semibold text-sm transition-all"
               style={{ background: '#1E6FD9', color: '#ffffff' }}
               onMouseEnter={(e) => (e.currentTarget.style.background = '#1557B0')}
@@ -135,7 +135,7 @@ export default function HomeView() {
               {t.home.ctaPrimary}
             </Link>
             <Link
-              href={`/${locale}/contact`}
+              href={`/${locale}/contact/`}
               className="px-8 py-4 rounded-xl font-semibold text-sm transition-all"
               style={{ background: 'rgba(255,255,255,0.08)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.2)' }}
               onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.15)')}
@@ -282,7 +282,7 @@ export default function HomeView() {
 
           <div className="text-center mt-10">
             <Link
-              href={`/${locale}/projects`}
+              href={`/${locale}/projects/`}
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-sm transition-all"
               style={{ background: '#0A2342', color: '#ffffff' }}
               onMouseEnter={(e) => (e.currentTarget.style.background = '#0D2D5A')}
@@ -310,7 +310,7 @@ export default function HomeView() {
             {t.home.ctaSectionSubtitle}
           </p>
           <Link
-            href={`/${locale}/contact`}
+            href={`/${locale}/contact/`}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm transition-all"
             style={{ background: '#00B4D8', color: '#ffffff' }}
             onMouseEnter={(e) => (e.currentTarget.style.background = '#0096B7')}

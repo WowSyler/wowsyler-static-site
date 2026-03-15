@@ -8,6 +8,7 @@ interface LocaleMeta {
   title: string;
   description: string;
   ogLocale: string;
+  keywords: string;
 }
 
 const META: Record<Locale, LocaleMeta> = {
@@ -16,12 +17,14 @@ const META: Record<Locale, LocaleMeta> = {
     description:
       'WowSyler Technology builds powerful software solutions — web, mobile, game development and AI agents — with cutting-edge technologies.',
     ogLocale: 'en_US',
+    keywords: 'software development, web development, mobile development, AI agents, game development, WowSyler, technology, Next.js, React, .NET Core, Go',
   },
   tr: {
     title: 'WowSyler Teknoloji | Yazılım, Web & Mobil, Yapay Zeka Geliştirme',
     description:
       'WowSyler Teknoloji; web, mobil, oyun geliştirme ve yapay zeka ajanları alanlarında güçlü yazılım çözümleri üretmektedir.',
     ogLocale: 'tr_TR',
+    keywords: 'yazılım geliştirme, web geliştirme, mobil geliştirme, yapay zeka, oyun geliştirme, WowSyler, teknoloji, Next.js, React, .NET Core, Go',
   },
 };
 
@@ -38,6 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: meta.title,
     description: meta.description,
+    keywords: meta.keywords,
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -67,6 +71,27 @@ export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
 }
 
+function getJsonLd(locale: Locale) {
+  const isEn = locale === 'en';
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'WowSyler Teknoloji',
+    url: BASE_URL,
+    logo: `${BASE_URL}/logo.png`,
+    description: isEn
+      ? 'WowSyler Technology builds powerful software solutions — web, mobile, game development and AI agents.'
+      : 'WowSyler Teknoloji; web, mobil, oyun geliştirme ve yapay zeka ajanları alanlarında güçlü yazılım çözümleri üretmektedir.',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: 'info@wowsyler.com',
+      contactType: 'customer service',
+      availableLanguage: ['Turkish', 'English'],
+    },
+    sameAs: [],
+  };
+}
+
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
 
@@ -74,9 +99,15 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound();
   }
 
+  const jsonLd = getJsonLd(locale as Locale);
+
   return (
     <LanguageProvider initialLocale={locale as Locale}>
       <LangSetter locale={locale} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {children}
     </LanguageProvider>
   );
