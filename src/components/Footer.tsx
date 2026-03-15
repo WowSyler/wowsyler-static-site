@@ -4,8 +4,10 @@ import Logo from './Logo';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const year = new Date().getFullYear();
+
+  const aboutSlug = locale === 'en' ? 'about' : 'hakkimizda';
 
   return (
     <footer style={{ background: '#0A2342', color: '#CBD5E0' }}>
@@ -40,10 +42,10 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5">
               {[
-                { href: '/', label: t.nav.home },
-                { href: '/about', label: t.nav.about },
-                { href: '/projects', label: t.nav.projects },
-                { href: '/contact', label: t.nav.contact },
+                { href: `/${locale}/`, label: t.nav.home },
+                { href: `/${locale}/${aboutSlug}`, label: t.nav.about },
+                { href: `/${locale}/projects`, label: t.nav.projects },
+                { href: `/${locale}/contact`, label: t.nav.contact },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -73,7 +75,7 @@ export default function Footer() {
               ].map((s) => (
                 <li key={s}>
                   <Link
-                    href="/services"
+                    href={`/${locale}/services`}
                     className="text-sm transition-colors hover:text-white"
                     style={{ color: '#94A3B8' }}
                   >

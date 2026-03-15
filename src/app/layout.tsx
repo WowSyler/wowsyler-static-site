@@ -1,19 +1,18 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { LanguageProvider } from "@/contexts/LanguageContext";
+import { BASE_URL } from "@/lib/routes";
 
 export const metadata: Metadata = {
-  title: "WowSyler Teknoloji",
-  description: "Software, Web & Mobile Development, Game Development, AI Agents",
+  metadataBase: new URL(BASE_URL),
+  title: "WowSyler",
+  description: "WowSyler Technology — web, mobile, game, and AI software solutions.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="tr">
+    <html lang="tr" suppressHydrationWarning>
       <body>
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+        {children}
       </body>
     </html>
   );

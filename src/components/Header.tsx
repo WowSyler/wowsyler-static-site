@@ -1,19 +1,31 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 import Logo from './Logo';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getAlternateUrl, type Locale } from '@/lib/routes';
 
 export default function Header() {
-  const { t, locale, setLocale } = useLanguage();
+  const { t, locale } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+
+  /** Navigate to the same page in the target locale. */
+  function switchLocale(targetLocale: Locale) {
+    const alternate = getAlternateUrl(pathname, targetLocale);
+    router.push(alternate);
+  }
+
+  const aboutSlug = locale === 'en' ? 'about' : 'hakkimizda';
 
   const navLinks = [
-    { href: '/', label: t.nav.home },
-    { href: '/services', label: t.nav.services },
-    { href: '/projects', label: t.nav.projects },
-    { href: '/about', label: t.nav.about },
-    { href: '/contact', label: t.nav.contact },
+    { href: `/${locale}/`, label: t.nav.home },
+    { href: `/${locale}/services`, label: t.nav.services },
+    { href: `/${locale}/projects`, label: t.nav.projects },
+    { href: `/${locale}/${aboutSlug}`, label: t.nav.about },
+    { href: `/${locale}/contact`, label: t.nav.contact },
   ];
 
   return (
@@ -24,7 +36,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href={`/${locale}/`} className="flex-shrink-0">
             <Logo size={36} />
           </Link>
 
@@ -58,8 +70,9 @@ export default function Header() {
               style={{ borderColor: '#CBD5E0' }}
             >
               <button
-                onClick={() => setLocale('tr')}
+                onClick={() => switchLocale('tr')}
                 className="px-3 py-1.5 text-xs font-semibold transition-colors"
+                aria-label="Türkçe"
                 style={{
                   background: locale === 'tr' ? '#0A2342' : '#ffffff',
                   color: locale === 'tr' ? '#ffffff' : '#4A5568',
@@ -68,8 +81,9 @@ export default function Header() {
                 TR
               </button>
               <button
-                onClick={() => setLocale('en')}
+                onClick={() => switchLocale('en')}
                 className="px-3 py-1.5 text-xs font-semibold transition-colors"
+                aria-label="English"
                 style={{
                   background: locale === 'en' ? '#0A2342' : '#ffffff',
                   color: locale === 'en' ? '#ffffff' : '#4A5568',

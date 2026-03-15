@@ -1,5 +1,5 @@
 'use client';
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import { en } from '@/translations/en';
 import { tr } from '@/translations/tr';
 
@@ -14,30 +14,23 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [state, setState] = useState<{ locale: Locale; mounted: boolean }>({
-    locale: 'tr',
-    mounted: false,
-  });
+interface LanguageProviderProps {
+  children: React.ReactNode;
+  /** Locale derived from the URL segment — provided by the [locale] layout. */
+  initialLocale?: Locale;
+}
 
-  useEffect(() => {
-    const saved = localStorage.getItem('locale');
-    const locale: Locale = (saved === 'en' || saved === 'tr') ? saved : 'tr';
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- reading localStorage is a genuine side-effect requiring useEffect for SSR safety
-    setState({ locale, mounted: true });
-  }, []);
+export function LanguageProvider({ children, initialLocale = 'tr' }: LanguageProviderProps) {
+  const [locale, setLocaleState] = useState<Locale>(initialLocale);
 
   const setLocale = (l: Locale) => {
-    setState((prev) => ({ ...prev, locale: l }));
-    localStorage.setItem('locale', l);
+    setLocaleState(l);
   };
 
-  // Use default locale until mounted to avoid hydration mismatch
-  const activeLocale = state.mounted ? state.locale : 'tr';
-  const t = activeLocale === 'en' ? en : tr;
+  const t = locale === 'en' ? en : tr;
 
   return (
-    <LanguageContext.Provider value={{ locale: activeLocale, t, setLocale }}>
+    <LanguageContext.Provider value={{ locale, t, setLocale }}>
       {children}
     </LanguageContext.Provider>
   );
