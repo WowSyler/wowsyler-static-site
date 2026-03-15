@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { LanguageProvider } from '@/contexts/LanguageContext';
+import LangSetter from '@/components/LangSetter';
 import { BASE_URL, LOCALES, type Locale } from '@/lib/routes';
 
 interface LocaleMeta {
@@ -51,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: canonicalUrl,
       siteName: 'WowSyler',
       locale: meta.ogLocale,
-      alternateLocale: locale === 'en' ? 'tr_TR' : 'en_US',
+      alternateLocale: [locale === 'en' ? 'tr_TR' : 'en_US'],
       type: 'website',
     },
     twitter: {
@@ -75,6 +76,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <LanguageProvider initialLocale={locale as Locale}>
+      <LangSetter locale={locale} />
       {children}
     </LanguageProvider>
   );
