@@ -107,6 +107,7 @@ export const tr = {
     messageLabel: 'Mesaj',
     messagePlaceholder: 'Projenizden bahsedin...',
     submitBtn: 'Mesajı Gönder',
+    successMessage: 'Mesajınız iletildi! En kısa sürede size geri döneceğiz.',
     infoTitle: 'İletişime Geçin',
     infoText: 'Yeni projeler, yaratıcı fikirler veya vizyonunuzun bir parçası olma fırsatları hakkında konuşmaya her zaman açığız.',
     emailLabel2: 'E-posta',

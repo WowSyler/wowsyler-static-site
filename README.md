@@ -1,33 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WowSyler Teknoloji — Static Website
+
+A bilingual (Turkish / English) corporate static website built with **Next.js 16**, **Tailwind CSS v4**, and **TypeScript**.
+
+## Pages
+
+| Route | Description |
+|---|---|
+| `/` | Home — hero, services, tech stack, projects preview |
+| `/services` | Detailed services listing |
+| `/projects` | Showcase of TextManipulator, AirdropBotPro, Streea |
+| `/about` | Company story, mission & values |
+| `/contact` | Contact form with success feedback |
+
+## Tech Stack
+
+- **Next.js 16** with App Router and `output: 'export'` (fully static)
+- **Tailwind CSS v4** — utility-first, no config file needed
+- **TypeScript** (strict mode)
+- Custom `LanguageContext` for EN/TR i18n (locale persisted in `localStorage`)
+- System font stack (no external font loading)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build   # outputs static files to /out
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## i18n
 
-## Learn More
+Language is toggled via the header button and persisted to `localStorage`.  
+Translation files live in `src/translations/en.ts` and `src/translations/tr.ts`.
 
-To learn more about Next.js, take a look at the following resources:
+## Contact Form
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The contact form renders a success state on submit. To enable real email delivery, integrate with a service such as [Formspree](https://formspree.io) or [EmailJS](https://www.emailjs.com) by wiring up the `handleSubmit` handler in `src/app/contact/page.tsx`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 

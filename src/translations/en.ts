@@ -107,6 +107,7 @@ export const en = {
     messageLabel: 'Message',
     messagePlaceholder: 'Tell us about your project...',
     submitBtn: 'Send Message',
+    successMessage: 'Your message has been sent! We\'ll get back to you as soon as possible.',
     infoTitle: 'Get in Touch',
     infoText: 'We\'re always open to discussing new projects, creative ideas, or opportunities to be part of your vision.',
     emailLabel2: 'Email',

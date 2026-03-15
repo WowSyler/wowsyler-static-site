@@ -1,10 +1,18 @@
 'use client';
+import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ContactPage() {
   const { t } = useLanguage();
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Static site: show success state (integrate with a form service like Formspree for real submissions)
+    setSubmitted(true);
+  };
 
   return (
     <div style={{ background: '#F8FAFC', minHeight: '100vh' }}>
@@ -45,7 +53,18 @@ export default function ContactPage() {
                 {t.contact.formTitle}
               </h2>
 
-              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-5" onSubmit={handleSubmit}>
+                {submitted && (
+                  <div
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold"
+                    style={{ background: 'rgba(0,180,216,0.12)', color: '#0A2342', border: '1px solid rgba(0,180,216,0.4)' }}
+                  >
+                    <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {t.contact.successMessage}
+                  </div>
+                )}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label
