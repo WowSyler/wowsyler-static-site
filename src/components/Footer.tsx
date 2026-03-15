@@ -15,9 +15,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div style={{ filter: 'brightness(0) invert(1)' }}>
-              <Logo size={36} />
-            </div>
+            <Link href={`/${locale}/`} className="inline-flex">
+              <Logo size={36} variant="light" />
+            </Link>
             <p className="mt-4 text-sm leading-relaxed max-w-xs" style={{ color: '#94A3B8' }}>
               {t.footer.tagline}
             </p>
