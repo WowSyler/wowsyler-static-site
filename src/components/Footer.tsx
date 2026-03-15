@@ -1,0 +1,106 @@
+'use client';
+import Link from 'next/link';
+import Logo from './Logo';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+export default function Footer() {
+  const { t } = useLanguage();
+  const year = new Date().getFullYear();
+
+  return (
+    <footer style={{ background: '#0A2342', color: '#CBD5E0' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+          {/* Brand */}
+          <div className="md:col-span-2">
+            <div style={{ filter: 'brightness(0) invert(1)' }}>
+              <Logo size={36} />
+            </div>
+            <p className="mt-4 text-sm leading-relaxed max-w-xs" style={{ color: '#94A3B8' }}>
+              {t.footer.tagline}
+            </p>
+            <div className="mt-5 flex items-center gap-2">
+              <svg className="w-4 h-4" style={{ color: '#00B4D8' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <a
+                href="mailto:info@wowsyler.com"
+                className="text-sm hover:underline"
+                style={{ color: '#00B4D8' }}
+              >
+                {t.footer.email}
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4" style={{ color: '#E2E8F0' }}>
+              {t.footer.quickLinks}
+            </h4>
+            <ul className="space-y-2.5">
+              {[
+                { href: '/', label: t.nav.home },
+                { href: '/about', label: t.nav.about },
+                { href: '/projects', label: t.nav.projects },
+                { href: '/contact', label: t.nav.contact },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm transition-colors hover:text-white"
+                    style={{ color: '#94A3B8' }}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4" style={{ color: '#E2E8F0' }}>
+              {t.footer.services}
+            </h4>
+            <ul className="space-y-2.5">
+              {[
+                t.footer.webDev,
+                t.footer.mobileDev,
+                t.footer.gameDev,
+                t.footer.aiAgents,
+                t.footer.devops,
+              ].map((s) => (
+                <li key={s}>
+                  <Link
+                    href="/services"
+                    className="text-sm transition-colors hover:text-white"
+                    style={{ color: '#94A3B8' }}
+                  >
+                    {s}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div
+          className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-8"
+          style={{ borderTop: '1px solid #1E3A5F' }}
+        >
+          <p className="text-xs" style={{ color: '#64748B' }}>
+            &copy; {year} WowSyler Teknoloji. {t.footer.rights}
+          </p>
+          <div className="flex items-center gap-1.5">
+            <div className="w-2 h-2 rounded-full" style={{ background: '#00B4D8' }} />
+            <span className="text-xs" style={{ color: '#64748B' }}>
+              info@wowsyler.com
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
