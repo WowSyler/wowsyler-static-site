@@ -1,6 +1,6 @@
-# WowSyler Teknoloji — Static Website
+# WowSyler Teknoloji
 
-A bilingual (Turkish / English) corporate static website built with **Next.js 16**, **Tailwind CSS v4**, and **TypeScript**.
+A bilingual (Turkish / English) corporate website built with **Next.js 16**, **Tailwind CSS v4**, and **TypeScript**.
 
 ## Pages
 
@@ -14,10 +14,10 @@ A bilingual (Turkish / English) corporate static website built with **Next.js 16
 
 ## Tech Stack
 
-- **Next.js 16** with App Router and `output: 'export'` (fully static)
+- **Next.js 16** with App Router and Docker-ready `output: 'standalone'`
 - **Tailwind CSS v4** — utility-first, no config file needed
 - **TypeScript** (strict mode)
-- Custom `LanguageContext` for EN/TR i18n (locale persisted in `localStorage`)
+- URL-driven EN/TR i18n with `LanguageContext`
 - System font stack (no external font loading)
 
 ## Getting Started
@@ -30,13 +30,24 @@ npm run dev
 ## Build
 
 ```bash
-npm run build   # outputs static files to /out
+npm run build
 ```
 
 ## i18n
 
-Language is toggled via the header button and persisted to `localStorage`.  
-Translation files live in `src/translations/en.ts` and `src/translations/tr.ts`.
+Language is driven by the locale segment in the URL (`/en/`, `/tr/`).  
+Translation files live in `src/translations/en.json` and `src/translations/tr.json`.
+
+## Docker
+
+Build and run the production image locally:
+
+```bash
+docker build -t wowsyler .
+docker run --rm -p 3000:3000 wowsyler
+```
+
+For Coolify, deploy with the repository `Dockerfile` and expose port `3000`.
 
 ## Contact Form
 

@@ -1,0 +1,8 @@
+.git
+.gitignore
+.next
+node_modules
+out
+.copilot
+.DS_Store
+npm-debug.log*
