@@ -29,7 +29,7 @@ export async function generateMetadata({
       languages: {
         en: `${BASE_URL}/en/contact/`,
         tr: `${BASE_URL}/tr/contact/`,
-        'x-default': `${BASE_URL}/tr/contact/`,
+        'x-default': `${BASE_URL}/en/contact/`,
       },
     },
     openGraph: {
