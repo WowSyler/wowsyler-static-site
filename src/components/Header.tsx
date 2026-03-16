@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import Logo from './Logo';
@@ -11,6 +11,7 @@ export default function Header() {
   const { t, locale } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [legalMenuOpen, setLegalMenuOpen] = useState(false);
+  const legalMenuRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -35,6 +36,30 @@ export default function Header() {
     { href: getLegalPageHref(locale, 'cookiePolicy'), label: t.legalPages.items.cookiePolicy.navLabel },
     { href: getLegalPageHref(locale, 'legalInformation'), label: t.legalPages.items.legalInformation.navLabel },
   ];
+  const normalizedPathname = pathname.replace(/\/$/, '');
+  const isLegalRoute = legalLinks.some((link) => link.href.replace(/\/$/, '') === normalizedPathname);
+
+  useEffect(() => {
+    function handleDocumentMouseDown(event: MouseEvent) {
+      if (legalMenuRef.current && !legalMenuRef.current.contains(event.target as Node)) {
+        setLegalMenuOpen(false);
+      }
+    }
+
+    function handleDocumentKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setLegalMenuOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleDocumentMouseDown);
+    document.addEventListener('keydown', handleDocumentKeyDown);
+
+    return () => {
+      document.removeEventListener('mousedown', handleDocumentMouseDown);
+      document.removeEventListener('keydown', handleDocumentKeyDown);
+    };
+  }, []);
 
   return (
     <header
@@ -69,17 +94,14 @@ export default function Header() {
               </Link>
             ))}
 
-            <div
-              className="relative ml-2"
-              onMouseEnter={() => setLegalMenuOpen(true)}
-              onMouseLeave={() => setLegalMenuOpen(false)}
-            >
+            <div className="relative ml-2" ref={legalMenuRef}>
               <button
                 type="button"
+                onClick={() => setLegalMenuOpen((current) => !current)}
                 className="px-4 py-2 rounded-lg text-sm font-medium transition-colors inline-flex items-center gap-2"
                 style={{
-                  color: legalMenuOpen ? '#1E6FD9' : '#4A5568',
-                  background: legalMenuOpen ? '#EBF4FF' : 'transparent',
+                  color: legalMenuOpen || isLegalRoute ? '#1E6FD9' : '#4A5568',
+                  background: legalMenuOpen || isLegalRoute ? '#EBF4FF' : 'transparent',
                 }}
                 aria-expanded={legalMenuOpen}
                 aria-haspopup="menu"
@@ -92,23 +114,39 @@ export default function Header() {
 
               {legalMenuOpen && (
                 <div
-                  className="absolute top-full right-0 mt-2 w-64 rounded-2xl p-2"
-                  style={{
-                    background: '#ffffff',
-                    border: '1px solid #E2E8F0',
-                    boxShadow: '0 16px 40px rgba(15, 23, 42, 0.12)',
-                  }}
+                  className="absolute top-full right-0 pt-2 w-64"
+                  role="menu"
+                  aria-label={t.legalPages.sectionTitle}
                 >
-                  {legalLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="block rounded-xl px-4 py-3 text-sm font-medium transition-colors"
-                      style={{ color: '#334155' }}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
+                  <div
+                    className="rounded-2xl p-2"
+                    style={{
+                      background: '#ffffff',
+                      border: '1px solid #E2E8F0',
+                      boxShadow: '0 16px 40px rgba(15, 23, 42, 0.12)',
+                    }}
+                  >
+                    {legalLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        role="menuitem"
+                        onClick={() => setLegalMenuOpen(false)}
+                        className="block rounded-xl px-4 py-3 text-sm font-medium transition-colors"
+                        style={{ color: '#334155' }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = '#F8FAFC';
+                          e.currentTarget.style.color = '#1E6FD9';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = 'transparent';
+                          e.currentTarget.style.color = '#334155';
+                        }}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
