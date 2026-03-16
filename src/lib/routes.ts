@@ -1,3 +1,5 @@
+import { LEGAL_PAGE_CONFIG } from './legal';
+
 export const BASE_URL = 'https://wowsyler.com';
 
 export type Locale = 'en' | 'tr';
@@ -11,6 +13,14 @@ export const LOCALES: Locale[] = ['en', 'tr'];
 const SLUG_MAP: Record<string, Record<Locale, string>> = {
   about: { en: 'about', tr: 'hakkimizda' },
   hakkimizda: { en: 'about', tr: 'hakkimizda' },
+  pdpl: LEGAL_PAGE_CONFIG.pdpl.slugs,
+  kvkk: LEGAL_PAGE_CONFIG.pdpl.slugs,
+  'privacy-policy': LEGAL_PAGE_CONFIG.privacyPolicy.slugs,
+  'gizlilik-politikasi': LEGAL_PAGE_CONFIG.privacyPolicy.slugs,
+  'cookie-policy': LEGAL_PAGE_CONFIG.cookiePolicy.slugs,
+  'cerez-politikasi': LEGAL_PAGE_CONFIG.cookiePolicy.slugs,
+  'legal-information': LEGAL_PAGE_CONFIG.legalInformation.slugs,
+  'yasal-bilgiler': LEGAL_PAGE_CONFIG.legalInformation.slugs,
 };
 
 /**
@@ -50,4 +60,36 @@ export const SITEMAP_ENTRIES: SitemapEntry[] = [
   { url: `${BASE_URL}/en/projects/`, changefreq: 'weekly', priority: 0.9 },
   { url: `${BASE_URL}/tr/contact/`, changefreq: 'yearly', priority: 0.6 },
   { url: `${BASE_URL}/en/contact/`, changefreq: 'yearly', priority: 0.6 },
+  { url: `${BASE_URL}/tr/${LEGAL_PAGE_CONFIG.pdpl.slugs.tr}/`, changefreq: 'yearly', priority: 0.4 },
+  { url: `${BASE_URL}/en/${LEGAL_PAGE_CONFIG.pdpl.slugs.en}/`, changefreq: 'yearly', priority: 0.4 },
+  {
+    url: `${BASE_URL}/tr/${LEGAL_PAGE_CONFIG.privacyPolicy.slugs.tr}/`,
+    changefreq: 'yearly',
+    priority: 0.4,
+  },
+  {
+    url: `${BASE_URL}/en/${LEGAL_PAGE_CONFIG.privacyPolicy.slugs.en}/`,
+    changefreq: 'yearly',
+    priority: 0.4,
+  },
+  {
+    url: `${BASE_URL}/tr/${LEGAL_PAGE_CONFIG.cookiePolicy.slugs.tr}/`,
+    changefreq: 'yearly',
+    priority: 0.4,
+  },
+  {
+    url: `${BASE_URL}/en/${LEGAL_PAGE_CONFIG.cookiePolicy.slugs.en}/`,
+    changefreq: 'yearly',
+    priority: 0.4,
+  },
+  {
+    url: `${BASE_URL}/tr/${LEGAL_PAGE_CONFIG.legalInformation.slugs.tr}/`,
+    changefreq: 'yearly',
+    priority: 0.4,
+  },
+  {
+    url: `${BASE_URL}/en/${LEGAL_PAGE_CONFIG.legalInformation.slugs.en}/`,
+    changefreq: 'yearly',
+    priority: 0.4,
+  },
 ];

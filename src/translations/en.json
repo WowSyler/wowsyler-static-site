@@ -7,7 +7,7 @@
     "contact": "Contact"
   },
   "footer": {
-    "tagline": "Building the future with cutting-edge technology.",
+    "tagline": "Reliable engineering and product delivery for corporate software initiatives.",
     "quickLinks": "Quick Links",
     "services": "Services",
     "contact": "Contact",
@@ -19,10 +19,10 @@
     "devops": "DevOps & Infrastructure"
   },
   "home": {
-    "heroTitle": "WowSyler Technology",
-    "heroTitleSub": "Technology",
-    "heroBadge": "WowSyler Technology",
-    "heroSubtitle": "We build powerful software solutions — from web & mobile apps to game development and AI agents — with the latest technologies.",
+    "heroTitle": "WowSyler Software & Technology",
+    "heroTitleSub": "Software & Technology",
+    "heroBadge": "WowSyler Software & Technology",
+    "heroSubtitle": "We deliver scalable software and digital product services across web, mobile, backend, and AI for companies and growing teams.",
     "ctaPrimary": "View Our Projects",
     "ctaSecondary": "Get in Touch",
     "servicesTitle": "What We Do",
@@ -52,7 +52,7 @@
   },
   "projects": {
     "heroTitle": "Our Projects",
-    "heroSubtitle": "Innovative products built by the WowSyler team.",
+    "heroSubtitle": "Products built with the delivery standards of WowSyler Software & Technology.",
     "heroBadge": "Portfolio",
     "statusLive": "Live",
     "statusDev": "In Development",
@@ -69,13 +69,13 @@
     "techStack": "Tech Stack"
   },
   "about": {
-    "heroTitle": "About WowSyler",
-    "heroSubtitle": "A passionate team of engineers and creators building tomorrow's software today.",
+    "heroTitle": "About WowSyler Software & Technology",
+    "heroSubtitle": "A software team combining modern product engineering with dependable corporate delivery.",
     "heroBadge": "About Us",
     "storyTitle": "Our Story",
-    "storyText1": "WowSyler Teknoloji was founded with a single vision: to build exceptional software that makes a real difference. We started as a small team of passionate developers and have grown into a full-service technology company delivering web, mobile, game, and AI solutions.",
+    "storyText1": "WowSyler Software & Technology was founded with a clear mission: to build software that creates measurable business value. What started as a focused engineering team has evolved into a software company delivering web, mobile, backend, and AI solutions with a disciplined delivery mindset.",
     "storyText2": "Our name reflects our ambition — we aim to create products that make people say \"wow.\" Every line of code we write, every interface we design, and every system we architect is crafted with excellence in mind.",
-    "storyText3": "Today, WowSyler serves clients across industries, delivering robust and scalable applications. We're proud of the products we've built and even more excited about what's coming next.",
+    "storyText3": "Today, WowSyler Software & Technology serves clients across industries with robust, scalable, and maintainable applications. We take pride in building products that are not only modern, but also operationally reliable and ready for long-term growth.",
     "missionTitle": "Our Mission",
     "missionText": "To deliver world-class software solutions that empower businesses and delight users — by combining technical excellence with creative innovation.",
     "valuesTitle": "Our Values",
@@ -130,6 +130,7 @@
     "submittingBtn": "Sending...",
     "successMessage": "Your message has been sent! We'll get back to you as soon as possible.",
     "errorMessage": "Your message could not be sent right now. Please try again shortly.",
+    "errorDetailPrefix": "Details:",
     "infoTitle": "Get in Touch",
     "infoText": "We're always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
     "emailLabel2": "Email",
@@ -183,5 +184,207 @@
     "ctaTitle": "Ready to Build Something Amazing?",
     "ctaText": "Contact our team and let's discuss how we can help you achieve your goals.",
     "ctaBtn": "Get in Touch"
+  },
+  "legalPages": {
+    "sectionTitle": "Corporate & Legal",
+    "companyCardTitle": "Company Information",
+    "companyNameLabel": "Legal entity",
+    "websiteLabel": "Website",
+    "emailLabel": "Contact channel",
+    "lastUpdatedLabel": "Last updated",
+    "updatedAt": "March 16, 2026",
+    "contactTitle": "Requests & Contact",
+    "contactText": "For privacy, personal data, or legal requests, please use the contact form or the published contact channel. Requests are reviewed in line with applicable Turkish legislation and operational obligations.",
+    "contactCta": "Contact our team",
+    "relatedTitle": "Related legal pages",
+    "items": {
+      "pdpl": {
+        "navLabel": "PDPL Notice",
+        "eyebrow": "PDPL / KVKK",
+        "title": "PDPL Information Notice",
+        "subtitle": "This notice summarizes how personal data may be processed when you visit our website or contact our team under Turkish Law No. 6698.",
+        "sections": [
+          {
+            "title": "Data controller",
+            "paragraphs": [
+              "This website is operated by WowSyler Software & Technology. For personal data processed through website communication flows, project inquiries, and business contact channels, the company acts as the data controller."
+            ]
+          },
+          {
+            "title": "Categories of data we may process",
+            "paragraphs": [
+              "The scope of processed data depends on your interaction with us. We aim to collect only the minimum information required for communication, security, and service continuity."
+            ],
+            "bullets": [
+              "Identity and contact information you voluntarily submit through the contact form or email.",
+              "Message content, project details, and correspondence records shared during business communication.",
+              "Technical connection, IP, browser, and security records created by hosting, CDN, and infrastructure layers.",
+              "Request, approval, and follow-up records required for operational or legal compliance."
+            ]
+          },
+          {
+            "title": "Purposes and legal grounds",
+            "paragraphs": [
+              "Personal data may be processed to respond to your inquiries, evaluate potential projects, manage business communication, maintain platform security, and fulfill legal obligations."
+            ],
+            "bullets": [
+              "Executing requested pre-contractual communication and evaluating service demand.",
+              "Protecting website continuity, infrastructure security, and operational reliability.",
+              "Documenting communication records when required for legitimate interests or legal obligations."
+            ]
+          },
+          {
+            "title": "Transfers, storage, and retention",
+            "paragraphs": [
+              "Data may be processed with carefully selected hosting, CDN, infrastructure, and email delivery providers where required for the operation of the website and communication channels. Access is limited to authorized personnel and service providers acting within their service scope.",
+              "We do not sell personal data. Records are retained only for the period reasonably necessary for communication, security, compliance, or future contractual review."
+            ]
+          },
+          {
+            "title": "Your rights",
+            "paragraphs": [
+              "Subject to applicable law, you may request information about whether your personal data is processed, ask for correction or update, request deletion where legally possible, and object to certain processing activities."
+            ],
+            "bullets": [
+              "Request information about data processing activities.",
+              "Ask for inaccurate or outdated data to be corrected.",
+              "Request deletion, anonymization, or restriction where legal conditions are met.",
+              "Submit questions or rights requests through the contact channel published on this website."
+            ]
+          }
+        ]
+      },
+      "privacyPolicy": {
+        "navLabel": "Privacy Policy",
+        "eyebrow": "Privacy",
+        "title": "Privacy Policy",
+        "subtitle": "How we collect, use, store, and protect information connected to this website and our business communications.",
+        "sections": [
+          {
+            "title": "Scope",
+            "paragraphs": [
+              "This policy applies to information collected through the WowSyler website, contact form submissions, direct email communication, and technical website operations."
+            ]
+          },
+          {
+            "title": "Information we collect",
+            "paragraphs": [
+              "We collect only information that is relevant to communication, project evaluation, service continuity, and security."
+            ],
+            "bullets": [
+              "Contact details and business inquiry content voluntarily shared by visitors.",
+              "Technical metadata such as IP, device, browser, and request logs generated by infrastructure services.",
+              "Operational communication records needed to respond to requests or follow up on potential engagements."
+            ]
+          },
+          {
+            "title": "How information is used",
+            "paragraphs": [
+              "Collected information is used to respond to inquiries, evaluate potential projects, manage communication history, protect the website, and improve operational reliability."
+            ],
+            "bullets": [
+              "Responding to contact requests and partnership inquiries.",
+              "Reviewing project scope, technical needs, and service fit.",
+              "Monitoring misuse, abuse, or technical anomalies affecting the website."
+            ]
+          },
+          {
+            "title": "Security and retention",
+            "paragraphs": [
+              "We aim to protect information through limited access, reputable infrastructure providers, and operational safeguards appropriate to the scale of the website.",
+              "Information is retained only as long as it remains necessary for communication, legitimate business review, legal compliance, or technical security."
+            ]
+          },
+          {
+            "title": "Third-party services and updates",
+            "paragraphs": [
+              "The website may rely on third-party hosting, CDN, and email infrastructure providers to remain available and functional. If our privacy practices materially change, this page will be updated accordingly.",
+              "We do not currently operate user accounts or behavior-based advertising profiles through this website."
+            ]
+          }
+        ]
+      },
+      "cookiePolicy": {
+        "navLabel": "Cookie Policy",
+        "eyebrow": "Cookies",
+        "title": "Cookie Policy",
+        "subtitle": "Information about cookies and similar technical mechanisms used for website continuity, security, and performance.",
+        "sections": [
+          {
+            "title": "What are cookies?",
+            "paragraphs": [
+              "Cookies are small data files or similar technical identifiers that may be stored in a browser or used during a request to support continuity, security, and user experience."
+            ]
+          },
+          {
+            "title": "What may be used on this site",
+            "paragraphs": [
+              "Our current setup is intentionally lightweight. Where required, we may rely on essential technical mechanisms provided by the application, hosting, CDN, or security layers."
+            ],
+            "bullets": [
+              "Essential session or request continuity mechanisms required for secure page delivery.",
+              "Infrastructure-level security, rate-limiting, caching, or abuse-prevention identifiers.",
+              "Technical storage strictly required to keep the website available and reliable."
+            ]
+          },
+          {
+            "title": "What we do not intentionally use",
+            "paragraphs": [
+              "We do not intentionally rely on advertising, remarketing, or non-essential behavioral tracking cookies as part of the current website setup."
+            ]
+          },
+          {
+            "title": "Managing cookies",
+            "paragraphs": [
+              "Most browsers allow you to review, block, or delete cookies through their privacy settings. Blocking essential cookies may affect the availability or security behavior of certain website functions."
+            ]
+          },
+          {
+            "title": "Future changes",
+            "paragraphs": [
+              "If analytics, marketing, or additional non-essential technologies are introduced in the future, this policy will be updated before or alongside that change."
+            ]
+          }
+        ]
+      },
+      "legalInformation": {
+        "navLabel": "Legal Information",
+        "eyebrow": "Legal",
+        "title": "Legal Information",
+        "subtitle": "General legal notices governing the website operator, service descriptions, published content, and communication channels.",
+        "sections": [
+          {
+            "title": "Website operator",
+            "paragraphs": [
+              "This website is operated by WowSyler Software & Technology and is used to present company capabilities, project references, and communication channels related to software services."
+            ]
+          },
+          {
+            "title": "Informational nature of content",
+            "paragraphs": [
+              "Service descriptions, project references, technical capabilities, and other published information are presented for general informational purposes. They may be updated, expanded, or refined over time."
+            ]
+          },
+          {
+            "title": "Intellectual property",
+            "paragraphs": [
+              "Unless otherwise stated, the design, written content, brand elements, and software-related materials published on this website belong to their respective rights holders. Unauthorized copying or misleading reuse is not permitted."
+            ]
+          },
+          {
+            "title": "Limitation of liability",
+            "paragraphs": [
+              "We aim to keep the website accurate and available, but availability, completeness, or uninterrupted access cannot be guaranteed in every circumstance. Visitors should not interpret website content as legal, financial, or binding contractual advice."
+            ]
+          },
+          {
+            "title": "Applicable law and communication",
+            "paragraphs": [
+              "These legal notices are interpreted in line with the laws of the Republic of Turkey. For corporate, legal, or communication-related questions, visitors may use the contact channels published on the website."
+            ]
+          }
+        ]
+      }
+    }
   }
 }

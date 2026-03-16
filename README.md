@@ -1,4 +1,4 @@
-# WowSyler Teknoloji
+# WowSyler Yazılım ve Teknoloji
 
 A bilingual (Turkish / English) corporate website built with **Next.js 16**, **Tailwind CSS v4**, and **TypeScript**.
 
@@ -58,14 +58,14 @@ Set these environment variables in Coolify (or your local `.env.local`):
 ```bash
 RESEND_API_KEY=your_fresh_resend_api_key
 CONTACT_TO_EMAIL=you@example.com
-CONTACT_FROM_EMAIL=onboarding@resend.dev
+CONTACT_FROM_EMAIL=noreply@send.wowsyler.com
 NEXT_PUBLIC_CONTACT_EMAIL=
 ```
 
 Notes:
 
 - `CONTACT_TO_EMAIL` is the private inbox that receives form submissions. It can be any mailbox you control; it does **not** need to be `info@wowsyler.com`.
-- `CONTACT_FROM_EMAIL` can use `onboarding@resend.dev` for initial testing. For production, verify your domain in Resend and switch to something like `noreply@wowsyler.com`.
+- `CONTACT_FROM_EMAIL` should be a verified Resend sender such as `noreply@send.wowsyler.com`. Do not rely on `onboarding@resend.dev` in production.
 - `NEXT_PUBLIC_CONTACT_EMAIL` is optional. If you set it, the address is shown publicly in the footer, contact page, and JSON-LD metadata. If you leave it empty, the site keeps the contact form but does not expose a public email address.
 
 

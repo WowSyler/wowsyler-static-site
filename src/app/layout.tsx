@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { BRAND_DISPLAY } from "@/lib/brand";
 import { BASE_URL } from "@/lib/routes";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
-  title: "WowSyler",
-  description: "WowSyler Technology — web, mobile, game, and AI software solutions.",
+  title: BRAND_DISPLAY.en,
+  description: `${BRAND_DISPLAY.en} — corporate software engineering across web, mobile, backend, and AI.`,
   other: {
     'theme-color': '#0A2342',
   },

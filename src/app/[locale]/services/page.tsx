@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ServicesView from '@/views/ServicesView';
+import { BRAND_DISPLAY } from '@/lib/brand';
 import { BASE_URL, LOCALES, type Locale } from '@/lib/routes';
 
 export function generateStaticParams() {
@@ -15,11 +16,11 @@ export async function generateMetadata({
   const isEn = (locale as Locale) === 'en';
 
   const title = isEn
-    ? 'Services | WowSyler Technology'
-    : 'Hizmetlerimiz | WowSyler Teknoloji';
+    ? `Services | ${BRAND_DISPLAY.en}`
+    : `Hizmetlerimiz | ${BRAND_DISPLAY.tr}`;
   const description = isEn
-    ? 'Comprehensive software development services: web, mobile, game, AI agents, backend, and DevOps by WowSyler Technology.'
-    : 'Web, mobil, oyun, yapay zeka, backend ve DevOps alanlarında kapsamlı yazılım geliştirme hizmetleri.';
+    ? `Corporate software development services by ${BRAND_DISPLAY.en}: web, mobile, backend, AI, and DevOps.`
+    : `${BRAND_DISPLAY.tr}; web, mobil, backend, yapay zeka ve DevOps alanlarında kurumsal yazılım hizmetleri sunar.`;
 
   return {
     title,

@@ -25,6 +25,7 @@ export default function ContactView() {
   const { t } = useLanguage();
   const [formData, setFormData] = useState<ContactFormState>(initialFormState);
   const [status, setStatus] = useState<SubmissionStatus>('idle');
+  const [errorDetail, setErrorDetail] = useState('');
 
   const isSubmitting = status === 'submitting';
 
@@ -39,12 +40,17 @@ export default function ContactView() {
       if (status !== 'idle') {
         setStatus('idle');
       }
+
+      if (errorDetail) {
+        setErrorDetail('');
+      }
     };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setStatus('submitting');
+    setErrorDetail('');
 
     try {
       const response = await fetch('/api/contact', {
@@ -56,6 +62,8 @@ export default function ContactView() {
       });
 
       if (!response.ok) {
+        const body = (await response.json().catch(() => null)) as { error?: string } | null;
+        setErrorDetail(body?.error ?? '');
         setStatus('error');
         return;
       }
@@ -63,6 +71,7 @@ export default function ContactView() {
       setFormData(initialFormState);
       setStatus('success');
     } catch {
+      setErrorDetail('');
       setStatus('error');
     }
   };
@@ -128,7 +137,14 @@ export default function ContactView() {
                     <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    {t.contact.errorMessage}
+                    <div className="flex flex-col">
+                      <span>{t.contact.errorMessage}</span>
+                      {errorDetail && (
+                        <span className="text-xs font-medium mt-1" style={{ color: '#B91C1C' }}>
+                          {t.contact.errorDetailPrefix} {errorDetail}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 )}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">

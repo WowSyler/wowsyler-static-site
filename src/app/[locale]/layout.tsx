@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import LangSetter from '@/components/LangSetter';
+import { BRAND_DISPLAY, BRAND_SHORT, LEGAL_COMPANY_NAME } from '@/lib/brand';
 import { PUBLIC_CONTACT_EMAIL } from '@/lib/contact';
 import { BASE_URL, LOCALES, type Locale } from '@/lib/routes';
 
@@ -14,18 +15,18 @@ interface LocaleMeta {
 
 const META: Record<Locale, LocaleMeta> = {
   en: {
-    title: 'WowSyler Technology | Software, Web & Mobile, AI Development',
+    title: `${BRAND_DISPLAY.en} | Corporate Software, Web & Mobile, AI Development`,
     description:
-      'WowSyler Technology builds powerful software solutions — web, mobile, game development and AI agents — with cutting-edge technologies.',
+      `${BRAND_DISPLAY.en} delivers enterprise-ready software solutions across web, mobile, backend, and AI with a disciplined product engineering approach.`,
     ogLocale: 'en_US',
-    keywords: 'software development, web development, mobile development, AI agents, game development, WowSyler, technology, Next.js, React, .NET Core, Go',
+    keywords: `software development, web development, mobile development, AI agents, backend development, corporate software partner, ${BRAND_DISPLAY.en}, Next.js, React, .NET Core, Go`,
   },
   tr: {
-    title: 'WowSyler Teknoloji | Yazılım, Web & Mobil, Yapay Zeka Geliştirme',
+    title: `${BRAND_DISPLAY.tr} | Kurumsal Yazılım, Web & Mobil, Yapay Zeka`,
     description:
-      'WowSyler Teknoloji; web, mobil, oyun geliştirme ve yapay zeka ajanları alanlarında güçlü yazılım çözümleri üretmektedir.',
+      `${BRAND_DISPLAY.tr}; web, mobil, backend ve yapay zeka alanlarında kurumsal ölçekte yazılım çözümleri üretir.`,
     ogLocale: 'tr_TR',
-    keywords: 'yazılım geliştirme, web geliştirme, mobil geliştirme, yapay zeka, oyun geliştirme, WowSyler, teknoloji, Next.js, React, .NET Core, Go',
+    keywords: `yazılım geliştirme, web geliştirme, mobil geliştirme, yapay zeka, backend geliştirme, kurumsal yazılım partneri, ${BRAND_DISPLAY.tr}, Next.js, React, .NET Core, Go`,
   },
 };
 
@@ -55,7 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: meta.title,
       description: meta.description,
       url: canonicalUrl,
-      siteName: 'WowSyler',
+      siteName: BRAND_DISPLAY[locale as Locale] ?? BRAND_DISPLAY.tr,
       locale: meta.ogLocale,
       alternateLocale: [locale === 'en' ? 'tr_TR' : 'en_US'],
       type: 'website',
@@ -76,13 +77,15 @@ function getJsonLd(locale: Locale) {
   const isEn = locale === 'en';
   return {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'WowSyler Teknoloji',
+    '@type': 'Corporation',
+    name: BRAND_DISPLAY[locale],
+    alternateName: BRAND_SHORT,
+    legalName: LEGAL_COMPANY_NAME,
     url: BASE_URL,
     logo: `${BASE_URL}/logo.png`,
     description: isEn
-      ? 'WowSyler Technology builds powerful software solutions — web, mobile, game development and AI agents.'
-      : 'WowSyler Teknoloji; web, mobil, oyun geliştirme ve yapay zeka ajanları alanlarında güçlü yazılım çözümleri üretmektedir.',
+      ? `${BRAND_DISPLAY.en} delivers enterprise-ready software solutions across web, mobile, backend, and AI.`
+      : `${BRAND_DISPLAY.tr}; web, mobil, backend ve yapay zeka alanlarında kurumsal yazılım çözümleri üretir.`,
     contactPoint: {
       '@type': 'ContactPoint',
       ...(PUBLIC_CONTACT_EMAIL ? { email: PUBLIC_CONTACT_EMAIL } : {}),

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ProjectsView from '@/views/ProjectsView';
+import { BRAND_DISPLAY } from '@/lib/brand';
 import { BASE_URL, LOCALES, type Locale } from '@/lib/routes';
 
 export function generateStaticParams() {
@@ -15,11 +16,11 @@ export async function generateMetadata({
   const isEn = (locale as Locale) === 'en';
 
   const title = isEn
-    ? 'Projects | WowSyler Technology'
-    : 'Projelerimiz | WowSyler Teknoloji';
+    ? `Projects | ${BRAND_DISPLAY.en}`
+    : `Projelerimiz | ${BRAND_DISPLAY.tr}`;
   const description = isEn
-    ? 'Explore innovative software products built by the WowSyler Technology team — TextManipulator, AirdropBotPro, Streea and more.'
-    : 'WowSyler Teknoloji ekibinin geliştirdiği yenilikçi projeler — TextManipulator, AirdropBotPro, Streea ve daha fazlası.';
+    ? `Explore products built with the engineering and delivery standards of ${BRAND_DISPLAY.en} — TextManipulator, AirdropBotPro, Streea, and more.`
+    : `${BRAND_DISPLAY.tr} ekibinin mühendislik ve teslimat standardıyla geliştirdiği projeler — TextManipulator, AirdropBotPro, Streea ve daha fazlası.`;
 
   return {
     title,

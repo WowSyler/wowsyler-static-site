@@ -7,7 +7,7 @@
     "contact": "İletişim"
   },
   "footer": {
-    "tagline": "En son teknoloji ile geleceği inşa ediyoruz.",
+    "tagline": "Kurumsal yazılım projeleri için güvenilir mühendislik ve ürün geliştirme hizmetleri sunuyoruz.",
     "quickLinks": "Hızlı Bağlantılar",
     "services": "Hizmetler",
     "contact": "İletişim",
@@ -19,10 +19,10 @@
     "devops": "DevOps & Altyapı"
   },
   "home": {
-    "heroTitle": "WowSyler Teknoloji",
-    "heroTitleSub": "Teknoloji",
-    "heroBadge": "WowSyler Teknoloji",
-    "heroSubtitle": "Web & mobil uygulamalardan oyun geliştirme ve yapay zeka ajanlarına kadar güçlü yazılım çözümleri üretiyoruz.",
+    "heroTitle": "WowSyler Yazılım ve Teknoloji",
+    "heroTitleSub": "Yazılım & Teknoloji",
+    "heroBadge": "WowSyler Yazılım ve Teknoloji",
+    "heroSubtitle": "Kurumlara ve büyüyen girişimlere; web, mobil, backend ve yapay zeka alanlarında ölçeklenebilir yazılım çözümleri sunuyoruz.",
     "ctaPrimary": "Projelerimizi İnceleyin",
     "ctaSecondary": "İletişime Geçin",
     "servicesTitle": "Ne Yapıyoruz",
@@ -52,7 +52,7 @@
   },
   "projects": {
     "heroTitle": "Projelerimiz",
-    "heroSubtitle": "WowSyler ekibinin geliştirdiği yenilikçi ürünler.",
+    "heroSubtitle": "WowSyler Yazılım ve Teknoloji ekibinin teslimat disipliniyle geliştirdiği ürünler.",
     "heroBadge": "Portföy",
     "statusLive": "Yayında",
     "statusDev": "Geliştirme Aşamasında",
@@ -69,13 +69,13 @@
     "techStack": "Teknoloji Yığını"
   },
   "about": {
-    "heroTitle": "WowSyler Hakkında",
-    "heroSubtitle": "Yarının yazılımını bugün inşa eden tutkulu mühendisler ve yaratıcılar ekibi.",
+    "heroTitle": "WowSyler Yazılım ve Teknoloji Hakkında",
+    "heroSubtitle": "Modern ürün mühendisliğini kurumsal teslimat anlayışıyla birleştiren yazılım ekibi.",
     "heroBadge": "Hakkımızda",
     "storyTitle": "Hikayemiz",
-    "storyText1": "WowSyler Teknoloji tek bir vizyonla kuruldu: gerçek bir fark yaratan olağanüstü yazılımlar üretmek. Tutkulu geliştiricilerden oluşan küçük bir ekip olarak başladık ve web, mobil, oyun ve yapay zeka çözümleri sunan tam hizmetli bir teknoloji şirketine dönüştük.",
+    "storyText1": "WowSyler Yazılım ve Teknoloji Hizmetleri Ltd. Şti., ölçülebilir iş değeri üreten yazılımlar geliştirmek amacıyla kuruldu. Odaklı bir mühendislik ekibi olarak başlayan yapımız, bugün web, mobil, backend ve yapay zeka çözümleri sunan kurumsal bir yazılım şirketine dönüştü.",
     "storyText2": "İsmimiz hırsımızı yansıtıyor — insanların \"vay be!\" demesini sağlayan ürünler yaratmayı hedefliyoruz. Yazdığımız her kod satırı, tasarladığımız her arayüz ve oluşturduğumuz her sistem mükemmellik anlayışıyla şekillendirilmiştir.",
-    "storyText3": "Bugün WowSyler, çeşitli sektörlerdeki müşterilere sağlam ve ölçeklenebilir uygulamalar sunmaktadır. Ürettiğimiz ürünlerle gurur duyuyor, gelecekte ortaya çıkacaklardan ise daha da heyecan duyuyoruz.",
+    "storyText3": "Bugün WowSyler Yazılım ve Teknoloji, farklı sektörlerdeki müşterilere sağlam, ölçeklenebilir ve sürdürülebilir uygulamalar sunmaktadır. Yalnızca modern görünen değil, operasyonel olarak güvenilir ve uzun vadeli büyümeye hazır ürünler geliştirmeye odaklanıyoruz.",
     "missionTitle": "Misyonumuz",
     "missionText": "Teknik mükemmelliği yaratıcı yenilikle birleştirerek işletmeleri güçlendiren ve kullanıcıları memnun eden dünya standartlarında yazılım çözümleri sunmak.",
     "valuesTitle": "Değerlerimiz",
@@ -130,6 +130,7 @@
     "submittingBtn": "Gönderiliyor...",
     "successMessage": "Mesajınız iletildi! En kısa sürede size geri döneceğiz.",
     "errorMessage": "Mesajınız şu anda gönderilemedi. Lütfen kısa süre sonra tekrar deneyin.",
+    "errorDetailPrefix": "Detay:",
     "infoTitle": "İletişime Geçin",
     "infoText": "Yeni projeler, yaratıcı fikirler veya vizyonunuzun bir parçası olma fırsatları hakkında konuşmaya her zaman açığız.",
     "emailLabel2": "E-posta",
@@ -183,5 +184,207 @@
     "ctaTitle": "Harika Bir Şey İnşa Etmeye Hazır mısınız?",
     "ctaText": "Ekibimizle iletişime geçin ve hedeflerinize nasıl ulaşmanıza yardımcı olabileceğimizi konuşalım.",
     "ctaBtn": "İletişime Geçin"
+  },
+  "legalPages": {
+    "sectionTitle": "Kurumsal & Yasal",
+    "companyCardTitle": "Şirket Bilgileri",
+    "companyNameLabel": "Tüzel kişi",
+    "websiteLabel": "Web sitesi",
+    "emailLabel": "İletişim kanalı",
+    "lastUpdatedLabel": "Son güncelleme",
+    "updatedAt": "16 Mart 2026",
+    "contactTitle": "Başvuru & İletişim",
+    "contactText": "Gizlilik, kişisel veri veya yasal talepleriniz için iletişim formunu ya da yayınlanan iletişim kanalını kullanabilirsiniz. Başvurular yürürlükteki Türk mevzuatı ve operasyonel yükümlülükler doğrultusunda değerlendirilir.",
+    "contactCta": "Ekibimizle iletişime geçin",
+    "relatedTitle": "İlgili yasal sayfalar",
+    "items": {
+      "pdpl": {
+        "navLabel": "KVKK Aydınlatma Metni",
+        "eyebrow": "KVKK",
+        "title": "KVKK Aydınlatma Metni",
+        "subtitle": "Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında web sitemizi ziyaret ettiğinizde veya ekibimizle iletişime geçtiğinizde kişisel verilerinizin nasıl işlenebileceğini özetler.",
+        "sections": [
+          {
+            "title": "Veri sorumlusu",
+            "paragraphs": [
+              "Bu web sitesi WowSyler Yazılım ve Teknoloji tarafından işletilmektedir. Web sitesi iletişim akışları, proje talepleri ve iş iletişimi kanalları üzerinden işlenen kişisel veriler bakımından şirket veri sorumlusu sıfatıyla hareket eder."
+            ]
+          },
+          {
+            "title": "İşleyebileceğimiz veri kategorileri",
+            "paragraphs": [
+              "İşlenen veri kapsamı bizimle kurduğunuz etkileşime göre değişir. Amacımız iletişim, güvenlik ve hizmet sürekliliği için gerekli olan asgari bilgiyi toplamaktır."
+            ],
+            "bullets": [
+              "İletişim formu veya e-posta yoluyla gönüllü olarak paylaştığınız kimlik ve iletişim bilgileri.",
+              "İş iletişimi sırasında paylaştığınız mesaj içerikleri, proje detayları ve yazışma kayıtları.",
+              "Hosting, CDN ve altyapı katmanları tarafından oluşturulan teknik bağlantı, IP, tarayıcı ve güvenlik kayıtları.",
+              "Operasyonel veya hukuki uyum için gerekebilecek talep, onay ve takip kayıtları."
+            ]
+          },
+          {
+            "title": "İşleme amaçları ve hukuki sebepler",
+            "paragraphs": [
+              "Kişisel veriler; taleplerinizi yanıtlamak, potansiyel projeleri değerlendirmek, iş iletişimini yönetmek, platform güvenliğini sağlamak ve yasal yükümlülükleri yerine getirmek amacıyla işlenebilir."
+            ],
+            "bullets": [
+              "Talep edilen ön sözleşmesel iletişimi yürütmek ve hizmet ihtiyacını değerlendirmek.",
+              "Web sitesi sürekliliğini, altyapı güvenliğini ve operasyonel güvenilirliği korumak.",
+              "Meşru menfaat veya hukuki yükümlülük kapsamında iletişim kayıtlarını belgelemek."
+            ]
+          },
+          {
+            "title": "Aktarım, saklama ve muhafaza",
+            "paragraphs": [
+              "Veriler, web sitesi ve iletişim kanallarının işletilmesi için gerekli olduğu ölçüde dikkatle seçilmiş hosting, CDN, altyapı ve e-posta servis sağlayıcıları ile işlenebilir. Erişim, yetkili personel ve hizmet kapsamı ile sınırlı servis sağlayıcılarla kısıtlanır.",
+              "Kişisel veriler satılmaz. Kayıtlar yalnızca iletişim, güvenlik, uyum veya gelecekteki sözleşmesel değerlendirme açısından makul ölçüde gerekli olduğu süre boyunca saklanır."
+            ]
+          },
+          {
+            "title": "İlgili kişi hakları",
+            "paragraphs": [
+              "Yürürlükteki mevzuat çerçevesinde kişisel verilerinizin işlenip işlenmediğini öğrenme, düzeltilmesini veya güncellenmesini isteme, hukuken mümkün olduğu ölçüde silme talebinde bulunma ve belirli işleme faaliyetlerine itiraz etme haklarına sahipsiniz."
+            ],
+            "bullets": [
+              "Veri işleme faaliyetleri hakkında bilgi talep etme.",
+              "Hatalı veya güncel olmayan verilerin düzeltilmesini isteme.",
+              "Şartları oluştuğunda silme, anonimleştirme veya kısıtlama talep etme.",
+              "Sorularınızı veya hak taleplerinizi bu web sitesinde yayınlanan iletişim kanalı üzerinden iletme."
+            ]
+          }
+        ]
+      },
+      "privacyPolicy": {
+        "navLabel": "Gizlilik Politikası",
+        "eyebrow": "Gizlilik",
+        "title": "Gizlilik Politikası",
+        "subtitle": "Bu web sitesi ve iş iletişimlerimizle bağlantılı bilgilerin nasıl toplandığını, kullanıldığını, saklandığını ve korunduğunu açıklar.",
+        "sections": [
+          {
+            "title": "Kapsam",
+            "paragraphs": [
+              "Bu politika; WowSyler web sitesi üzerinden toplanan bilgiler, iletişim formu gönderimleri, doğrudan e-posta iletişimi ve teknik web sitesi operasyonları için geçerlidir."
+            ]
+          },
+          {
+            "title": "Topladığımız bilgiler",
+            "paragraphs": [
+              "Yalnızca iletişim, proje değerlendirmesi, hizmet sürekliliği ve güvenlik açısından ilgili olan bilgileri toplarız."
+            ],
+            "bullets": [
+              "Ziyaretçilerin gönüllü olarak paylaştığı iletişim bilgileri ve iş talebi içerikleri.",
+              "Altyapı servisleri tarafından oluşturulan IP, cihaz, tarayıcı ve istek günlükleri gibi teknik meta veriler.",
+              "Talepleri yanıtlamak veya potansiyel iş birliklerini takip etmek için gereken operasyonel iletişim kayıtları."
+            ]
+          },
+          {
+            "title": "Bilgileri nasıl kullanırız",
+            "paragraphs": [
+              "Toplanan bilgiler; taleplere yanıt vermek, potansiyel projeleri değerlendirmek, iletişim geçmişini yönetmek, web sitesini korumak ve operasyonel güvenilirliği artırmak için kullanılır."
+            ],
+            "bullets": [
+              "İletişim taleplerini ve iş birliği başvurularını yanıtlamak.",
+              "Proje kapsamını, teknik ihtiyaçları ve hizmet uyumunu değerlendirmek.",
+              "Web sitesini etkileyen kötüye kullanım, suistimal veya teknik anormallikleri izlemek."
+            ]
+          },
+          {
+            "title": "Güvenlik ve saklama",
+            "paragraphs": [
+              "Bilgileri; sınırlı erişim, güvenilir altyapı sağlayıcıları ve web sitesinin ölçeğine uygun operasyonel önlemler ile korumayı hedefleriz.",
+              "Bilgiler yalnızca iletişim, meşru iş değerlendirmesi, yasal uyum veya teknik güvenlik için gerekli olduğu sürece saklanır."
+            ]
+          },
+          {
+            "title": "Üçüncü taraf servisler ve güncellemeler",
+            "paragraphs": [
+              "Web sitesi; erişilebilir ve işlevsel kalabilmek için üçüncü taraf hosting, CDN ve e-posta altyapı servislerinden yararlanabilir. Gizlilik uygulamalarımızda önemli bir değişiklik olduğunda bu sayfa güncellenir.",
+              "Bu web sitesi kapsamında şu anda kullanıcı hesabı veya davranış temelli reklam profili işletilmemektedir."
+            ]
+          }
+        ]
+      },
+      "cookiePolicy": {
+        "navLabel": "Çerez Politikası",
+        "eyebrow": "Çerezler",
+        "title": "Çerez Politikası",
+        "subtitle": "Web sitesi sürekliliği, güvenlik ve performans için kullanılan çerezler ve benzeri teknik mekanizmalar hakkında bilgi verir.",
+        "sections": [
+          {
+            "title": "Çerez nedir?",
+            "paragraphs": [
+              "Çerezler; süreklilik, güvenlik ve kullanıcı deneyimini desteklemek amacıyla tarayıcıda saklanabilen veya istek sırasında kullanılan küçük veri dosyaları ya da benzeri teknik tanımlayıcılardır."
+            ]
+          },
+          {
+            "title": "Bu sitede neler kullanılabilir?",
+            "paragraphs": [
+              "Mevcut kurulumumuz bilinçli olarak hafiftir. Gerektiğinde uygulama, hosting, CDN veya güvenlik katmanları tarafından sağlanan temel teknik mekanizmalardan yararlanabiliriz."
+            ],
+            "bullets": [
+              "Güvenli sayfa sunumu için gerekli oturum veya istek sürekliliği mekanizmaları.",
+              "Altyapı seviyesinde güvenlik, hız sınırlama, cache veya kötüye kullanımı önleme tanımlayıcıları.",
+              "Web sitesini erişilebilir ve güvenilir tutmak için zorunlu teknik saklama mekanizmaları."
+            ]
+          },
+          {
+            "title": "Bilinçli olarak kullanmadıklarımız",
+            "paragraphs": [
+              "Mevcut web sitesi kurulumunda reklam, yeniden pazarlama veya zorunlu olmayan davranışsal takip çerezlerini bilinçli olarak kullanmıyoruz."
+            ]
+          },
+          {
+            "title": "Çerezleri yönetme",
+            "paragraphs": [
+              "Çoğu tarayıcı, çerezleri gizlilik ayarları üzerinden görüntülemenize, engellemenize veya silmenize izin verir. Zorunlu çerezlerin engellenmesi bazı site fonksiyonlarının erişilebilirliğini veya güvenlik davranışını etkileyebilir."
+            ]
+          },
+          {
+            "title": "Gelecekteki değişiklikler",
+            "paragraphs": [
+              "İleride analitik, pazarlama veya ek zorunlu olmayan teknolojiler kullanıma alınırsa bu politika, değişiklikten önce veya değişiklikle birlikte güncellenecektir."
+            ]
+          }
+        ]
+      },
+      "legalInformation": {
+        "navLabel": "Yasal Bilgiler",
+        "eyebrow": "Yasal",
+        "title": "Yasal Bilgiler",
+        "subtitle": "Web sitesi işletmecisi, hizmet açıklamaları, yayınlanan içerikler ve iletişim kanallarını düzenleyen genel yasal bildirimleri içerir.",
+        "sections": [
+          {
+            "title": "Web sitesi işletmecisi",
+            "paragraphs": [
+              "Bu web sitesi WowSyler Yazılım ve Teknoloji tarafından işletilmekte olup yazılım hizmetlerine ilişkin şirket yetkinliklerini, proje referanslarını ve iletişim kanallarını tanıtmak amacıyla kullanılmaktadır."
+            ]
+          },
+          {
+            "title": "İçeriklerin bilgilendirme niteliği",
+            "paragraphs": [
+              "Hizmet açıklamaları, proje referansları, teknik yetkinlikler ve diğer yayınlanan bilgiler genel bilgilendirme amacı taşır. Zaman içinde güncellenebilir, genişletilebilir veya revize edilebilir."
+            ]
+          },
+          {
+            "title": "Fikri mülkiyet",
+            "paragraphs": [
+              "Aksi belirtilmedikçe bu web sitesinde yayınlanan tasarım, yazılı içerik, marka unsurları ve yazılımla ilişkili materyaller ilgili hak sahiplerine aittir. İzinsiz kopyalama veya yanıltıcı kullanım kabul edilmez."
+            ]
+          },
+          {
+            "title": "Sorumluluğun sınırı",
+            "paragraphs": [
+              "Web sitesini doğru ve erişilebilir tutmayı hedefliyoruz; ancak her koşulda erişilebilirlik, tamlık veya kesintisiz hizmet garantisi verilemez. Ziyaretçiler, site içeriğini hukuki, finansal veya bağlayıcı sözleşmesel tavsiye olarak değerlendirmemelidir."
+            ]
+          },
+          {
+            "title": "Uygulanacak hukuk ve iletişim",
+            "paragraphs": [
+              "Bu yasal bildirimler Türkiye Cumhuriyeti hukuku doğrultusunda yorumlanır. Kurumsal, hukuki veya iletişimle ilgili sorular için web sitesinde yayınlanan iletişim kanalları kullanılabilir."
+            ]
+          }
+        ]
+      }
+    }
   }
 }

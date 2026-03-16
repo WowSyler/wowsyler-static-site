@@ -1,5 +1,7 @@
 'use client';
 import Link from 'next/link';
+import { LEGAL_COMPANY_NAME } from '@/lib/brand';
+import { getLegalPageHref } from '@/lib/legal';
 import Logo from './Logo';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { PUBLIC_CONTACT_EMAIL, PUBLIC_CONTACT_MAILTO } from '@/lib/contact';
@@ -9,11 +11,17 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   const aboutSlug = locale === 'en' ? 'about' : 'hakkimizda';
+  const legalLinks = [
+    { href: getLegalPageHref(locale, 'pdpl'), label: t.legalPages.items.pdpl.navLabel },
+    { href: getLegalPageHref(locale, 'privacyPolicy'), label: t.legalPages.items.privacyPolicy.navLabel },
+    { href: getLegalPageHref(locale, 'cookiePolicy'), label: t.legalPages.items.cookiePolicy.navLabel },
+    { href: getLegalPageHref(locale, 'legalInformation'), label: t.legalPages.items.legalInformation.navLabel },
+  ];
 
   return (
     <footer style={{ background: '#0A2342', color: '#CBD5E0' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href={`/${locale}/`} className="inline-flex">
@@ -88,6 +96,25 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
+          <div>
+            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4" style={{ color: '#E2E8F0' }}>
+              {t.legalPages.sectionTitle}
+            </h4>
+            <ul className="space-y-2.5">
+              {legalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm transition-colors hover:text-white"
+                    style={{ color: '#94A3B8' }}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Bottom bar */}
@@ -96,7 +123,7 @@ export default function Footer() {
           style={{ borderTop: '1px solid #1E3A5F' }}
         >
           <p className="text-xs" style={{ color: '#64748B' }}>
-            &copy; {year} WowSyler Teknoloji. {t.footer.rights}
+            &copy; {year} {LEGAL_COMPANY_NAME}. {t.footer.rights}
           </p>
           {PUBLIC_CONTACT_EMAIL && (
             <div className="flex items-center gap-1.5">

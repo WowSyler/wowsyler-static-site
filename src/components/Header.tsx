@@ -4,11 +4,13 @@ import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import Logo from './Logo';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getLegalPageHref } from '@/lib/legal';
 import { getAlternateUrl, type Locale } from '@/lib/routes';
 
 export default function Header() {
   const { t, locale } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [legalMenuOpen, setLegalMenuOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -26,6 +28,12 @@ export default function Header() {
     { href: `/${locale}/projects/`, label: t.nav.projects },
     { href: `/${locale}/${aboutSlug}/`, label: t.nav.about },
     { href: `/${locale}/contact/`, label: t.nav.contact },
+  ];
+  const legalLinks = [
+    { href: getLegalPageHref(locale, 'pdpl'), label: t.legalPages.items.pdpl.navLabel },
+    { href: getLegalPageHref(locale, 'privacyPolicy'), label: t.legalPages.items.privacyPolicy.navLabel },
+    { href: getLegalPageHref(locale, 'cookiePolicy'), label: t.legalPages.items.cookiePolicy.navLabel },
+    { href: getLegalPageHref(locale, 'legalInformation'), label: t.legalPages.items.legalInformation.navLabel },
   ];
 
   return (
@@ -60,6 +68,50 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+
+            <div
+              className="relative ml-2"
+              onMouseEnter={() => setLegalMenuOpen(true)}
+              onMouseLeave={() => setLegalMenuOpen(false)}
+            >
+              <button
+                type="button"
+                className="px-4 py-2 rounded-lg text-sm font-medium transition-colors inline-flex items-center gap-2"
+                style={{
+                  color: legalMenuOpen ? '#1E6FD9' : '#4A5568',
+                  background: legalMenuOpen ? '#EBF4FF' : 'transparent',
+                }}
+                aria-expanded={legalMenuOpen}
+                aria-haspopup="menu"
+              >
+                {t.legalPages.sectionTitle}
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {legalMenuOpen && (
+                <div
+                  className="absolute top-full right-0 mt-2 w-64 rounded-2xl p-2"
+                  style={{
+                    background: '#ffffff',
+                    border: '1px solid #E2E8F0',
+                    boxShadow: '0 16px 40px rgba(15, 23, 42, 0.12)',
+                  }}
+                >
+                  {legalLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="block rounded-xl px-4 py-3 text-sm font-medium transition-colors"
+                      style={{ color: '#334155' }}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Right side: language toggle + mobile button */}
@@ -139,6 +191,31 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+
+          <div className="mt-2 pt-3 border-t" style={{ borderColor: '#E2E8F0' }}>
+            <p className="px-4 pb-2 text-xs font-semibold uppercase tracking-wider" style={{ color: '#64748B' }}>
+              {t.legalPages.sectionTitle}
+            </p>
+            {legalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors"
+                style={{ color: '#4A5568' }}
+                onClick={() => setMobileOpen(false)}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.background = '#EBF4FF';
+                  (e.currentTarget as HTMLAnchorElement).style.color = '#1E6FD9';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.background = 'transparent';
+                  (e.currentTarget as HTMLAnchorElement).style.color = '#4A5568';
+                }}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
       )}
     </header>

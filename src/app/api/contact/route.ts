@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { BRAND_DISPLAY } from '@/lib/brand';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_NAME_LENGTH = 120;
@@ -90,6 +91,28 @@ function validatePayload(payload: ContactPayload) {
   return null;
 }
 
+function mapProviderError(message: string) {
+  const normalized = message.toLowerCase();
+
+  if (
+    normalized.includes('testing emails') ||
+    normalized.includes('own email address') ||
+    normalized.includes('onboarding@resend.dev')
+  ) {
+    return 'Resend is still using its test sender. Set CONTACT_FROM_EMAIL to a verified sender such as noreply@send.wowsyler.com and redeploy.';
+  }
+
+  if (
+    normalized.includes('verified domain') ||
+    normalized.includes('verify a domain') ||
+    normalized.includes('from address')
+  ) {
+    return 'CONTACT_FROM_EMAIL must use an address from a verified Resend domain.';
+  }
+
+  return message;
+}
+
 export async function POST(request: Request) {
   let rawBody: unknown;
 
@@ -114,11 +137,24 @@ export async function POST(request: Request) {
 
   const resendApiKey = process.env.RESEND_API_KEY?.trim();
   const contactToEmail = process.env.CONTACT_TO_EMAIL?.trim();
-  const contactFromEmail = process.env.CONTACT_FROM_EMAIL?.trim() || 'onboarding@resend.dev';
+  const contactFromEmail = process.env.CONTACT_FROM_EMAIL?.trim();
 
-  if (!resendApiKey || !contactToEmail) {
+  if (!resendApiKey || !contactToEmail || !contactFromEmail) {
     return NextResponse.json(
-      { error: 'Contact email service is not configured on the server.' },
+      {
+        error:
+          'Contact email service is not fully configured. Set RESEND_API_KEY, CONTACT_TO_EMAIL, and CONTACT_FROM_EMAIL in Coolify.',
+      },
+      { status: 500 },
+    );
+  }
+
+  if (!EMAIL_REGEX.test(contactToEmail) || !EMAIL_REGEX.test(contactFromEmail)) {
+    return NextResponse.json(
+      {
+        error:
+          'CONTACT_TO_EMAIL or CONTACT_FROM_EMAIL is not a valid email address. Use a real inbox and a verified Resend sender.',
+      },
       { status: 500 },
     );
   }
@@ -130,13 +166,13 @@ export async function POST(request: Request) {
       from: contactFromEmail,
       to: [contactToEmail],
       replyTo: [payload.email],
-      subject: `WowSyler contact form: ${payload.subject}`,
+      subject: `${BRAND_DISPLAY.tr} contact form: ${payload.subject}`,
       text: buildPlainTextEmail(payload),
       html: buildHtmlEmail(payload),
     });
 
     if (error) {
-      return NextResponse.json({ error: error.message }, { status: 502 });
+      return NextResponse.json({ error: mapProviderError(error.message) }, { status: 502 });
     }
 
     return NextResponse.json({ ok: true, id: data?.id ?? null });
@@ -144,7 +180,9 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          error instanceof Error ? error.message : 'Unexpected error while sending the contact email.',
+          error instanceof Error
+            ? mapProviderError(error.message)
+            : 'Unexpected error while sending the contact email.',
       },
       { status: 502 },
     );
