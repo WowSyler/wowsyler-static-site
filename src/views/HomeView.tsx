@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { PROJECTS, type ProjectKey } from '@/lib/projects';
 
 const techStack = [
   { name: 'Next.js', color: '#000000' },
@@ -64,35 +65,28 @@ export default function HomeView() {
     { key: 'ai', title: t.home.services.aiTitle, desc: t.home.services.aiDesc, icon: serviceIcons.ai },
   ];
 
-  const projects = [
-    {
+  const projectContent: Record<ProjectKey, { title: string; desc: string; status: string }> = {
+    textManipulator: {
       title: t.projects.textManipulatorTitle,
       desc: t.projects.textManipulatorDesc,
       status: t.projects.statusLive,
-      live: true,
-      url: 'https://textmanipulator.com',
-      tech: ['Next.js', 'Go'],
-      color: '#1E6FD9',
     },
-    {
+    airdropBot: {
       title: t.projects.airdropBotTitle,
       desc: t.projects.airdropBotDesc,
       status: t.projects.statusDev,
-      live: false,
-      url: 'https://airdropbotpro.com',
-      tech: ['Node.js', 'Go', 'PostgreSQL'],
-      color: '#7C3AED',
     },
-    {
+    streea: {
       title: t.projects.streeaTitle,
       desc: t.projects.streeaDesc,
       status: t.projects.statusDev,
-      live: false,
-      url: 'https://streea.com',
-      tech: ['Next.js', '.NET Core', 'PostgreSQL', 'Redis'],
-      color: '#059669',
     },
-  ];
+  };
+
+  const projects = PROJECTS.map((project) => ({
+    ...project,
+    ...projectContent[project.key],
+  }));
 
   return (
     <div style={{ background: '#F8FAFC', minHeight: '100vh' }}>

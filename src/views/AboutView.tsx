@@ -2,13 +2,34 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { PROJECTS } from '@/lib/projects';
 
 const techGroupsData = [
-  { key: 'frontend' as const, items: ['Next.js', 'Angular', 'Blazor', 'React', 'TypeScript'] },
-  { key: 'backend' as const, items: ['.NET Core', 'Go', 'Node.js', 'Python'] },
-  { key: 'database' as const, items: ['PostgreSQL', 'Redis', 'RabbitMQ'] },
-  { key: 'devops' as const, items: ['Docker', 'Docker Compose', 'CI/CD', 'Self-hosted', 'Cloud'] },
-  { key: 'ai' as const, items: ['AI Agents', 'LLM Integration', 'Automation'] },
+  {
+    key: 'experience' as const,
+    color: '#1E6FD9',
+    items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Angular', 'Blazor', 'React Native', 'Swift', 'Kotlin'],
+  },
+  {
+    key: 'platform' as const,
+    color: '#7C3AED',
+    items: ['ASP.NET Core API', '.NET Core', 'Go', 'Node.js', 'Python'],
+  },
+  {
+    key: 'data' as const,
+    color: '#059669',
+    items: ['PostgreSQL', 'MSSQL', 'MongoDB', 'Redis', 'RabbitMQ', 'Elasticsearch'],
+  },
+  {
+    key: 'ops' as const,
+    color: '#D97706',
+    items: ['Docker', 'Kubernetes', 'CI/CD', 'Grafana', 'Prometheus', 'Uptime Kuma'],
+  },
+  {
+    key: 'automation' as const,
+    color: '#0891B2',
+    items: ['AI Agents', 'Workflow Automation', 'LLM Integration', 'Search Pipelines', 'Observability'],
+  },
 ];
 
 const valueIcons = [
@@ -37,6 +58,7 @@ const valueColors = ['#1E6FD9', '#7C3AED', '#059669', '#DC2626', '#D97706', '#08
 
 export default function AboutView() {
   const { t } = useLanguage();
+  const techCount = new Set(techGroupsData.flatMap((group) => group.items)).size;
 
   const values = [
     { title: t.about.values.qualityTitle, desc: t.about.values.qualityDesc },
@@ -109,7 +131,7 @@ export default function AboutView() {
               </p>
 
               <div className="mt-8 grid grid-cols-3 gap-4 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-                {[['3', t.about.statsProjects], ['5+', t.about.statsTech], ['2', t.about.statsLanguages]].map(([num, label]) => (
+                {[[String(PROJECTS.length), t.about.statsProjects], [String(techCount), t.about.statsTech], ['2', t.about.statsLanguages]].map(([num, label]) => (
                   <div key={label} className="text-center">
                     <p className="text-2xl font-bold" style={{ color: '#00B4D8' }}>{num}</p>
                     <p className="text-xs mt-1" style={{ color: '#64748B' }}>{label}</p>
@@ -161,22 +183,28 @@ export default function AboutView() {
             <p className="text-lg" style={{ color: '#64748B' }}>{t.about.expertiseSubtitle}</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
             {techGroupsData.map((group) => (
               <div
                 key={group.key}
                 className="rounded-2xl p-6"
                 style={{ background: '#ffffff', border: '1px solid #E2E8F0' }}
               >
-                <h4 className="font-bold text-sm uppercase tracking-wider mb-4" style={{ color: '#0A2342' }}>
-                  {t.about.techGroups[group.key]}
-                </h4>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-3 h-3 rounded-full" style={{ background: group.color }} />
+                  <h4 className="font-bold text-sm uppercase tracking-wider" style={{ color: '#0A2342' }}>
+                    {t.about.techGroups[group.key]}
+                  </h4>
+                </div>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: '#64748B' }}>
+                  {t.about.techGroupDescriptions[group.key]}
+                </p>
                 <div className="flex flex-wrap gap-2">
                   {group.items.map((item) => (
                     <span
                       key={item}
                       className="px-3 py-1.5 rounded-lg text-xs font-medium"
-                      style={{ background: '#EBF4FF', color: '#1E6FD9' }}
+                      style={{ background: `${group.color}12`, color: group.color, border: `1px solid ${group.color}20` }}
                     >
                       {item}
                     </span>

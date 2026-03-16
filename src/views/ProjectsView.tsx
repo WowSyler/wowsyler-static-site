@@ -1,73 +1,62 @@
 'use client';
+import type { ReactNode } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const projects = [
-  {
-    key: 'textManipulator',
-    url: 'https://textmanipulator.com',
-    live: true,
-    tech: ['Next.js', 'Go', 'REST API', 'Docker'],
-    color: '#1E6FD9',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-      </svg>
-    ),
-  },
-  {
-    key: 'airdropBot',
-    url: 'https://airdropbotpro.com',
-    live: false,
-    tech: ['Go', 'Node.js', 'PostgreSQL', 'Redis', 'Docker', 'Proxy'],
-    color: '#7C3AED',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-  },
-  {
-    key: 'streea',
-    url: 'https://streea.com',
-    live: false,
-    tech: ['Next.js', '.NET Core', 'PostgreSQL', 'Redis', 'RabbitMQ', 'Docker'],
-    color: '#059669',
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
-      </svg>
-    ),
-  },
-];
+import { PROJECTS, type ProjectKey } from '@/lib/projects';
 
 export default function ProjectsView() {
   const { t } = useLanguage();
 
-  const projectData = [
+  const projectContent: Record<
+    ProjectKey,
     {
-      ...projects[0],
+      title: string;
+      desc: string;
+      long: string;
+      status: string;
+      icon: ReactNode;
+    }
+  > = {
+    textManipulator: {
       title: t.projects.textManipulatorTitle,
       desc: t.projects.textManipulatorDesc,
       long: t.projects.textManipulatorLong,
       status: t.projects.statusLive,
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      ),
     },
-    {
-      ...projects[1],
+    airdropBot: {
       title: t.projects.airdropBotTitle,
       desc: t.projects.airdropBotDesc,
       long: t.projects.airdropBotLong,
       status: t.projects.statusDev,
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
     },
-    {
-      ...projects[2],
+    streea: {
       title: t.projects.streeaTitle,
       desc: t.projects.streeaDesc,
       long: t.projects.streeaLong,
       status: t.projects.statusDev,
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
+        </svg>
+      ),
     },
-  ];
+  };
+
+  const projectData = PROJECTS.map((project) => ({
+    ...project,
+    ...projectContent[project.key],
+  }));
 
   return (
     <div style={{ background: '#F8FAFC', minHeight: '100vh' }}>
