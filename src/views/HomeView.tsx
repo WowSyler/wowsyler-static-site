@@ -6,17 +6,28 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const techStack = [
   { name: 'Next.js', color: '#000000' },
+  { name: 'React', color: '#61DAFB' },
+  { name: 'React Native', color: '#61DAFB' },
   { name: 'Angular', color: '#DD0031' },
   { name: 'Blazor', color: '#512BD4' },
+  { name: 'TypeScript', color: '#3178C6' },
   { name: '.NET Core', color: '#512BD4' },
   { name: 'Go', color: '#00ADD8' },
   { name: 'Node.js', color: '#339933' },
   { name: 'Python', color: '#3776AB' },
+  { name: 'Swift', color: '#F05138' },
+  { name: 'Kotlin', color: '#7F52FF' },
   { name: 'RabbitMQ', color: '#FF6600' },
   { name: 'Redis', color: '#DC382D' },
+  { name: 'Elasticsearch', color: '#FEC514' },
+  { name: 'MongoDB', color: '#47A248' },
+  { name: 'MSSQL', color: '#CC2927' },
   { name: 'PostgreSQL', color: '#336791' },
+  { name: 'Grafana', color: '#F46800' },
+  { name: 'Prometheus', color: '#E6522C' },
   { name: 'Docker', color: '#2496ED' },
   { name: 'CI/CD', color: '#1E6FD9' },
+  { name: 'Tailwind CSS', color: '#06B6D4' },
 ];
 
 const serviceIcons = {
