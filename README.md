@@ -51,7 +51,22 @@ For Coolify, deploy with the repository `Dockerfile` and expose port `3000`.
 
 ## Contact Form
 
-The contact form renders a success state on submit. To enable real email delivery, integrate with a service such as [Formspree](https://formspree.io) or [EmailJS](https://www.emailjs.com) by wiring up the `handleSubmit` handler in `src/app/contact/page.tsx`.
+The contact form now sends real email through **Resend** using `src/app/api/contact/route.ts`.
+
+Set these environment variables in Coolify (or your local `.env.local`):
+
+```bash
+RESEND_API_KEY=your_fresh_resend_api_key
+CONTACT_TO_EMAIL=you@example.com
+CONTACT_FROM_EMAIL=onboarding@resend.dev
+NEXT_PUBLIC_CONTACT_EMAIL=
+```
+
+Notes:
+
+- `CONTACT_TO_EMAIL` is the private inbox that receives form submissions. It can be any mailbox you control; it does **not** need to be `info@wowsyler.com`.
+- `CONTACT_FROM_EMAIL` can use `onboarding@resend.dev` for initial testing. For production, verify your domain in Resend and switch to something like `noreply@wowsyler.com`.
+- `NEXT_PUBLIC_CONTACT_EMAIL` is optional. If you set it, the address is shown publicly in the footer, contact page, and JSON-LD metadata. If you leave it empty, the site keeps the contact form but does not expose a public email address.
 
 
 ## Deploy on Vercel

@@ -1,17 +1,70 @@
 'use client';
-import { useState } from 'react';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { PUBLIC_CONTACT_EMAIL, PUBLIC_CONTACT_MAILTO } from '@/lib/contact';
+
+type ContactFormState = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
+
+type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error';
+
+const initialFormState: ContactFormState = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+};
 
 export default function ContactView() {
   const { t } = useLanguage();
-  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState<ContactFormState>(initialFormState);
+  const [status, setStatus] = useState<SubmissionStatus>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const isSubmitting = status === 'submitting';
+
+  const handleFieldChange =
+    (field: keyof ContactFormState) =>
+    (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData((current) => ({
+        ...current,
+        [field]: event.target.value,
+      }));
+
+      if (status !== 'idle') {
+        setStatus('idle');
+      }
+    };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Static site: show success state (integrate with a form service like Formspree for real submissions)
-    setSubmitted(true);
+
+    setStatus('submitting');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        setStatus('error');
+        return;
+      }
+
+      setFormData(initialFormState);
+      setStatus('success');
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -54,8 +107,9 @@ export default function ContactView() {
               </h2>
 
               <form className="space-y-5" onSubmit={handleSubmit}>
-                {submitted && (
+                {status === 'success' && (
                   <div
+                    aria-live="polite"
                     className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold"
                     style={{ background: 'rgba(0,180,216,0.12)', color: '#0A2342', border: '1px solid rgba(0,180,216,0.4)' }}
                   >
@@ -63,6 +117,18 @@ export default function ContactView() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     {t.contact.successMessage}
+                  </div>
+                )}
+                {status === 'error' && (
+                  <div
+                    aria-live="polite"
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold"
+                    style={{ background: 'rgba(239,68,68,0.12)', color: '#991B1B', border: '1px solid rgba(239,68,68,0.35)' }}
+                  >
+                    <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    {t.contact.errorMessage}
                   </div>
                 )}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -75,6 +141,10 @@ export default function ContactView() {
                     </label>
                     <input
                       type="text"
+                      name="name"
+                      value={formData.name}
+                      required
+                      autoComplete="name"
                       placeholder={t.contact.namePlaceholder}
                       className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all"
                       style={{
@@ -82,6 +152,7 @@ export default function ContactView() {
                         background: '#F9FAFB',
                         color: '#1A202C',
                       }}
+                      onChange={handleFieldChange('name')}
                       onFocus={(e) => (e.currentTarget.style.borderColor = '#1E6FD9')}
                       onBlur={(e) => (e.currentTarget.style.borderColor = '#D1D5DB')}
                     />
@@ -95,6 +166,10 @@ export default function ContactView() {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      required
+                      autoComplete="email"
                       placeholder={t.contact.emailPlaceholder}
                       className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all"
                       style={{
@@ -102,6 +177,7 @@ export default function ContactView() {
                         background: '#F9FAFB',
                         color: '#1A202C',
                       }}
+                      onChange={handleFieldChange('email')}
                       onFocus={(e) => (e.currentTarget.style.borderColor = '#1E6FD9')}
                       onBlur={(e) => (e.currentTarget.style.borderColor = '#D1D5DB')}
                     />
@@ -117,6 +193,9 @@ export default function ContactView() {
                   </label>
                   <input
                     type="text"
+                    name="subject"
+                    value={formData.subject}
+                    required
                     placeholder={t.contact.subjectPlaceholder}
                     className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all"
                     style={{
@@ -124,6 +203,7 @@ export default function ContactView() {
                       background: '#F9FAFB',
                       color: '#1A202C',
                     }}
+                    onChange={handleFieldChange('subject')}
                     onFocus={(e) => (e.currentTarget.style.borderColor = '#1E6FD9')}
                     onBlur={(e) => (e.currentTarget.style.borderColor = '#D1D5DB')}
                   />
@@ -138,6 +218,9 @@ export default function ContactView() {
                   </label>
                   <textarea
                     rows={6}
+                    name="message"
+                    value={formData.message}
+                    required
                     placeholder={t.contact.messagePlaceholder}
                     className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all resize-none"
                     style={{
@@ -145,6 +228,7 @@ export default function ContactView() {
                       background: '#F9FAFB',
                       color: '#1A202C',
                     }}
+                    onChange={handleFieldChange('message')}
                     onFocus={(e) => (e.currentTarget.style.borderColor = '#1E6FD9')}
                     onBlur={(e) => (e.currentTarget.style.borderColor = '#D1D5DB')}
                   />
@@ -152,12 +236,26 @@ export default function ContactView() {
 
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm transition-all"
-                  style={{ background: '#1E6FD9', color: '#ffffff' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = '#1557B0')}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = '#1E6FD9')}
+                  style={{
+                    background: '#1E6FD9',
+                    color: '#ffffff',
+                    opacity: isSubmitting ? 0.75 : 1,
+                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isSubmitting) {
+                      e.currentTarget.style.background = '#1557B0';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isSubmitting) {
+                      e.currentTarget.style.background = '#1E6FD9';
+                    }
+                  }}
                 >
-                  {t.contact.submitBtn}
+                  {isSubmitting ? t.contact.submittingBtn : t.contact.submitBtn}
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                   </svg>
@@ -179,16 +277,18 @@ export default function ContactView() {
 
               <div className="space-y-4">
                 {[
-                  {
-                    label: t.contact.emailLabel2,
-                    value: 'info@wowsyler.com',
-                    href: 'mailto:info@wowsyler.com',
-                    icon: (
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    ),
-                  },
+                  ...(PUBLIC_CONTACT_EMAIL && PUBLIC_CONTACT_MAILTO
+                    ? [{
+                        label: t.contact.emailLabel2,
+                        value: PUBLIC_CONTACT_EMAIL,
+                        href: PUBLIC_CONTACT_MAILTO,
+                        icon: (
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        ),
+                      }]
+                    : []),
                   {
                     label: t.contact.responseTime,
                     value: t.contact.responseTimeVal,

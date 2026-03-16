@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import LangSetter from '@/components/LangSetter';
+import { PUBLIC_CONTACT_EMAIL } from '@/lib/contact';
 import { BASE_URL, LOCALES, type Locale } from '@/lib/routes';
 
 interface LocaleMeta {
@@ -84,7 +85,7 @@ function getJsonLd(locale: Locale) {
       : 'WowSyler Teknoloji; web, mobil, oyun geliştirme ve yapay zeka ajanları alanlarında güçlü yazılım çözümleri üretmektedir.',
     contactPoint: {
       '@type': 'ContactPoint',
-      email: 'info@wowsyler.com',
+      ...(PUBLIC_CONTACT_EMAIL ? { email: PUBLIC_CONTACT_EMAIL } : {}),
       contactType: 'customer service',
       availableLanguage: ['Turkish', 'English'],
     },
