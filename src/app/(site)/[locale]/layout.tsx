@@ -3,7 +3,7 @@ import '../../globals.css';
 import { notFound } from 'next/navigation';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { BRAND_DISPLAY, BRAND_SHORT, LEGAL_COMPANY_NAME } from '@/lib/brand';
-import { buildOrganizationJsonLd } from '@/lib/seo';
+import { buildOrganizationJsonLd, buildWebsiteJsonLd } from '@/lib/seo';
 import { BASE_URL, LOCALES, type Locale } from '@/lib/routes';
 
 type Props = {
@@ -56,7 +56,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound();
   }
 
-  const jsonLd = buildOrganizationJsonLd(locale as Locale);
+  const jsonLd = [buildOrganizationJsonLd(locale as Locale), buildWebsiteJsonLd(locale as Locale)];
 
   return (
     <html lang={locale}>

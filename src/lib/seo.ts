@@ -139,12 +139,14 @@ export function buildOrganizationJsonLd(locale: Locale) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Corporation',
+    '@id': `${BASE_URL}/#organization`,
     name: BRAND_DISPLAY[locale],
     alternateName: BRAND_SHORT,
     legalName: LEGAL_COMPANY_NAME,
     url: BASE_URL,
     logo: toAbsoluteUrl(BRAND_LOGO_PATH),
     image: toAbsoluteUrl(SOCIAL_IMAGE_PATH),
+    inLanguage: CONTENT_LANGUAGE[locale],
     description:
       locale === 'en'
         ? `${BRAND_DISPLAY.en} delivers enterprise-ready software solutions across web, mobile, backend, and AI.`
@@ -155,6 +157,20 @@ export function buildOrganizationJsonLd(locale: Locale) {
       contactType: 'customer service',
       availableLanguage: ['Turkish', 'English'],
     },
-    sameAs: [],
+  };
+}
+
+export function buildWebsiteJsonLd(locale: Locale) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${BASE_URL}/#website`,
+    url: BASE_URL,
+    name: BRAND_DISPLAY[locale],
+    alternateName: BRAND_SHORT,
+    inLanguage: CONTENT_LANGUAGE[locale],
+    publisher: {
+      '@id': `${BASE_URL}/#organization`,
+    },
   };
 }
