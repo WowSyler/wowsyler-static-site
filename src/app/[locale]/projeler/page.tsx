@@ -4,32 +4,32 @@ import { BRAND_DISPLAY } from '@/lib/brand';
 import { BASE_URL, getMainPageHref } from '@/lib/routes';
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }];
+  return [{ locale: 'tr' }];
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = `Projects | ${BRAND_DISPLAY.en}`;
-  const description = `Explore products built with the engineering and delivery standards of ${BRAND_DISPLAY.en} — TextManipulator, AirdropBotPro, Streea, and more.`;
+  const title = `Projelerimiz | ${BRAND_DISPLAY.tr}`;
+  const description = `${BRAND_DISPLAY.tr} ekibinin mühendislik ve teslimat standardıyla geliştirdiği projeler — TextManipulator, AirdropBotPro, Streea ve daha fazlası.`;
 
   return {
     title,
     description,
     alternates: {
-      canonical: `${BASE_URL}${getMainPageHref('en', 'projects')}`,
+      canonical: `${BASE_URL}${getMainPageHref('tr', 'projects')}`,
       languages: {
-        en: `${BASE_URL}${getMainPageHref('en', 'projects')}`,
         tr: `${BASE_URL}${getMainPageHref('tr', 'projects')}`,
+        en: `${BASE_URL}${getMainPageHref('en', 'projects')}`,
         'x-default': `${BASE_URL}${getMainPageHref('en', 'projects')}`,
       },
     },
     openGraph: {
       title,
       description,
-      url: `${BASE_URL}${getMainPageHref('en', 'projects')}`,
+      url: `${BASE_URL}${getMainPageHref('tr', 'projects')}`,
     },
   };
 }
 
-export default function ProjectsPage() {
+export default function ProjelerPage() {
   return <ProjectsView />;
 }

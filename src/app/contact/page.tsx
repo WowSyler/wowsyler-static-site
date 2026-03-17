@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 export default function ContactRedirect() {
   const router = useRouter();
   useEffect(() => {
-    router.replace('/tr/contact/');
+    router.replace('/tr/iletisim/');
   }, [router]);
   return null;
 }

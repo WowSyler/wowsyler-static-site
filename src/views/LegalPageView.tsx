@@ -7,7 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { LEGAL_COMPANY_NAME } from '@/lib/brand';
 import { PUBLIC_CONTACT_EMAIL, PUBLIC_CONTACT_MAILTO } from '@/lib/contact';
 import { getLegalPageHref, LEGAL_PAGE_KEYS, type LegalPageKey } from '@/lib/legal';
-import { BASE_URL } from '@/lib/routes';
+import { BASE_URL, getMainPageHref } from '@/lib/routes';
 
 type LegalPageViewProps = {
   pageKey: LegalPageKey;
@@ -35,7 +35,8 @@ export default function LegalPageView({ pageKey }: LegalPageViewProps) {
     label: pages[key].navLabel,
   }));
 
-  const contactHref = PUBLIC_CONTACT_MAILTO ?? `/${locale}/contact/`;
+  const contactPageHref = getMainPageHref(locale, 'contact');
+  const contactHref = PUBLIC_CONTACT_MAILTO ?? contactPageHref;
   const contactLabel = PUBLIC_CONTACT_EMAIL || t.legalPages.contactCta;
   const websiteLabel = BASE_URL.replace(/^https?:\/\//, '').replace(/\/$/, '');
 
@@ -175,7 +176,7 @@ export default function LegalPageView({ pageKey }: LegalPageViewProps) {
                 {t.legalPages.contactText}
               </p>
               <Link
-                href={`/${locale}/contact/`}
+                href={contactPageHref}
                 className="inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-sm font-semibold"
                 style={{ background: '#00B4D8', color: '#0A2342' }}
               >

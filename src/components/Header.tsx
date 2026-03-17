@@ -5,7 +5,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import Logo from './Logo';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getLegalPageHref } from '@/lib/legal';
-import { getAlternateUrl, type Locale } from '@/lib/routes';
+import { getAlternateUrl, getMainPageHref, type Locale } from '@/lib/routes';
 
 export default function Header() {
   const { t, locale } = useLanguage();
@@ -21,14 +21,12 @@ export default function Header() {
     router.push(alternate);
   }
 
-  const aboutSlug = locale === 'en' ? 'about' : 'hakkimizda';
-
   const navLinks = [
     { href: `/${locale}/`, label: t.nav.home },
-    { href: `/${locale}/services/`, label: t.nav.services },
-    { href: `/${locale}/projects/`, label: t.nav.projects },
-    { href: `/${locale}/${aboutSlug}/`, label: t.nav.about },
-    { href: `/${locale}/contact/`, label: t.nav.contact },
+    { href: getMainPageHref(locale, 'services'), label: t.nav.services },
+    { href: getMainPageHref(locale, 'projects'), label: t.nav.projects },
+    { href: getMainPageHref(locale, 'about'), label: t.nav.about },
+    { href: getMainPageHref(locale, 'contact'), label: t.nav.contact },
   ];
   const legalLinks = [
     { href: getLegalPageHref(locale, 'pdpl'), label: t.legalPages.items.pdpl.navLabel },

@@ -6,13 +6,32 @@ export type Locale = 'en' | 'tr';
 
 export const LOCALES: Locale[] = ['en', 'tr'];
 
+export const MAIN_PAGE_SLUGS = {
+  about: { en: 'about', tr: 'hakkimizda' },
+  services: { en: 'services', tr: 'hizmetler' },
+  projects: { en: 'projects', tr: 'projeler' },
+  contact: { en: 'contact', tr: 'iletisim' },
+} as const;
+
+export type MainPageKey = keyof typeof MAIN_PAGE_SLUGS;
+
+export function getMainPageHref(locale: Locale, page: MainPageKey) {
+  return `/${locale}/${MAIN_PAGE_SLUGS[page][locale]}/`;
+}
+
 /**
  * Slug mappings for pages that have different URL slugs per locale.
  * Other pages use the same slug in both locales.
  */
 const SLUG_MAP: Record<string, Record<Locale, string>> = {
-  about: { en: 'about', tr: 'hakkimizda' },
-  hakkimizda: { en: 'about', tr: 'hakkimizda' },
+  about: MAIN_PAGE_SLUGS.about,
+  hakkimizda: MAIN_PAGE_SLUGS.about,
+  services: MAIN_PAGE_SLUGS.services,
+  hizmetler: MAIN_PAGE_SLUGS.services,
+  projects: MAIN_PAGE_SLUGS.projects,
+  projeler: MAIN_PAGE_SLUGS.projects,
+  contact: MAIN_PAGE_SLUGS.contact,
+  iletisim: MAIN_PAGE_SLUGS.contact,
   pdpl: LEGAL_PAGE_CONFIG.pdpl.slugs,
   kvkk: LEGAL_PAGE_CONFIG.pdpl.slugs,
   'privacy-policy': LEGAL_PAGE_CONFIG.privacyPolicy.slugs,
@@ -52,14 +71,14 @@ export interface SitemapEntry {
 export const SITEMAP_ENTRIES: SitemapEntry[] = [
   { url: `${BASE_URL}/tr/`, changefreq: 'weekly', priority: 1.0 },
   { url: `${BASE_URL}/en/`, changefreq: 'weekly', priority: 1.0 },
-  { url: `${BASE_URL}/tr/hakkimizda/`, changefreq: 'monthly', priority: 0.8 },
-  { url: `${BASE_URL}/en/about/`, changefreq: 'monthly', priority: 0.8 },
-  { url: `${BASE_URL}/tr/services/`, changefreq: 'monthly', priority: 0.8 },
-  { url: `${BASE_URL}/en/services/`, changefreq: 'monthly', priority: 0.8 },
-  { url: `${BASE_URL}/tr/projects/`, changefreq: 'weekly', priority: 0.9 },
-  { url: `${BASE_URL}/en/projects/`, changefreq: 'weekly', priority: 0.9 },
-  { url: `${BASE_URL}/tr/contact/`, changefreq: 'yearly', priority: 0.6 },
-  { url: `${BASE_URL}/en/contact/`, changefreq: 'yearly', priority: 0.6 },
+  { url: `${BASE_URL}${getMainPageHref('tr', 'about')}`, changefreq: 'monthly', priority: 0.8 },
+  { url: `${BASE_URL}${getMainPageHref('en', 'about')}`, changefreq: 'monthly', priority: 0.8 },
+  { url: `${BASE_URL}${getMainPageHref('tr', 'services')}`, changefreq: 'monthly', priority: 0.8 },
+  { url: `${BASE_URL}${getMainPageHref('en', 'services')}`, changefreq: 'monthly', priority: 0.8 },
+  { url: `${BASE_URL}${getMainPageHref('tr', 'projects')}`, changefreq: 'weekly', priority: 0.9 },
+  { url: `${BASE_URL}${getMainPageHref('en', 'projects')}`, changefreq: 'weekly', priority: 0.9 },
+  { url: `${BASE_URL}${getMainPageHref('tr', 'contact')}`, changefreq: 'yearly', priority: 0.6 },
+  { url: `${BASE_URL}${getMainPageHref('en', 'contact')}`, changefreq: 'yearly', priority: 0.6 },
   { url: `${BASE_URL}/tr/${LEGAL_PAGE_CONFIG.pdpl.slugs.tr}/`, changefreq: 'yearly', priority: 0.4 },
   { url: `${BASE_URL}/en/${LEGAL_PAGE_CONFIG.pdpl.slugs.en}/`, changefreq: 'yearly', priority: 0.4 },
   {

@@ -4,32 +4,32 @@ import { BRAND_DISPLAY } from '@/lib/brand';
 import { BASE_URL, getMainPageHref } from '@/lib/routes';
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }];
+  return [{ locale: 'tr' }];
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = `Contact Us | ${BRAND_DISPLAY.en}`;
-  const description = `Get in touch with ${BRAND_DISPLAY.en}. If you need a reliable software delivery partner, our team would be glad to discuss your project.`;
+  const title = `İletişim | ${BRAND_DISPLAY.tr}`;
+  const description = `${BRAND_DISPLAY.tr} ile iletişime geçin. Güvenilir bir yazılım teslimat partneri arıyorsanız projenizi birlikte değerlendirebiliriz.`;
 
   return {
     title,
     description,
     alternates: {
-      canonical: `${BASE_URL}${getMainPageHref('en', 'contact')}`,
+      canonical: `${BASE_URL}${getMainPageHref('tr', 'contact')}`,
       languages: {
-        en: `${BASE_URL}${getMainPageHref('en', 'contact')}`,
         tr: `${BASE_URL}${getMainPageHref('tr', 'contact')}`,
+        en: `${BASE_URL}${getMainPageHref('en', 'contact')}`,
         'x-default': `${BASE_URL}${getMainPageHref('en', 'contact')}`,
       },
     },
     openGraph: {
       title,
       description,
-      url: `${BASE_URL}${getMainPageHref('en', 'contact')}`,
+      url: `${BASE_URL}${getMainPageHref('tr', 'contact')}`,
     },
   };
 }
 
-export default function ContactPage() {
+export default function IletisimPage() {
   return <ContactView />;
 }

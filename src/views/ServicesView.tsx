@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { PROJECTS, type ProjectKey } from '@/lib/projects';
+import { getMainPageHref } from '@/lib/routes';
 
 const serviceConfig = [
   {
@@ -93,6 +94,7 @@ const stackGroupConfig = [
 
 export default function ServicesView() {
   const { t, locale } = useLanguage();
+  const contactHref = getMainPageHref(locale, 'contact');
 
   const services = [
     { ...serviceConfig[0], title: t.services.webTitle, desc: t.services.webDesc, features: t.services.webFeatures },
@@ -354,7 +356,7 @@ export default function ServicesView() {
             {t.services.ctaText}
           </p>
           <Link
-            href={`/${locale}/contact/`}
+            href={contactHref}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm transition-all"
             style={{ background: '#00B4D8', color: '#ffffff' }}
             onMouseEnter={(e) => (e.currentTarget.style.background = '#0096B7')}

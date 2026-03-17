@@ -4,32 +4,32 @@ import { BRAND_DISPLAY } from '@/lib/brand';
 import { BASE_URL, getMainPageHref } from '@/lib/routes';
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }];
+  return [{ locale: 'tr' }];
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = `Services | ${BRAND_DISPLAY.en}`;
-  const description = `Corporate software development services by ${BRAND_DISPLAY.en}: web, mobile, backend, AI, and DevOps.`;
+  const title = `Hizmetlerimiz | ${BRAND_DISPLAY.tr}`;
+  const description = `${BRAND_DISPLAY.tr}; web, mobil, backend, yapay zeka ve DevOps alanlarında kurumsal yazılım hizmetleri sunar.`;
 
   return {
     title,
     description,
     alternates: {
-      canonical: `${BASE_URL}${getMainPageHref('en', 'services')}`,
+      canonical: `${BASE_URL}${getMainPageHref('tr', 'services')}`,
       languages: {
-        en: `${BASE_URL}${getMainPageHref('en', 'services')}`,
         tr: `${BASE_URL}${getMainPageHref('tr', 'services')}`,
+        en: `${BASE_URL}${getMainPageHref('en', 'services')}`,
         'x-default': `${BASE_URL}${getMainPageHref('en', 'services')}`,
       },
     },
     openGraph: {
       title,
       description,
-      url: `${BASE_URL}${getMainPageHref('en', 'services')}`,
+      url: `${BASE_URL}${getMainPageHref('tr', 'services')}`,
     },
   };
 }
 
-export default function ServicesPage() {
+export default function HizmetlerPage() {
   return <ServicesView />;
 }

@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 export default function ServicesRedirect() {
   const router = useRouter();
   useEffect(() => {
-    router.replace('/tr/services/');
+    router.replace('/tr/hizmetler/');
   }, [router]);
   return null;
 }

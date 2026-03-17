@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { LEGAL_COMPANY_NAME } from '@/lib/brand';
 import { getLegalPageHref } from '@/lib/legal';
+import { getMainPageHref } from '@/lib/routes';
 import Logo from './Logo';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { PUBLIC_CONTACT_EMAIL, PUBLIC_CONTACT_MAILTO } from '@/lib/contact';
@@ -10,7 +11,6 @@ export default function Footer() {
   const { t, locale } = useLanguage();
   const year = new Date().getFullYear();
 
-  const aboutSlug = locale === 'en' ? 'about' : 'hakkimizda';
   const legalLinks = [
     { href: getLegalPageHref(locale, 'pdpl'), label: t.legalPages.items.pdpl.navLabel },
     { href: getLegalPageHref(locale, 'privacyPolicy'), label: t.legalPages.items.privacyPolicy.navLabel },
@@ -54,9 +54,9 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {[
                 { href: `/${locale}/`, label: t.nav.home },
-                { href: `/${locale}/${aboutSlug}/`, label: t.nav.about },
-                { href: `/${locale}/projects/`, label: t.nav.projects },
-                { href: `/${locale}/contact/`, label: t.nav.contact },
+                { href: getMainPageHref(locale, 'about'), label: t.nav.about },
+                { href: getMainPageHref(locale, 'projects'), label: t.nav.projects },
+                { href: getMainPageHref(locale, 'contact'), label: t.nav.contact },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -86,7 +86,7 @@ export default function Footer() {
               ].map((s) => (
                 <li key={s}>
                   <Link
-                    href={`/${locale}/services/`}
+                    href={getMainPageHref(locale, 'services')}
                     className="text-sm transition-colors hover:text-white"
                     style={{ color: '#94A3B8' }}
                   >

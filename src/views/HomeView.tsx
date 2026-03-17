@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { PROJECTS, type ProjectKey } from '@/lib/projects';
+import { getMainPageHref } from '@/lib/routes';
 
 const techStack = [
   { name: 'Next.js', color: '#000000' },
@@ -57,6 +58,8 @@ const serviceIcons = {
 
 export default function HomeView() {
   const { t, locale } = useLanguage();
+  const projectsHref = getMainPageHref(locale, 'projects');
+  const contactHref = getMainPageHref(locale, 'contact');
 
   const services = [
     { key: 'web', title: t.home.services.webTitle, desc: t.home.services.webDesc, icon: serviceIcons.web },
@@ -131,7 +134,7 @@ export default function HomeView() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href={`/${locale}/projects/`}
+              href={projectsHref}
               className="px-8 py-4 rounded-xl font-semibold text-sm transition-all"
               style={{ background: '#1E6FD9', color: '#ffffff' }}
               onMouseEnter={(e) => (e.currentTarget.style.background = '#1557B0')}
@@ -140,7 +143,7 @@ export default function HomeView() {
               {t.home.ctaPrimary}
             </Link>
             <Link
-              href={`/${locale}/contact/`}
+              href={contactHref}
               className="px-8 py-4 rounded-xl font-semibold text-sm transition-all"
               style={{ background: 'rgba(255,255,255,0.08)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.2)' }}
               onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.15)')}
@@ -285,7 +288,7 @@ export default function HomeView() {
 
           <div className="text-center mt-10">
             <Link
-              href={`/${locale}/projects/`}
+              href={projectsHref}
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-sm transition-all"
               style={{ background: '#0A2342', color: '#ffffff' }}
               onMouseEnter={(e) => (e.currentTarget.style.background = '#0D2D5A')}
@@ -313,7 +316,7 @@ export default function HomeView() {
             {t.home.ctaSectionSubtitle}
           </p>
           <Link
-            href={`/${locale}/contact/`}
+            href={contactHref}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm transition-all"
             style={{ background: '#00B4D8', color: '#ffffff' }}
             onMouseEnter={(e) => (e.currentTarget.style.background = '#0096B7')}
