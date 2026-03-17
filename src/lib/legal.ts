@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { BRAND_DISPLAY } from './brand';
+import { buildPageMetadata } from './seo';
 
 export type SupportedLocale = 'en' | 'tr';
 export type LegalPageKey = 'pdpl' | 'privacyPolicy' | 'cookiePolicy' | 'legalInformation';
@@ -92,6 +93,25 @@ export const LEGAL_PAGE_CONFIG: Record<LegalPageKey, LegalPageConfig> = {
 
 export const LEGAL_PAGE_KEYS = Object.keys(LEGAL_PAGE_CONFIG) as LegalPageKey[];
 
+const LEGAL_PAGE_KEYWORDS: Record<LegalPageKey, Record<SupportedLocale, string[]>> = {
+  pdpl: {
+    en: ['PDPL notice', 'personal data notice', 'data processing notice', 'contact form privacy'],
+    tr: ['KVKK aydınlatma metni', 'kişisel veri aydınlatma', 'veri işleme bildirimi', 'iletişim formu KVKK'],
+  },
+  privacyPolicy: {
+    en: ['privacy policy', 'website privacy policy', 'data usage policy', 'data protection policy'],
+    tr: ['gizlilik politikası', 'web sitesi gizlilik politikası', 'veri kullanımı politikası', 'veri koruma politikası'],
+  },
+  cookiePolicy: {
+    en: ['cookie policy', 'website cookies', 'essential cookies', 'cookie usage policy'],
+    tr: ['çerez politikası', 'web sitesi çerezleri', 'zorunlu çerezler', 'çerez kullanımı politikası'],
+  },
+  legalInformation: {
+    en: ['legal information', 'website legal notice', 'intellectual property notice', 'website terms'],
+    tr: ['yasal bilgiler', 'web sitesi yasal bildirim', 'fikri mülkiyet bildirimi', 'web sitesi koşulları'],
+  },
+};
+
 export function getLegalPageHref(locale: SupportedLocale, pageKey: LegalPageKey) {
   return `/${locale}/${LEGAL_PAGE_CONFIG[pageKey].slugs[locale]}/`;
 }
@@ -99,33 +119,19 @@ export function getLegalPageHref(locale: SupportedLocale, pageKey: LegalPageKey)
 export function buildLegalMetadata(
   pageKey: LegalPageKey,
   locale: SupportedLocale,
-  baseUrl: string,
 ): Metadata {
   const page = LEGAL_PAGE_CONFIG[pageKey];
   const currentMeta = page.metadata[locale];
   const title = `${currentMeta.title} | ${BRAND_DISPLAY[locale]}`;
-  const canonical = `${baseUrl}/${locale}/${page.slugs[locale]}/`;
 
-  return {
+  return buildPageMetadata({
+    locale,
     title,
     description: currentMeta.description,
     alternates: {
-      canonical,
-      languages: {
-        en: `${baseUrl}/en/${page.slugs.en}/`,
-        tr: `${baseUrl}/tr/${page.slugs.tr}/`,
-        'x-default': `${baseUrl}/en/${page.slugs.en}/`,
-      },
+      en: `/en/${page.slugs.en}/`,
+      tr: `/tr/${page.slugs.tr}/`,
     },
-    openGraph: {
-      title,
-      description: currentMeta.description,
-      url: canonical,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description: currentMeta.description,
-    },
-  };
+    keywords: LEGAL_PAGE_KEYWORDS[pageKey][locale],
+  });
 }
