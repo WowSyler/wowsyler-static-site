@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import '../../globals.css';
 import { notFound } from 'next/navigation';
+import GoogleTag from '@/components/GoogleTag';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { BRAND_DISPLAY, BRAND_SHORT, LEGAL_COMPANY_NAME } from '@/lib/brand';
 import { buildOrganizationJsonLd, buildWebsiteJsonLd } from '@/lib/seo';
@@ -61,6 +62,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale}>
       <body>
+        <GoogleTag />
         <LanguageProvider initialLocale={locale as Locale}>
           <script
             type="application/ld+json"

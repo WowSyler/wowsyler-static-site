@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import '../globals.css';
+import GoogleTag from '@/components/GoogleTag';
 import { BRAND_DISPLAY, BRAND_SHORT, LEGAL_COMPANY_NAME } from '@/lib/brand';
 import { BASE_URL, DEFAULT_LOCALE } from '@/lib/routes';
 
@@ -39,7 +40,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang={DEFAULT_LOCALE}>
-      <body>{children}</body>
+      <body>
+        <GoogleTag />
+        {children}
+      </body>
     </html>
   );
 }
