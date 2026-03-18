@@ -20,18 +20,22 @@ export const metadata: Metadata = {
   creator: BRAND_SHORT,
   publisher: LEGAL_COMPANY_NAME,
   referrer: 'origin-when-cross-origin',
+  manifest: '/site.webmanifest',
   formatDetection: {
     telephone: false,
     email: false,
     address: false,
   },
   icons: {
-    icon: [{ url: '/favicon.ico', sizes: 'any' }],
-    shortcut: ['/favicon.ico'],
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    shortcut: ['/favicon.svg'],
+    apple: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
   },
   openGraph: {
     title: BRAND_DISPLAY.en,
     description: `${BRAND_DISPLAY.en} — corporate software engineering across web, mobile, backend, and AI.`,
+    url: BASE_URL,
+    siteName: BRAND_DISPLAY.en,
     images: [`${BASE_URL}/opengraph-image.png`],
   },
   twitter: {
