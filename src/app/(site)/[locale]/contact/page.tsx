@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import ContactView from '@/views/ContactView';
 import { BRAND_DISPLAY } from '@/lib/brand';
-import { buildPageMetadata } from '@/lib/seo';
-import { getMainPageHref } from '@/lib/routes';
+import { buildBreadcrumbJsonLd, buildPageMetadata } from '@/lib/seo';
+import { BASE_URL, getLocaleHomeHref, getMainPageHref } from '@/lib/routes';
 
 export const dynamicParams = false;
 
@@ -33,5 +33,15 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function ContactPage() {
-  return <ContactView />;
+  const jsonLd = buildBreadcrumbJsonLd([
+    { name: 'Home', url: `${BASE_URL}${getLocaleHomeHref('en')}` },
+    { name: 'Contact', url: `${BASE_URL}${getMainPageHref('en', 'contact')}` },
+  ]);
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <ContactView />
+    </>
+  );
 }

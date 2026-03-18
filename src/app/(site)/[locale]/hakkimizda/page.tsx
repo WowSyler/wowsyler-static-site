@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import AboutView from '@/views/AboutView';
 import { BRAND_DISPLAY } from '@/lib/brand';
-import { buildPageMetadata } from '@/lib/seo';
+import { buildBreadcrumbJsonLd, buildPageMetadata } from '@/lib/seo';
+import { BASE_URL, getLocaleHomeHref } from '@/lib/routes';
 
 export const dynamicParams = false;
 
@@ -30,5 +31,15 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function HakkimizdaPage() {
-  return <AboutView />;
+  const jsonLd = buildBreadcrumbJsonLd([
+    { name: 'Ana Sayfa', url: `${BASE_URL}${getLocaleHomeHref('tr')}` },
+    { name: 'Hakkımızda', url: `${BASE_URL}/tr/hakkimizda/` },
+  ]);
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <AboutView />
+    </>
+  );
 }
