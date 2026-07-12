@@ -1,0 +1,28 @@
+These instructions apply to the entire repository.
+- This is a Next.js 16 App Router site for WowSyler.
+- The app is bilingual (Turkish / English) and uses locale-based routing such as `/en/...` and `/tr/...`.
+- Main source code lives under `src/`.
+- Prefer editing files in `src/`, `public/`, and root config files.
+- Treat `node_modules/`, `.next/`, and `out/` as generated output; do not edit them directly.
+- Keep route behavior aligned with the README-described pages: home, services, projects, about, and contact.
+- Keep Turkish and English content in sync.
+- Translation content lives in `src/translations/en.json` and `src/translations/tr.json`.
+- When adding or renaming translation keys, update both locale files in the same change.
+- Preserve locale-aware routing and any `LanguageContext` behavior.
+- The contact API route uses Resend via `src/app/api/contact/route.ts`.
+- Never hardcode secrets or email credentials.
+- Use environment variables for contact and email configuration.
+- Use the existing stack: TypeScript, React 19, Next.js App Router, and Tailwind CSS v4.
+- Match existing design patterns before introducing new abstractions.
+- Prefer small, focused components over broad refactors.
+- Make surgical changes that solve the requested task without unrelated cleanup.
+- Keep TypeScript strictness intact; avoid `any` unless truly necessary.
+- Reuse existing helpers, components, and translation patterns before creating new ones.
+- Update documentation when behavior, setup, or environment variables change.
+- For code changes, prefer validating with targeted checks first, then broader checks if needed.
+- Common commands:
+  - `npm run lint`
+  - `npm run build`
+  - `npm run dev`
+- Respect `.gitignore` and avoid committing generated files or local environment files.
+- Do not delete or overwrite user content unless the task explicitly requires it.
