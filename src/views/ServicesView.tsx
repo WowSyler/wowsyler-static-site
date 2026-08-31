@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { PROJECTS, type ProjectKey } from '@/lib/projects';
+import { PROJECTS, PROJECT_STATUS_STYLES, type ProjectKey, type ProjectStatus } from '@/lib/projects';
 import { getMainPageHref } from '@/lib/routes';
 
 const serviceConfig = [
@@ -111,27 +111,32 @@ export default function ServicesView() {
     desc: t.services.stackGroups[`${group.key}Desc`],
   }));
 
-  const projectContent: Record<ProjectKey, { title: string; desc: string; status: string }> = {
-    textManipulator: {
-      title: t.projects.textManipulatorTitle,
-      desc: t.projects.textManipulatorLong,
-      status: t.projects.statusLive,
-    },
-    airdropBot: {
-      title: t.projects.airdropBotTitle,
-      desc: t.projects.airdropBotLong,
-      status: t.projects.statusDev,
-    },
-    streea: {
-      title: t.projects.streeaTitle,
-      desc: t.projects.streeaLong,
-      status: t.projects.statusDev,
-    },
+  const statusLabels: Record<ProjectStatus, string> = {
+    live: t.projects.statusLive,
+    dev: t.projects.statusDev,
+    planned: t.projects.statusPlanned,
+  };
+
+  const projectContent: Record<ProjectKey, { title: string; desc: string }> = {
+    textManipulator: { title: t.projects.textManipulatorTitle, desc: t.projects.textManipulatorLong },
+    airdropBot: { title: t.projects.airdropBotTitle, desc: t.projects.airdropBotLong },
+    streea: { title: t.projects.streeaTitle, desc: t.projects.streeaLong },
+    randevu: { title: t.projects.randevuTitle, desc: t.projects.randevuLong },
+    inspectRelease: { title: t.projects.inspectReleaseTitle, desc: t.projects.inspectReleaseLong },
+    dolap: { title: t.projects.dolapTitle, desc: t.projects.dolapLong },
+    giderGelir: { title: t.projects.giderGelirTitle, desc: t.projects.giderGelirLong },
+    glowScan: { title: t.projects.glowScanTitle, desc: t.projects.glowScanLong },
+    chassis: { title: t.projects.chassisTitle, desc: t.projects.chassisLong },
+    carParking: { title: t.projects.carParkingTitle, desc: t.projects.carParkingLong },
+    cryptoBot: { title: t.projects.cryptoBotTitle, desc: t.projects.cryptoBotLong },
+    mailPreview: { title: t.projects.mailPreviewTitle, desc: t.projects.mailPreviewLong },
   };
 
   const projectSignals = PROJECTS.map((project) => ({
     ...project,
     ...projectContent[project.key],
+    status: statusLabels[project.status],
+    statusStyle: PROJECT_STATUS_STYLES[project.status],
   }));
 
   return (
@@ -300,8 +305,8 @@ export default function ServicesView() {
                     <span
                       className="px-2.5 py-1 rounded-full text-xs font-semibold"
                       style={{
-                        background: project.live ? '#DCFCE7' : '#FEF3C7',
-                        color: project.live ? '#16A34A' : '#D97706',
+                        background: project.statusStyle.bg,
+                        color: project.statusStyle.fg,
                       }}
                     >
                       {project.status}
@@ -324,18 +329,20 @@ export default function ServicesView() {
                     ))}
                   </div>
 
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-semibold"
-                    style={{ color: project.color }}
-                  >
-                    {t.projects.visitSite}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
+                  {project.url && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold"
+                      style={{ color: project.color }}
+                    >
+                      {t.projects.visitSite}
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  )}
                 </div>
               </div>
             ))}

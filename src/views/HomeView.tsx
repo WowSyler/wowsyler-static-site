@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { PROJECTS, type ProjectKey } from '@/lib/projects';
+import { PROJECTS, PROJECT_STATUS_STYLES, type ProjectKey, type ProjectStatus } from '@/lib/projects';
 import { getMainPageHref } from '@/lib/routes';
 
 const techStack = [
@@ -68,27 +68,33 @@ export default function HomeView() {
     { key: 'ai', title: t.home.services.aiTitle, desc: t.home.services.aiDesc, icon: serviceIcons.ai },
   ];
 
-  const projectContent: Record<ProjectKey, { title: string; desc: string; status: string }> = {
-    textManipulator: {
-      title: t.projects.textManipulatorTitle,
-      desc: t.projects.textManipulatorDesc,
-      status: t.projects.statusLive,
-    },
-    airdropBot: {
-      title: t.projects.airdropBotTitle,
-      desc: t.projects.airdropBotDesc,
-      status: t.projects.statusDev,
-    },
-    streea: {
-      title: t.projects.streeaTitle,
-      desc: t.projects.streeaDesc,
-      status: t.projects.statusDev,
-    },
+  const statusLabels: Record<ProjectStatus, string> = {
+    live: t.projects.statusLive,
+    dev: t.projects.statusDev,
+    planned: t.projects.statusPlanned,
   };
 
-  const projects = PROJECTS.map((project) => ({
+  const projectContent: Record<ProjectKey, { title: string; desc: string }> = {
+    textManipulator: { title: t.projects.textManipulatorTitle, desc: t.projects.textManipulatorDesc },
+    airdropBot: { title: t.projects.airdropBotTitle, desc: t.projects.airdropBotDesc },
+    streea: { title: t.projects.streeaTitle, desc: t.projects.streeaDesc },
+    randevu: { title: t.projects.randevuTitle, desc: t.projects.randevuDesc },
+    inspectRelease: { title: t.projects.inspectReleaseTitle, desc: t.projects.inspectReleaseDesc },
+    dolap: { title: t.projects.dolapTitle, desc: t.projects.dolapDesc },
+    giderGelir: { title: t.projects.giderGelirTitle, desc: t.projects.giderGelirDesc },
+    glowScan: { title: t.projects.glowScanTitle, desc: t.projects.glowScanDesc },
+    chassis: { title: t.projects.chassisTitle, desc: t.projects.chassisDesc },
+    carParking: { title: t.projects.carParkingTitle, desc: t.projects.carParkingDesc },
+    cryptoBot: { title: t.projects.cryptoBotTitle, desc: t.projects.cryptoBotDesc },
+    mailPreview: { title: t.projects.mailPreviewTitle, desc: t.projects.mailPreviewDesc },
+  };
+
+  // Ana sayfada önizleme olarak ilk 6 proje gösterilir; tamamı projeler sayfasında.
+  const projects = PROJECTS.slice(0, 6).map((project) => ({
     ...project,
     ...projectContent[project.key],
+    status: statusLabels[project.status],
+    statusStyle: PROJECT_STATUS_STYLES[project.status],
   }));
 
   return (
@@ -248,8 +254,8 @@ export default function HomeView() {
                     <span
                       className="px-2.5 py-1 rounded-full text-xs font-semibold ml-2 flex-shrink-0"
                       style={{
-                        background: project.live ? '#DCFCE7' : '#FEF3C7',
-                        color: project.live ? '#16A34A' : '#D97706',
+                        background: project.statusStyle.bg,
+                        color: project.statusStyle.fg,
                       }}
                     >
                       {project.status}
@@ -269,18 +275,20 @@ export default function HomeView() {
                       </span>
                     ))}
                   </div>
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium"
-                    style={{ color: '#1E6FD9' }}
-                  >
-                    {t.projects.visitSite}
-                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
+                  {project.url && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium"
+                      style={{ color: '#1E6FD9' }}
+                    >
+                      {t.projects.visitSite}
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
