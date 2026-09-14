@@ -10,6 +10,14 @@ RUN npm ci
 
 FROM base AS builder
 
+# GlitchTip (Sentry uyumlu) hata takibi için DSN; NEXT_PUBLIC_* değişkenleri
+# Next.js tarafından build sırasında tarayıcı paketine gömülür, bu yüzden
+# çalışma zamanında değil, build-time ARG olarak verilmelidir (Coolify'da
+# "Build Variable" / "Available at Buildtime" olarak işaretle). Boş bırakılırsa
+# Sentry devre dışı kalır.
+ARG NEXT_PUBLIC_SENTRY_DSN
+ENV NEXT_PUBLIC_SENTRY_DSN=$NEXT_PUBLIC_SENTRY_DSN
+
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
