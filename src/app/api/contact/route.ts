@@ -1,8 +1,10 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { BRAND_DISPLAY } from '@/lib/brand';
+import { BRAND_DISPLAY, BRAND_SHORT } from '@/lib/brand';
 
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// Same shape the mail gateway accepts (no whitespace, '@' or angle brackets in either part).
+const EMAIL_REGEX = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/;
+const MAIL_GATEWAY_TIMEOUT_MS = 15_000;
 const MAX_NAME_LENGTH = 120;
 const MAX_EMAIL_LENGTH = 160;
 const MAX_SUBJECT_LENGTH = 200;
@@ -135,15 +137,23 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: validationError }, { status: 400 });
   }
 
+  const mailGatewayUrl = process.env.MAIL_GATEWAY_URL?.trim();
+  const mailGatewayToken = process.env.MAIL_GATEWAY_TOKEN?.trim();
   const resendApiKey = process.env.RESEND_API_KEY?.trim();
   const contactToEmail = process.env.CONTACT_TO_EMAIL?.trim();
   const contactFromEmail = process.env.CONTACT_FROM_EMAIL?.trim();
+  const useGateway = Boolean(mailGatewayUrl);
 
-  if (!resendApiKey || !contactToEmail || !contactFromEmail) {
+  if (
+    !contactToEmail ||
+    !contactFromEmail ||
+    (useGateway ? !mailGatewayToken : !resendApiKey)
+  ) {
     return NextResponse.json(
       {
-        error:
-          'Contact email service is not fully configured. Set RESEND_API_KEY, CONTACT_TO_EMAIL, and CONTACT_FROM_EMAIL in Coolify.',
+        error: useGateway
+          ? 'Contact email service is not fully configured. Set MAIL_GATEWAY_TOKEN, CONTACT_TO_EMAIL, and CONTACT_FROM_EMAIL in Coolify.'
+          : 'Contact email service is not fully configured. Set MAIL_GATEWAY_URL and MAIL_GATEWAY_TOKEN (or RESEND_API_KEY), CONTACT_TO_EMAIL, and CONTACT_FROM_EMAIL in Coolify.',
       },
       { status: 500 },
     );
@@ -153,22 +163,97 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          'CONTACT_TO_EMAIL or CONTACT_FROM_EMAIL is not a valid email address. Use a real inbox and a verified Resend sender.',
+          'CONTACT_TO_EMAIL or CONTACT_FROM_EMAIL is not a valid email address. Use a real inbox and a sender on wowsyler.com.',
       },
       { status: 500 },
     );
   }
 
-  const resend = new Resend(resendApiKey);
+  const email = {
+    from: contactFromEmail,
+    to: contactToEmail,
+    // The visitor's address is validated above; replies go straight to them.
+    replyTo: EMAIL_REGEX.test(payload.email) ? payload.email : undefined,
+    subject: `${BRAND_DISPLAY.tr} contact form: ${payload.subject}`,
+    text: buildPlainTextEmail(payload),
+    html: buildHtmlEmail(payload),
+  };
+
+  if (useGateway) {
+    return sendViaGateway(mailGatewayUrl!, mailGatewayToken!, email);
+  }
+
+  return sendViaResend(resendApiKey!, email);
+}
+
+type ContactEmail = {
+  from: string;
+  to: string;
+  replyTo?: string;
+  subject: string;
+  text: string;
+  html: string;
+};
+
+const GATEWAY_FAILURE_MESSAGE = 'The message could not be sent right now. Please try again later.';
+
+/**
+ * Central mail gateway: POST {MAIL_GATEWAY_URL}/send with the Bearer token. 202 (queued) or 200 (duplicate) is success;
+ * 400/401/413 are permanent (configuration) errors, 429/5xx/network/timeout are transient. The token and the gateway's
+ * response body are never logged or returned to the visitor.
+ */
+async function sendViaGateway(baseUrl: string, token: string, email: ContactEmail) {
+  const url = `${baseUrl.replace(/\/+$/, '')}/send`;
+
+  let response: Response;
+  try {
+    response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: { email: email.from, name: BRAND_SHORT },
+        to: [email.to],
+        ...(email.replyTo ? { replyTo: email.replyTo } : {}),
+        subject: email.subject,
+        text: email.text,
+        html: email.html,
+      }),
+      signal: AbortSignal.timeout(MAIL_GATEWAY_TIMEOUT_MS),
+      cache: 'no-store',
+    });
+  } catch (error) {
+    const reason = error instanceof Error ? error.name : 'unknown';
+    console.error(`[contact] mail gateway unreachable (${reason})`);
+    return NextResponse.json({ error: GATEWAY_FAILURE_MESSAGE }, { status: 502 });
+  }
+
+  if (response.ok) {
+    const body = (await response.json().catch(() => null)) as { id?: string } | null;
+    return NextResponse.json({ ok: true, id: body?.id ?? null });
+  }
+
+  const transient = response.status === 429 || response.status >= 500;
+  console.error(
+    `[contact] mail gateway rejected the message: status ${response.status} (${transient ? 'transient' : 'permanent'})`,
+  );
+  return NextResponse.json({ error: GATEWAY_FAILURE_MESSAGE }, { status: transient ? 503 : 502 });
+}
+
+/** Rollback path, used only while MAIL_GATEWAY_URL is empty. */
+async function sendViaResend(apiKey: string, email: ContactEmail) {
+  const resend = new Resend(apiKey);
 
   try {
     const { data, error } = await resend.emails.send({
-      from: contactFromEmail,
-      to: [contactToEmail],
-      replyTo: [payload.email],
-      subject: `${BRAND_DISPLAY.tr} contact form: ${payload.subject}`,
-      text: buildPlainTextEmail(payload),
-      html: buildHtmlEmail(payload),
+      from: email.from,
+      to: [email.to],
+      ...(email.replyTo ? { replyTo: [email.replyTo] } : {}),
+      subject: email.subject,
+      text: email.text,
+      html: email.html,
     });
 
     if (error) {

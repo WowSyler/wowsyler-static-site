@@ -51,23 +51,36 @@ For Coolify, deploy with the repository `Dockerfile` and expose port `3000`.
 
 ## Contact Form
 
-The contact form now sends real email through **Resend** using `src/app/api/contact/route.ts`.
+The contact form (`src/app/api/contact/route.ts`) sends email through the central **mail gateway**
+(`POST {MAIL_GATEWAY_URL}/send`, Bearer `MAIL_GATEWAY_TOKEN`). Resend is kept only as a rollback path and is
+used **only when `MAIL_GATEWAY_URL` is empty**.
 
-Set these environment variables in Coolify (or your local `.env.local`):
+Set these as **runtime** environment variables in Coolify (or your local `.env.local`) — not build variables:
 
 ```bash
-RESEND_API_KEY=your_fresh_resend_api_key
-CONTACT_TO_EMAIL=you@example.com
-CONTACT_FROM_EMAIL=noreply@send.wowsyler.com
+MAIL_GATEWAY_URL=https://mail-gateway.wowsyler.workers.dev
+MAIL_GATEWAY_TOKEN=            # secret, per-app gateway token (never logged)
+CONTACT_TO_EMAIL=info@wowsyler.com
+CONTACT_FROM_EMAIL=noreply@wowsyler.com
 NEXT_PUBLIC_CONTACT_EMAIL=
+# Rollback only (used when MAIL_GATEWAY_URL is empty):
+RESEND_API_KEY=
 ```
 
 Notes:
 
-- `CONTACT_TO_EMAIL` is the private inbox that receives form submissions. It can be any mailbox you control; it does **not** need to be `info@wowsyler.com`.
-- `CONTACT_FROM_EMAIL` should be a verified Resend sender such as `noreply@send.wowsyler.com`. Do not rely on `onboarding@resend.dev` in production.
+- `CONTACT_FROM_EMAIL` **must be an address on `wowsyler.com`** — set it to `noreply@wowsyler.com`. The old Resend
+  sender on a subdomain (e.g. `wowsyler@mail.wowsyler.com`, `noreply@send.wowsyler.com`) must not be used with the
+  gateway: it may be queued (HTTP 202) and then fail to deliver, so the form reports success while the mail is lost.
+  The sender name shown to the recipient is `WowSyler`.
+- Replies go to the visitor: the form's (validated) email address is sent as `replyTo`.
+- Gateway answers: `202`/`200` → success; `400`/`401`/`413` → permanent (check token / from address), the visitor
+  sees a generic error (HTTP 502); `429`/`5xx`/timeout (15 s)/network → transient, the visitor sees a generic
+  "try again later" (HTTP 503). Only the status code is logged — never the token or the gateway's response body.
+- A successful submission returns `{ ok: true, id }`; `GET {MAIL_GATEWAY_URL}/status/<id>` with the same Bearer token
+  shows `queued | retrying | sent | failed` (202 only means queued, not delivered).
+- `CONTACT_TO_EMAIL` is the private inbox that receives form submissions.
 - `NEXT_PUBLIC_CONTACT_EMAIL` is optional. If you set it, the address is shown publicly in the footer, contact page, and JSON-LD metadata. If you leave it empty, the site keeps the contact form but does not expose a public email address.
-
 
 ## Hata Takibi (GlitchTip / Sentry)
 
