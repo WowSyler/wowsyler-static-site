@@ -8,6 +8,12 @@ export const FISLY_SUPPORT_EMAIL = 'fisly@wowsyler.com';
 export const FISLY_PROVIDER = 'Ozan Küçük (WowSyler), İstanbul, Türkiye';
 export const FISLY_COLOR = '#65A30D';
 
+/** Universal-link contract with the mobile app (`app.config.ts` associated domains, backend `InviteLinkBase`). */
+export const FISLY_IOS_APP_ID = 'UTEW7X3R7H.app.fisly.mobile';
+export const FISLY_INVITE_PATH_PREFIX = '/fisly/i/';
+export const FISLY_INVITE_SCHEME_URL = 'fisly://invite/';
+export const FISLY_INVITE_TOKEN_PATTERN = /^[A-Za-z0-9_-]{8,200}$/;
+
 export type FislyPageKey = 'app' | 'privacy' | 'terms';
 export type FislyLegalKey = Exclude<FislyPageKey, 'app'>;
 

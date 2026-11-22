@@ -5,7 +5,7 @@ export const dynamic = 'force-static';
 
 export default function robots(): MetadataRoute.Robots {
   const allow = '/';
-  const disallow = ['/admin', '/api/'];
+  const disallow = ['/admin', '/api/', '/fisly/i/'];
 
   return {
     rules: [
