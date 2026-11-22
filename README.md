@@ -11,6 +11,12 @@ A bilingual (Turkish / English) corporate website built with **Next.js 16**, **T
 | `/projects` | Showcase of TextManipulator, AirdropBotPro, Streea |
 | `/about` | Company story, mission & values |
 | `/contact` | Contact form with success feedback |
+| `/fisly` | Fisly mobile app page: features, plans, support and FAQ (App Store support / marketing URL) |
+| `/fisly/privacy` | Fisly privacy policy (App Store privacy policy URL) |
+| `/fisly/terms` | Fisly subscription terms |
+
+Fisly legal texts in `src/content/fisly/legal.json` are generated from `docs/legal/*.md` in the app
+repository (`gider-gelir-takibi-app`); edit them there and regenerate, do not edit the JSON by hand.
 
 ## Tech Stack
 

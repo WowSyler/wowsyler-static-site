@@ -1,3 +1,4 @@
+import { FISLY_PAGE_KEYS, getFislyHref } from './fisly';
 import { LEGAL_PAGE_CONFIG } from './legal';
 import { BASE_URL, DEFAULT_LOCALE, LOCALES, type Locale } from './site-config';
 
@@ -58,9 +59,13 @@ export function getAlternateUrl(currentPath: string, targetLocale: Locale): stri
   }
 
   const mapped = SLUG_MAP[slug];
-  const targetSlug = mapped ? mapped[targetLocale] : slug;
 
-  return `/${targetLocale}/${targetSlug}/`;
+  if (!mapped) {
+    // Same slug in both locales (e.g. `fisly/privacy`): keep the whole path, only swap the locale.
+    return `/${targetLocale}/${parts.slice(1).join('/')}/`;
+  }
+
+  return `/${targetLocale}/${mapped[targetLocale]}/`;
 }
 
 /** Returns all sitemap entries for building sitemap.xml */
@@ -152,6 +157,11 @@ const SITEMAP_GROUPS: SitemapGroup[] = [
     changefreq: 'yearly',
     priority: 0.4,
   },
+  ...FISLY_PAGE_KEYS.map((page) => ({
+    paths: { en: getFislyHref('en', page), tr: getFislyHref('tr', page) },
+    changefreq: 'monthly' as const,
+    priority: page === 'app' ? 0.8 : 0.4,
+  })),
 ];
 
 export const SITEMAP_ENTRIES: SitemapEntry[] = SITEMAP_GROUPS.flatMap(({ paths, changefreq, priority }) =>

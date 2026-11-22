@@ -76,7 +76,7 @@
     "dolapTitle": "Dolap",
     "dolapDesc": "A multi-platform (Web + iOS + Android), multilingual smart wardrobe app that organizes and tracks your family's entire wardrobe and suggests AI-powered outfit combinations.",
     "dolapLong": "A monorepo combining a .NET 10 backend (Clean Architecture, EF Core + PostgreSQL), a Next.js web app, and a React Native Expo mobile app. The Claude API generates outfit recommendations, S3/R2-compatible storage holds images, pnpm and Turborepo manage the workspaces, and Docker Compose powers the development environment.",
-    "giderGelirTitle": "Receipt & Expense Tracker",
+    "giderGelirTitle": "Fisly: Receipt Scanner",
     "giderGelirDesc": "A mobile expense-tracking app that reads the amount, date, merchant, and VAT from a receipt photo using AI and categorizes expenses automatically. Provides monthly and quarterly summaries with CSV/PDF export. Built for freelancers and small businesses.",
     "giderGelirLong": "The Expo-based React Native mobile app talks to a layered .NET 10 API. OCR and an LLM together turn receipt content into structured data; PostgreSQL is the persistent store, Hangfire runs background jobs, and expo-sqlite serves as the offline capture queue. CI/CD runs on GitHub Actions and EAS.",
     "glowScanTitle": "GlowScan",
@@ -451,5 +451,105 @@
         ]
       }
     }
+  },
+  "fisly": {
+    "eyebrow": "Mobile app · iOS & Android",
+    "title": "Fisly: Receipt Scanner",
+    "tagline": "Snap a receipt. Track every expense. Ready for tax time.",
+    "intro": "Fisly turns a photo of a receipt into a clean expense record. Point your camera, and Fisly reads the amount, date, vendor and VAT for you. Built for freelancers, small businesses and households.",
+    "storeSoon": "Coming soon to the App Store and Google Play",
+    "featuresTitle": "What Fisly does",
+    "features": [
+      {
+        "title": "Scan in seconds",
+        "text": "Take a photo, pick one from your gallery or import a PDF. AI reads the amount, date, vendor and tax."
+      },
+      {
+        "title": "Automatic categories",
+        "text": "Expenses are sorted into categories such as fuel, meals, office and travel. You can always change them."
+      },
+      {
+        "title": "Income and expenses",
+        "text": "Add records by hand without limits. Recurring payments and income are reminded or added for you."
+      },
+      {
+        "title": "Reports for tax time",
+        "text": "Monthly, quarterly and yearly summaries with CSV and PDF export, ready for your accountant."
+      },
+      {
+        "title": "Shared accounts",
+        "text": "Keep a Family or Business account with roles for each member, including a read-only accountant role."
+      },
+      {
+        "title": "Budgets and reminders",
+        "text": "Set monthly budgets, get an alert before you exceed them and forward e-mailed receipts to your Fisly address."
+      }
+    ],
+    "plansTitle": "Plans",
+    "plansNote": "Subscriptions are sold through the App Store and Google Play. The price shown in the app in your local currency is the price that applies.",
+    "plans": [
+      {
+        "name": "Free",
+        "price": "US$0",
+        "points": [
+          "10 receipt scans per month",
+          "Unlimited manual entries",
+          "One Family account for up to 3 people",
+          "Monthly summary and CSV export"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": "US$3.99 / month · US$29.99 / year",
+        "points": [
+          "1,000 scans per month",
+          "Quarterly and yearly summaries, PDF export",
+          "Multiple currencies and custom categories",
+          "Up to 3 shared accounts, 5 people each"
+        ]
+      },
+      {
+        "name": "Pro+",
+        "price": "US$14.99 / month · US$119.99 / year",
+        "points": [
+          "Everything in Pro",
+          "Shared accounts for up to 100 people",
+          "2,500 scans per month"
+        ]
+      }
+    ],
+    "supportTitle": "Support",
+    "supportText": "Questions, problems or feedback? Write to us and we will reply as soon as we can, usually within two business days.",
+    "supportEmailLabel": "Support e-mail",
+    "faqTitle": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "How do I cancel my subscription?",
+        "a": "Subscriptions are managed by the store. On iPhone: Settings → your name → Subscriptions → Fisly. On Android: Play Store → Profile → Payments & subscriptions → Subscriptions → Fisly. Access continues until the end of the paid period."
+      },
+      {
+        "q": "How do I get a refund?",
+        "a": "Refunds are handled by Apple or Google under their own policies. On iPhone, request one at reportaproblem.apple.com."
+      },
+      {
+        "q": "I bought a subscription but the app still shows the free plan.",
+        "a": "Open the plan screen in the app and tap Restore purchases while signed in to the same Fisly account. If it does not help, write to us with the e-mail address of your Fisly account."
+      },
+      {
+        "q": "How do I delete my account and data?",
+        "a": "In the app: Settings → Privacy → Delete account. Deletion is permanent. You can export all your data from the same screen first."
+      },
+      {
+        "q": "The scan read something wrong. What can I do?",
+        "a": "Open the receipt and correct any field before confirming. Unconfirmed readings are marked as estimated in summaries."
+      }
+    ],
+    "legalTitle": "Legal",
+    "privacyLabel": "Privacy Policy",
+    "termsLabel": "Subscription Terms",
+    "providerLabel": "Provider",
+    "lastUpdatedLabel": "Last updated",
+    "backToApp": "Back to Fisly",
+    "projectCta": "View app page"
   }
 }

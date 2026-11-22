@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { BRAND_DISPLAY, BRAND_SHORT } from '@/lib/brand';
+import { getFislyHref } from '@/lib/fisly';
 import { LEGAL_PAGE_CONFIG } from '@/lib/legal';
 import { BASE_URL, getLocaleHomeHref, getMainPageHref } from '@/lib/routes';
 
@@ -44,6 +45,13 @@ export function GET() {
     `- Gizlilik Politikasi: ${BASE_URL}/tr/${LEGAL_PAGE_CONFIG.privacyPolicy.slugs.tr}/`,
     `- Cookie Policy: ${BASE_URL}/en/${LEGAL_PAGE_CONFIG.cookiePolicy.slugs.en}/`,
     `- Cerez Politikasi: ${BASE_URL}/tr/${LEGAL_PAGE_CONFIG.cookiePolicy.slugs.tr}/`,
+    '',
+    '## Fisly (mobile app)',
+    '',
+    `- App and support: ${toAbsoluteUrl(getFislyHref('en'))}`,
+    `- Uygulama ve destek: ${toAbsoluteUrl(getFislyHref('tr'))}`,
+    `- Privacy Policy: ${toAbsoluteUrl(getFislyHref('en', 'privacy'))}`,
+    `- Subscription Terms: ${toAbsoluteUrl(getFislyHref('en', 'terms'))}`,
     '',
     '## Crawl References',
     '',

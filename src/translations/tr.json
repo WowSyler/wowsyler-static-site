@@ -76,7 +76,7 @@
     "dolapTitle": "Dolap",
     "dolapDesc": "Ailenin tüm gardırobunu düzenleyen, takip eden ve AI ile kombin öneren çok platformlu (Web + iOS + Android), çok dilli akıllı gardırop uygulaması.",
     "dolapLong": "Monorepo yapısında .NET 10 backend (Clean Architecture, EF Core + PostgreSQL), Next.js web uygulaması ve React Native Expo mobil uygulaması bir arada geliştirilir. Claude API kombin önerilerini üretir; S3/R2 uyumlu depolama görselleri saklar; pnpm ve Turborepo çoklu workspace'i, Docker Compose geliştirme ortamını yönetir.",
-    "giderGelirTitle": "Fiş & Gider Takibi",
+    "giderGelirTitle": "Fisly: Fiş Tarayıcı",
     "giderGelirDesc": "Fiş fotoğrafından tutarı, tarihi, satıcıyı ve KDV'yi AI ile okuyan; giderleri otomatik kategorileyen mobil gider takip uygulaması. Ay ve çeyrek bazında özet ile CSV/PDF dışa aktarım sunar. Serbest çalışanlar ve küçük esnaf için tasarlandı.",
     "giderGelirLong": "Expo tabanlı React Native mobil uygulama, katmanlı mimarideki .NET 10 API ile konuşur. OCR ve LLM birlikte fiş içeriğini yapılandırılmış veriye çevirir; PostgreSQL kalıcı depo, Hangfire arka plan işleri, expo-sqlite çevrimdışı yakalama kuyruğu olarak görev yapar. CI/CD GitHub Actions ve EAS ile yürütülür.",
     "glowScanTitle": "GlowScan",
@@ -451,5 +451,105 @@
         ]
       }
     }
+  },
+  "fisly": {
+    "eyebrow": "Mobil uygulama · iOS ve Android",
+    "title": "Fisly: Fiş Tarayıcı",
+    "tagline": "Fişi çek. Her gideri takip et. Vergi zamanına hazır ol.",
+    "intro": "Fisly, bir fiş fotoğrafını düzenli bir gider kaydına dönüştürür. Kameranızı tutun; tutarı, tarihi, satıcıyı ve KDV'yi Fisly sizin yerinize okusun. Serbest çalışanlar, küçük işletmeler ve aileler için tasarlandı.",
+    "storeSoon": "Yakında App Store ve Google Play'de",
+    "featuresTitle": "Fisly ne yapar",
+    "features": [
+      {
+        "title": "Saniyeler içinde tarama",
+        "text": "Fotoğraf çekin, galeriden seçin ya da PDF içe aktarın. Yapay zekâ tutarı, tarihi, satıcıyı ve vergiyi okur."
+      },
+      {
+        "title": "Otomatik kategoriler",
+        "text": "Giderler yakıt, yemek, ofis ve seyahat gibi kategorilere ayrılır. İstediğiniz zaman değiştirebilirsiniz."
+      },
+      {
+        "title": "Gelir ve gider",
+        "text": "Kayıtları elle sınırsız ekleyin. Düzenli ödemeler ve gelirler hatırlatılır ya da sizin yerinize eklenir."
+      },
+      {
+        "title": "Vergi zamanı için raporlar",
+        "text": "Aylık, çeyreklik ve yıllık özetler; CSV ve PDF dışa aktarımla muhasebecinize hazır."
+      },
+      {
+        "title": "Ortak hesaplar",
+        "text": "Aile ya da Şirket hesabı açın; her üyeye rol verin, muhasebeciniz için salt okunur rol dâhil."
+      },
+      {
+        "title": "Bütçe ve hatırlatmalar",
+        "text": "Aylık bütçe belirleyin, aşmadan önce uyarı alın ve e-postayla gelen fişleri Fisly adresinize iletin."
+      }
+    ],
+    "plansTitle": "Planlar",
+    "plansNote": "Abonelikler App Store ve Google Play üzerinden satılır. Uygulamada yerel para biriminizde gösterilen fiyat geçerlidir.",
+    "plans": [
+      {
+        "name": "Ücretsiz",
+        "price": "0 ABD doları",
+        "points": [
+          "Ayda 10 fiş taraması",
+          "Sınırsız elle kayıt",
+          "3 kişiye kadar tek Aile hesabı",
+          "Aylık özet ve CSV dışa aktarım"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": "Aylık 3,99 · yıllık 29,99 ABD doları",
+        "points": [
+          "Ayda 1.000 tarama",
+          "Çeyreklik ve yıllık özet, PDF dışa aktarım",
+          "Çoklu para birimi ve özel kategoriler",
+          "Her biri 5 kişilik, en çok 3 ortak hesap"
+        ]
+      },
+      {
+        "name": "Pro+",
+        "price": "Aylık 14,99 · yıllık 119,99 ABD doları",
+        "points": [
+          "Pro'daki her şey",
+          "100 kişiye kadar ortak hesap",
+          "Ayda 2.500 tarama"
+        ]
+      }
+    ],
+    "supportTitle": "Destek",
+    "supportText": "Sorunuz, sorununuz ya da öneriniz mi var? Bize yazın; genellikle iki iş günü içinde yanıtlıyoruz.",
+    "supportEmailLabel": "Destek e-postası",
+    "faqTitle": "Sık sorulan sorular",
+    "faq": [
+      {
+        "q": "Aboneliğimi nasıl iptal ederim?",
+        "a": "Abonelikler mağaza tarafından yönetilir. iPhone: Ayarlar → adınız → Abonelikler → Fisly. Android: Play Store → Profil → Ödemeler ve abonelikler → Abonelikler → Fisly. Erişiminiz ücretini ödediğiniz dönemin sonuna kadar sürer."
+      },
+      {
+        "q": "İadeyi nasıl alırım?",
+        "a": "İadeler Apple ya da Google tarafından kendi politikalarına göre yürütülür. iPhone'da reportaproblem.apple.com adresinden talep edebilirsiniz."
+      },
+      {
+        "q": "Abonelik aldım ama uygulama hâlâ ücretsiz planı gösteriyor.",
+        "a": "Aynı Fisly hesabıyla giriş yapmışken plan ekranını açıp Satın alımları geri yükle'ye dokunun. Düzelmezse Fisly hesabınızın e-posta adresiyle bize yazın."
+      },
+      {
+        "q": "Hesabımı ve verilerimi nasıl silerim?",
+        "a": "Uygulamada: Ayarlar → Gizlilik → Hesabı sil. Silme kalıcıdır. Öncesinde aynı ekrandan tüm verilerinizi dışa aktarabilirsiniz."
+      },
+      {
+        "q": "Tarama bir alanı yanlış okudu. Ne yapabilirim?",
+        "a": "Fişi açıp onaylamadan önce istediğiniz alanı düzeltin. Onaylanmamış okumalar özetlerde tahmini olarak işaretlenir."
+      }
+    ],
+    "legalTitle": "Yasal",
+    "privacyLabel": "Gizlilik Politikası",
+    "termsLabel": "Abonelik Şartları",
+    "providerLabel": "Sağlayıcı",
+    "lastUpdatedLabel": "Son güncelleme",
+    "backToApp": "Fisly'ye dön",
+    "projectCta": "Uygulama sayfası"
   }
 }

@@ -17,6 +17,8 @@ export type ProjectStatus = 'live' | 'dev' | 'planned';
 export interface ProjectDefinition {
   key: ProjectKey;
   url?: string;
+  /** Locale-relative path of an in-site product page (e.g. `fisly`). */
+  path?: string;
   status: ProjectStatus;
   tech: string[];
   color: string;
@@ -134,6 +136,7 @@ export const PROJECTS: ProjectDefinition[] = [
   },
   {
     key: 'giderGelir',
+    path: 'fisly',
     status: 'dev',
     tech: [
       'React Native',

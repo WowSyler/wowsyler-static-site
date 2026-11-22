@@ -1,0 +1,848 @@
+{
+  "privacy": {
+    "en": {
+      "title": "Fisly — Privacy Policy",
+      "updated": "22 November 2026",
+      "party": "**Controller:** Ozan Küçük (WowSyler), İstanbul, Türkiye — fisly@wowsyler.com",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "1. What Fisly does"
+        },
+        {
+          "type": "p",
+          "text": "Fisly turns a photo of a receipt into an expense record. You can also enter income and expenses by hand. Summaries and CSV/PDF reports are produced from what you record."
+        },
+        {
+          "type": "h2",
+          "text": "2. What we collect"
+        },
+        {
+          "type": "h3",
+          "text": "2.1 Account"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**E-mail address** — identifies your account, used for verification, password reset and report delivery.",
+            "**Display name**, **preferred language**, **preferred currency**.",
+            "**Password hash** — if you signed up with e-mail and password. We never store the password itself.",
+            "**Sign-in with Google / Apple identifiers** — if you use social sign-in."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "2.2 Your financial records"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**Receipt images** you capture or import.",
+            "**Extracted and entered data**: amount, date, vendor, tax amount, currency, category, direction (income/expense), notes, and — for foreign-currency entries — the exchange rate and converted amount stored at the time of entry."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "2.3 Device"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**Push notification token** and platform (iOS/Android), only if you enable notifications."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "2.4 Subscription"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Subscription status, plan and store transaction identifiers, received from our payment processor. **We never receive or store your card details.**"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "3. How we use it"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Purpose",
+            "Legal basis (GDPR Art. 6)"
+          ],
+          "rows": [
+            [
+              "Providing the service (storing and showing your records)",
+              "Performance of a contract"
+            ],
+            [
+              "Reading receipts with AI",
+              "Performance of a contract"
+            ],
+            [
+              "Account verification, password reset, service e-mails",
+              "Performance of a contract"
+            ],
+            [
+              "Enforcing the free/Pro usage limits",
+              "Performance of a contract"
+            ],
+            [
+              "Product analytics",
+              "Legitimate interest — **you can switch this off in the app**"
+            ],
+            [
+              "Error diagnostics",
+              "Legitimate interest"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "We do **not** sell your data. We do **not** use your receipts to train AI models."
+        },
+        {
+          "type": "h2",
+          "text": "4. Who we share it with"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Recipient",
+            "What they receive",
+            "Why"
+          ],
+          "rows": [
+            [
+              "**OpenRouter** (AI gateway)",
+              "The **receipt image or PDF** you scan",
+              "To read the amount, date, vendor and tax. Sent for processing only."
+            ],
+            [
+              "**Cloudflare R2**",
+              "Receipt images",
+              "Private storage. Access only through short-lived signed links, to you."
+            ],
+            [
+              "**Managed database & hosting provider**",
+              "All account and record data",
+              "To run the service."
+            ],
+            [
+              "**E-mail provider (SMTP)**",
+              "Your e-mail address and message content",
+              "To deliver verification, reset and report e-mails."
+            ],
+            [
+              "**RevenueCat** + Apple / Google",
+              "Subscription events",
+              "To manage subscriptions."
+            ],
+            [
+              "**PostHog** (analytics)",
+              "A random account identifier and **behavioural events only** (app opened, receipt scanned, paywall viewed…). **No receipt content, no amounts, no vendor names.**",
+              "To understand product usage. **Opt-out available in Settings → Privacy.**"
+            ],
+            [
+              "**Sentry** (error reports)",
+              "Technical error data. Personally identifying data is **explicitly disabled** in our configuration.",
+              "To fix crashes."
+            ]
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "4.1 Shared accounts (Household / Business)"
+        },
+        {
+          "type": "p",
+          "text": "If you join a shared account, **the other members of that account see the records in it** — including who added each record. The account owner sees members' names and e-mail addresses; members see each other's names only. What each member can do depends on the role the owner gives them."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Records you add to a shared account **belong to that account**. If you leave, are removed, or delete your own account, they **stay in the shared account**; after account deletion they are shown as added by a \"former member\" and are no longer linked to you.",
+            "If an owner deletes a shared account (or deletes their own account without handing it over), the shared account and all its records are **permanently deleted 30 days later**. Members are notified and can export the data until then.",
+            "Invitation links are single-use, expire after 7 days, and are stored only as a one-way hash."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "5. AI processing — read this"
+        },
+        {
+          "type": "p",
+          "text": "When you scan a receipt, the **image is transmitted to our AI provider (OpenRouter)** so the amount, date, vendor and tax can be read. This is the core function of the app."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "The image is sent **for processing**, not for model training.",
+            "Receipt images may contain more than an amount — a card's last four digits, a loyalty number, an address. **Consider this before scanning documents that contain information you do not want to transmit.**",
+            "Manual entry sends **nothing** to the AI provider.",
+            "Retention at the provider is governed by that provider's policy; we do not control it."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "6. Retention"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Account and record data: kept while your account exists, with **no time limit** — receipts are tax records and every plan (including Free) can see all of them.",
+            "**Inactive accounts:** if an account is not used at all for **10 years**, we e-mail you and delete the account and its data **30 days later** unless you sign in. Accounts with an active subscription are never deleted this way. Signing in once cancels the deletion.",
+            "**When you delete your account, your records and receipt images are permanently deleted** by a background job — except records you added to a shared account, which stay in that account (see 4.1).",
+            "E-mail delivery logs and error reports may persist for a limited period at the relevant provider."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "7. Your rights"
+        },
+        {
+          "type": "p",
+          "text": "Under GDPR and Turkish KVKK you may **access, correct, export, and delete** your data, object to processing based on legitimate interest, and lodge a complaint with a supervisory authority."
+        },
+        {
+          "type": "p",
+          "text": "Two of these are built into the app and need no request:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**Export** — Settings → Privacy → export your data.",
+            "**Deletion** — Settings → Privacy → delete account. This is **permanent**."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "For anything else, contact us at fisly@wowsyler.com."
+        },
+        {
+          "type": "h2",
+          "text": "8. Security"
+        },
+        {
+          "type": "p",
+          "text": "Data is encrypted in transit (TLS) and at rest. Receipt images sit in a **private** bucket reachable only through short-lived signed links issued to you. Access tokens are short-lived with rotating refresh tokens. Every query is scoped to your account."
+        },
+        {
+          "type": "h2",
+          "text": "9. Children"
+        },
+        {
+          "type": "p",
+          "text": "Fisly is not directed at children under 16 and we do not knowingly collect their data."
+        },
+        {
+          "type": "h2",
+          "text": "10. International transfers"
+        },
+        {
+          "type": "p",
+          "text": "Our providers may process data outside your country. Where required, transfers rely on Standard Contractual Clauses or an adequacy decision."
+        },
+        {
+          "type": "h2",
+          "text": "11. Changes"
+        },
+        {
+          "type": "p",
+          "text": "Material changes will be announced in the app before taking effect."
+        },
+        {
+          "type": "h2",
+          "text": "12. Contact"
+        },
+        {
+          "type": "p",
+          "text": "Ozan Küçük (WowSyler), İstanbul, Türkiye — fisly@wowsyler.com"
+        }
+      ]
+    },
+    "tr": {
+      "title": "Fisly — Gizlilik Politikası",
+      "updated": "22 Kasım 2026",
+      "party": "**Veri sorumlusu:** Ozan Küçük (WowSyler), İstanbul, Türkiye — fisly@wowsyler.com",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "1. Fisly ne yapar"
+        },
+        {
+          "type": "p",
+          "text": "Fisly, bir fişin fotoğrafını gider kaydına çevirir. Gelir ve giderleri elle de girebilirsiniz. Özetler ile CSV/PDF raporları yalnızca sizin kaydettiklerinizden üretilir."
+        },
+        {
+          "type": "h2",
+          "text": "2. Ne topluyoruz"
+        },
+        {
+          "type": "h3",
+          "text": "2.1 Hesap"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**E-posta adresi** — hesabınızı tanımlar; doğrulama, şifre sıfırlama ve rapor teslimi için kullanılır.",
+            "**Görünen ad**, **tercih edilen dil**, **tercih edilen para birimi**.",
+            "**Şifre özeti (hash)** — e-posta + şifre ile kaydolduysanız. Şifrenin kendisi **saklanmaz**.",
+            "**Google / Apple ile giriş tanımlayıcıları** — sosyal giriş kullanıyorsanız."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "2.2 Finansal kayıtlarınız"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Çektiğiniz veya içe aktardığınız **fiş görselleri**.",
+            "**Okunan ve girilen veriler**: tutar, tarih, satıcı, vergi tutarı, para birimi, kategori, yön (gelir/gider), notlar ve — yabancı para birimli kayıtlarda — **kayıt anında saklanan** kur ile çevrilmiş tutar."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "2.3 Cihaz"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**Bildirim jetonu** ve platform (iOS/Android) — yalnızca bildirimleri açtıysanız."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "2.4 Abonelik"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Abonelik durumu, plan ve mağaza işlem kimlikleri; ödeme sağlayıcısından gelir. **Kart bilgileriniz bize hiç ulaşmaz ve saklanmaz.**"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "3. Nasıl kullanıyoruz"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Amaç",
+            "Hukuki dayanak (KVKK m.5 / GDPR m.6)"
+          ],
+          "rows": [
+            [
+              "Hizmetin sunulması (kayıtların saklanması ve gösterilmesi)",
+              "Sözleşmenin ifası"
+            ],
+            [
+              "Fişlerin AI ile okunması",
+              "Sözleşmenin ifası"
+            ],
+            [
+              "Hesap doğrulama, şifre sıfırlama, hizmet e-postaları",
+              "Sözleşmenin ifası"
+            ],
+            [
+              "Ücretsiz/Pro kullanım sınırlarının uygulanması",
+              "Sözleşmenin ifası"
+            ],
+            [
+              "Ürün analitiği",
+              "Meşru menfaat — **uygulamadan kapatabilirsiniz**"
+            ],
+            [
+              "Hata teşhisi",
+              "Meşru menfaat"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Verilerinizi **satmıyoruz**. Fişlerinizi **AI modeli eğitmek için kullanmıyoruz**."
+        },
+        {
+          "type": "h2",
+          "text": "4. Kimlerle paylaşıyoruz"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Alıcı",
+            "Ne alır",
+            "Neden"
+          ],
+          "rows": [
+            [
+              "**OpenRouter** (AI geçidi)",
+              "Taradığınız **fiş görseli veya PDF'i**",
+              "Tutar, tarih, satıcı ve vergiyi okumak için. Yalnızca işleme amacıyla gönderilir."
+            ],
+            [
+              "**Cloudflare R2**",
+              "Fiş görselleri",
+              "Özel depolama. Erişim yalnızca size verilen kısa ömürlü imzalı bağlantılarla."
+            ],
+            [
+              "**Yönetilen veritabanı ve barındırma sağlayıcısı**",
+              "Tüm hesap ve kayıt verisi",
+              "Hizmeti çalıştırmak için."
+            ],
+            [
+              "**E-posta sağlayıcısı (SMTP)**",
+              "E-posta adresiniz ve mesaj içeriği",
+              "Doğrulama, sıfırlama ve rapor e-postalarını iletmek için."
+            ],
+            [
+              "**RevenueCat** + Apple / Google",
+              "Abonelik olayları",
+              "Abonelikleri yönetmek için."
+            ],
+            [
+              "**PostHog** (analitik)",
+              "Rastgele bir hesap tanımlayıcısı ve **yalnızca davranış olayları** (uygulama açıldı, fiş tarandı, paywall görüldü…). **Fiş içeriği, tutar veya satıcı adı GÖNDERİLMEZ.**",
+              "Ürün kullanımını anlamak için. **Ayarlar → Gizlilik'ten kapatılabilir.**"
+            ],
+            [
+              "**Sentry** (hata kayıtları)",
+              "Teknik hata verisi. Kişiyi tanımlayan veri gönderimi yapılandırmamızda **açıkça kapalıdır**.",
+              "Çökmeleri gidermek için."
+            ]
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "4.1 Ortak hesaplar (Aile / Şirket)"
+        },
+        {
+          "type": "p",
+          "text": "Bir ortak hesaba katılırsanız **o hesabın diğer üyeleri hesaptaki kayıtları görür** — her kaydı kimin eklediği dahil. Hesap sahibi üyelerin adını ve e-posta adresini görür; üyeler birbirinin yalnızca adını görür. Her üyenin neler yapabileceği, sahibin verdiği role bağlıdır."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Ortak hesaba eklediğiniz kayıtlar **o hesaba aittir**. Hesaptan ayrılsanız, çıkarılsanız ya da kendi hesabınızı silseniz de **ortak hesapta kalır**; hesabınızı sildikten sonra \"eski üye\" tarafından eklenmiş olarak gösterilir ve artık sizinle ilişkilendirilmez.",
+            "Sahip bir ortak hesabı silerse (ya da devretmeden kendi hesabını silerse) ortak hesap ve tüm kayıtları **30 gün sonra kalıcı olarak silinir**. Üyelere bildirim gider ve bu süre içinde verileri dışa aktarabilirler.",
+            "Davet bağlantıları tek kullanımlıktır, 7 gün sonra geçersiz olur ve yalnızca tek yönlü bir özetle saklanır."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "5. AI ile işleme — bunu okuyun"
+        },
+        {
+          "type": "p",
+          "text": "Bir fişi taradığınızda, tutar, tarih, satıcı ve verginin okunabilmesi için **görsel AI sağlayıcımıza (OpenRouter) iletilir**. Bu, uygulamanın temel işlevidir."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Görsel **işleme amacıyla** gönderilir, model eğitimi için değil.",
+            "Fiş görselleri tutardan fazlasını içerebilir — kartın son dört hanesi, bir üyelik numarası, bir adres. **İletilmesini istemediğiniz bilgi taşıyan belgeleri taramadan önce bunu düşünün.**",
+            "Manuel giriş AI sağlayıcısına **hiçbir şey göndermez**.",
+            "Sağlayıcıdaki saklama süresi o sağlayıcının politikasına tabidir; bizim denetimimizde değildir."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "6. Saklama"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Hesap ve kayıt verisi: hesabınız var olduğu sürece **süre sınırı olmadan** saklanır — fişler vergi kaydıdır ve Free dahil her planda tamamı görüntülenebilir.",
+            "**Kullanılmayan hesaplar:** Bir hesap **10 yıl** boyunca hiç kullanılmazsa size e-posta göndeririz; giriş yapmazsanız hesap ve verisi **30 gün sonra** silinir. Aktif aboneliği olan hesaplar bu yolla asla silinmez. Bir kez giriş yapmanız silmeyi iptal eder.",
+            "**Hesabınızı sildiğinizde kayıtlarınız ve fiş görselleriniz bir arka plan işiyle kalıcı olarak silinir** — ortak hesaplara eklediğiniz kayıtlar hariç; onlar o hesapta kalır (bkz. 4.1).",
+            "E-posta teslim kayıtları ve hata raporları ilgili sağlayıcıda sınırlı bir süre kalabilir."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "7. Haklarınız"
+        },
+        {
+          "type": "p",
+          "text": "KVKK ve GDPR kapsamında verilerinize **erişme, düzeltme, dışa aktarma ve silme**, meşru menfaate dayalı işlemeye **itiraz etme** ve denetim makamına **şikâyette bulunma** haklarınız vardır."
+        },
+        {
+          "type": "p",
+          "text": "Bunlardan ikisi uygulamaya gömülüdür, talep gerektirmez:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**Dışa aktarma** — Ayarlar → Gizlilik → verilerinizi dışa aktarın.",
+            "**Silme** — Ayarlar → Gizlilik → hesabı sil. Bu işlem **kalıcıdır**."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Diğer talepler için: fisly@wowsyler.com."
+        },
+        {
+          "type": "h2",
+          "text": "8. Güvenlik"
+        },
+        {
+          "type": "p",
+          "text": "Veriler aktarımda (TLS) ve beklemede şifrelenir. Fiş görselleri **özel** bir bucket'ta durur ve yalnızca size verilen kısa ömürlü imzalı bağlantılarla erişilir. Erişim jetonları kısa ömürlüdür, yenileme jetonları rotasyonludur. Her sorgu yalnızca sizin hesabınızla sınırlıdır."
+        },
+        {
+          "type": "h2",
+          "text": "9. Çocuklar"
+        },
+        {
+          "type": "p",
+          "text": "Fisly 16 yaş altına yönelik değildir ve bilerek bu yaş grubundan veri toplamaz."
+        },
+        {
+          "type": "h2",
+          "text": "10. Yurt dışına aktarım"
+        },
+        {
+          "type": "p",
+          "text": "Sağlayıcılarımız verileri ülkeniz dışında işleyebilir. Gerekli hâllerde aktarımlar Standart Sözleşme Hükümleri veya yeterlilik kararına dayanır."
+        },
+        {
+          "type": "h2",
+          "text": "11. Değişiklikler"
+        },
+        {
+          "type": "p",
+          "text": "Esaslı değişiklikler yürürlüğe girmeden önce uygulama içinde duyurulur."
+        },
+        {
+          "type": "h2",
+          "text": "12. İletişim"
+        },
+        {
+          "type": "p",
+          "text": "Ozan Küçük (WowSyler), İstanbul, Türkiye — fisly@wowsyler.com"
+        }
+      ]
+    }
+  },
+  "terms": {
+    "en": {
+      "title": "Fisly — Subscription Terms",
+      "updated": "22 November 2026",
+      "party": "**Provider:** Ozan Küçük (WowSyler), İstanbul, Türkiye — fisly@wowsyler.com",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "1. Free plan"
+        },
+        {
+          "type": "p",
+          "text": "Fisly is free to use with these limits, enforced per calendar month:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**10 receipt scans per month.** A scan is an AI reading of a photo, a PDF or a receipt forwarded by e-mail.",
+            "**Unlimited manual entries.** Typing an income or expense by hand does **not** count against the limit, because it does not invoke the AI.",
+            "**One Family account for up to 3 people** (including you). Scans in it count against the owner's 10 scans.",
+            "Monthly summary; CSV export for the current month; a single currency; system categories."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Scanning requires a **verified e-mail address**. Manual entry does not."
+        },
+        {
+          "type": "h2",
+          "text": "2. Paid plans — price and duration"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Plan",
+            "Price",
+            "Duration"
+          ],
+          "rows": [
+            [
+              "**Pro Monthly**",
+              "**US$3.99**",
+              "1 month, auto-renewing"
+            ],
+            [
+              "**Pro Annual**",
+              "**US$29.99**",
+              "12 months, auto-renewing"
+            ],
+            [
+              "**Pro+ Monthly**",
+              "**US$14.99**",
+              "1 month, auto-renewing"
+            ],
+            [
+              "**Pro+ Annual**",
+              "**US$119.99**",
+              "12 months, auto-renewing"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Local pricing:** Apple and Google convert these to your local currency using their own price matrices, including applicable tax. **The price shown in the app at the moment of purchase is the price that applies.**"
+        },
+        {
+          "type": "p",
+          "text": "**Pro** includes: a pool of **1,000 scans per month** (shared by your personal records, the shared accounts you own and the personal scans of free members you sponsor), monthly, quarterly **and yearly** summaries, custom date-range reports, CSV **and PDF** export for all periods, multiple currencies, custom categories, priority AI processing, scheduled e-mail reports and up to **3 shared accounts (Family or Business) with up to 5 people each**."
+        },
+        {
+          "type": "p",
+          "text": "**Pro+** includes everything in Pro, plus shared accounts for up to **100 people** and a pool of **2,500 scans per month**."
+        },
+        {
+          "type": "p",
+          "text": "When the monthly scan pool is used up, scanning pauses until the next calendar month; manual entry stays unlimited. Pro and Pro+ are in the same subscription group: an upgrade takes effect immediately, a downgrade at the end of the current period."
+        },
+        {
+          "type": "h2",
+          "text": "3. Billing and automatic renewal"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Payment is charged to your **Apple ID** or **Google Play** account at confirmation of purchase.",
+            "**The subscription renews automatically** unless auto-renewal is turned off **at least 24 hours before the end of the current period**.",
+            "The renewal charge is taken within 24 hours before the end of the current period, at the then-current price.",
+            "We never receive or store your payment details."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "4. Managing and cancelling"
+        },
+        {
+          "type": "p",
+          "text": "You cancel through the store, not through us:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**iOS:** Settings → [your name] → Subscriptions → Fisly",
+            "**Android:** Play Store → Profile → Payments & subscriptions → Subscriptions → Fisly"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Cancelling stops the **next** renewal. **Paid access continues until the end of the period you have already paid for** — cancellation is not immediate termination."
+        },
+        {
+          "type": "h2",
+          "text": "5. Refunds"
+        },
+        {
+          "type": "p",
+          "text": "Refunds are handled **by the store**, under Apple's or Google's policies. We cannot issue refunds for store purchases. Consumer rights under applicable law are unaffected."
+        },
+        {
+          "type": "h2",
+          "text": "6. What happens when a paid plan ends"
+        },
+        {
+          "type": "p",
+          "text": "Your data is **not** deleted and **not** hidden."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "All receipts and records remain visible and exportable.",
+            "**Custom categories you already created stay — read-only.** They remain on existing receipts; you simply cannot create new ones. Past data is never altered.",
+            "Paid-only features (quarterly and yearly summaries, PDF export, multiple currencies, scheduled reports) become unavailable, and the 10-scans-per-month limit applies again.",
+            "**Shared accounts become read-only**, except one Family account (your oldest), which stays active with the free limit of 3 people. Existing members stay; new invitations need a paid plan."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "7. Price changes"
+        },
+        {
+          "type": "p",
+          "text": "Price changes will be announced in advance. Under store rules, a price increase requires your consent before it can be charged; if you do not consent, the subscription does not renew."
+        },
+        {
+          "type": "h2",
+          "text": "8. Service availability"
+        },
+        {
+          "type": "p",
+          "text": "Receipt reading depends on a third-party AI provider and on your network. We aim for continuous availability but do not guarantee uninterrupted service. **If AI reading fails permanently for a receipt, the scan is returned to your monthly quota.**"
+        },
+        {
+          "type": "h2",
+          "text": "9. Contact"
+        },
+        {
+          "type": "p",
+          "text": "Ozan Küçük (WowSyler), İstanbul, Türkiye — fisly@wowsyler.com"
+        }
+      ]
+    },
+    "tr": {
+      "title": "Fisly — Abonelik Şartları",
+      "updated": "22 Kasım 2026",
+      "party": "**Sağlayıcı:** Ozan Küçük (WowSyler), İstanbul, Türkiye — fisly@wowsyler.com",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "1. Ücretsiz plan"
+        },
+        {
+          "type": "p",
+          "text": "Fisly, takvim ayı bazında uygulanan şu sınırlarla ücretsiz kullanılır:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**Ayda 10 fiş taraması.** Tarama; bir fotoğrafın, bir PDF'in veya e-postayla iletilen bir fişin AI ile okunmasıdır.",
+            "**Sınırsız manuel giriş.** Bir gelir veya gideri elle yazmak sınırdan **düşmez**, çünkü AI'yı çalıştırmaz.",
+            "**Siz dâhil 3 kişiye kadar tek bir Aile hesabı.** Bu hesaptaki taramalar hesap sahibinin 10 taramasından düşer.",
+            "Aylık özet; içinde bulunulan ay için CSV dışa aktarım; tek para birimi; sistem kategorileri."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Tarama için **doğrulanmış e-posta adresi** gerekir. Manuel giriş için gerekmez."
+        },
+        {
+          "type": "h2",
+          "text": "2. Ücretli planlar — fiyat ve süre"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Plan",
+            "Fiyat",
+            "Süre"
+          ],
+          "rows": [
+            [
+              "**Pro Aylık**",
+              "**3,99 ABD doları**",
+              "1 ay, otomatik yenilenen"
+            ],
+            [
+              "**Pro Yıllık**",
+              "**29,99 ABD doları**",
+              "12 ay, otomatik yenilenen"
+            ],
+            [
+              "**Pro+ Aylık**",
+              "**14,99 ABD doları**",
+              "1 ay, otomatik yenilenen"
+            ],
+            [
+              "**Pro+ Yıllık**",
+              "**119,99 ABD doları**",
+              "12 ay, otomatik yenilenen"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Yerel fiyatlandırma:** Apple ve Google bu tutarları kendi fiyat matrislerine göre yerel para birimine çevirir; vergiler dâhildir. **Satın alma anında uygulamada gösterilen fiyat geçerlidir.**"
+        },
+        {
+          "type": "p",
+          "text": "**Pro** şunları içerir: ayda **1.000 taramalık havuz** (kişisel kayıtlarınız, sahibi olduğunuz ortak hesaplar ve sponsor olduğunuz ücretsiz üyelerin kişisel taramaları bu havuzu paylaşır), aylık, çeyreklik **ve yıllık** özet, özel tarih aralıklı raporlar, tüm dönemler için CSV **ve PDF** dışa aktarım, çoklu para birimi, özel kategoriler, öncelikli AI işleme, zamanlanmış e-posta raporları ve her biri **5 kişiye kadar, en çok 3 ortak hesap (Aile veya Şirket)**."
+        },
+        {
+          "type": "p",
+          "text": "**Pro+**, Pro'daki her şeye ek olarak **100 kişiye** kadar ortak hesap ve ayda **2.500 taramalık** havuz içerir."
+        },
+        {
+          "type": "p",
+          "text": "Aylık tarama havuzu dolduğunda tarama bir sonraki takvim ayına kadar durur; manuel giriş sınırsız kalır. Pro ve Pro+ aynı abonelik grubundadır: yükseltme hemen, düşürme mevcut dönemin sonunda geçerli olur."
+        },
+        {
+          "type": "h2",
+          "text": "3. Ücretlendirme ve otomatik yenileme"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Ödeme, satın alma onayında **Apple Kimliği** veya **Google Play** hesabınızdan tahsil edilir.",
+            "**Abonelik otomatik yenilenir**; yenilemeyi durdurmak için mevcut dönemin bitiminden **en az 24 saat önce** otomatik yenilemeyi kapatmanız gerekir.",
+            "Yenileme ücreti, dönem bitiminden önceki 24 saat içinde, o andaki geçerli fiyattan alınır.",
+            "Ödeme bilgileriniz bize hiç ulaşmaz ve saklanmaz."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "4. Yönetme ve iptal"
+        },
+        {
+          "type": "p",
+          "text": "İptal bizden değil, mağazadan yapılır:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**iOS:** Ayarlar → [adınız] → Abonelikler → Fisly",
+            "**Android:** Play Store → Profil → Ödemeler ve abonelikler → Abonelikler → Fisly"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "İptal, **bir sonraki** yenilemeyi durdurur. **Ücretini ödediğiniz dönemin sonuna kadar ücretli erişiminiz devam eder** — iptal, anında sonlandırma değildir."
+        },
+        {
+          "type": "h2",
+          "text": "5. İade"
+        },
+        {
+          "type": "p",
+          "text": "İadeler **mağaza tarafından**, Apple veya Google politikalarına göre yürütülür. Mağaza üzerinden yapılan satın almalar için iade gerçekleştiremeyiz. Tüketici mevzuatından doğan haklarınız saklıdır."
+        },
+        {
+          "type": "h2",
+          "text": "6. Ücretli plan sona erdiğinde ne olur"
+        },
+        {
+          "type": "p",
+          "text": "Verileriniz **silinmez** ve **gizlenmez**."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Tüm fişleriniz ve kayıtlarınız görünür ve dışa aktarılabilir kalır.",
+            "**Daha önce oluşturduğunuz özel kategoriler kalır — salt okunur.** Mevcut fişlerde görünmeye devam eder; yalnızca yenisini ekleyemezsiniz. Geçmiş veri hiçbir zaman değiştirilmez.",
+            "Ücretli planlara özel özellikler (çeyreklik ve yıllık özet, PDF dışa aktarım, çoklu para birimi, zamanlanmış raporlar) kullanılamaz olur ve aylık 10 tarama sınırı yeniden geçerli olur.",
+            "**Ortak hesaplar salt okunur olur**; yalnızca bir Aile hesabı (en eskisi) 3 kişilik ücretsiz sınırla etkin kalır. Mevcut üyeler kalır; yeni davet için ücretli plan gerekir."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "7. Fiyat değişiklikleri"
+        },
+        {
+          "type": "p",
+          "text": "Fiyat değişiklikleri önceden duyurulur. Mağaza kurallarına göre bir fiyat artışının tahsil edilebilmesi için onayınız gerekir; onaylamazsanız abonelik yenilenmez."
+        },
+        {
+          "type": "h2",
+          "text": "8. Hizmetin sürekliliği"
+        },
+        {
+          "type": "p",
+          "text": "Fiş okuma, üçüncü taraf bir AI sağlayıcısına ve ağ bağlantınıza bağlıdır. Kesintisiz erişim hedeflenir ancak garanti edilmez. **Bir fiş için AI okuması kalıcı olarak başarısız olursa, o tarama aylık kotanıza geri verilir.**"
+        },
+        {
+          "type": "h2",
+          "text": "9. İletişim"
+        },
+        {
+          "type": "p",
+          "text": "Ozan Küçük (WowSyler), İstanbul, Türkiye — fisly@wowsyler.com"
+        }
+      ]
+    }
+  }
+}

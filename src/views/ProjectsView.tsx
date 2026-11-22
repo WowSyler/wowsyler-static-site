@@ -1,12 +1,13 @@
 'use client';
 import type { ReactNode } from 'react';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { PROJECTS, PROJECT_STATUS_STYLES, type ProjectKey, type ProjectStatus } from '@/lib/projects';
 
 export default function ProjectsView() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   const statusLabels: Record<ProjectStatus, string> = {
     live: t.projects.statusLive,
@@ -248,6 +249,15 @@ export default function ProjectsView() {
                     </div>
 
                     {/* CTA */}
+                    {project.path && (
+                      <Link
+                        href={`/${locale}/${project.path}/`}
+                        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-semibold transition-all"
+                        style={{ background: project.color, color: '#ffffff' }}
+                      >
+                        {t.fisly.projectCta}
+                      </Link>
+                    )}
                     {project.url && (
                       <a
                         href={project.url}
