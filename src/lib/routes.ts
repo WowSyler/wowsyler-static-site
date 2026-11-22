@@ -1,4 +1,5 @@
 import { FISLY_PAGE_KEYS, getFislyHref } from './fisly';
+import { NOVADERMIQ_PAGE_KEYS, getNovaDermIQHref } from './novadermiq';
 import { LEGAL_PAGE_CONFIG } from './legal';
 import { BASE_URL, DEFAULT_LOCALE, LOCALES, type Locale } from './site-config';
 
@@ -159,6 +160,11 @@ const SITEMAP_GROUPS: SitemapGroup[] = [
   },
   ...FISLY_PAGE_KEYS.map((page) => ({
     paths: { en: getFislyHref('en', page), tr: getFislyHref('tr', page) },
+    changefreq: 'monthly' as const,
+    priority: page === 'app' ? 0.8 : 0.4,
+  })),
+  ...NOVADERMIQ_PAGE_KEYS.map((page) => ({
+    paths: { en: getNovaDermIQHref('en', page), tr: getNovaDermIQHref('tr', page) },
     changefreq: 'monthly' as const,
     priority: page === 'app' ? 0.8 : 0.4,
   })),

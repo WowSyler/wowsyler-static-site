@@ -1,0 +1,762 @@
+{
+  "privacy": {
+    "en": {
+      "title": "NovaDermIQ — Privacy Policy",
+      "updated": "22 November 2026",
+      "party": "**Controller:** WowSyler Yazılım ve Teknoloji, İstanbul, Türkiye — info-novadermiq@wowsyler.com",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "1. What NovaDermIQ does"
+        },
+        {
+          "type": "p",
+          "text": "NovaDermIQ is an AI-assisted facial skin analysis app for iOS and Android. It has two account types: **Individual** (you analyse your own face) and **Salon** (a beauty business analyses its clients). From a face photo it produces an overall score (0–10), skin metrics (moisture deficiency, pore size, pigmentation, skin tone unevenness and additional measurements), AI recommendations and a history so progress can be tracked over time."
+        },
+        {
+          "type": "p",
+          "text": "**NovaDermIQ is cosmetic and informational. It is not a medical device and does not provide a medical diagnosis.** See a doctor for any skin condition."
+        },
+        {
+          "type": "h2",
+          "text": "2. What we collect"
+        },
+        {
+          "type": "h3",
+          "text": "2.1 Account"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**E-mail address** — identifies your account, used for verification and password reset.",
+            "**Account type** (Individual or Salon), display name, preferred language.",
+            "**Password hash** — if you sign up with e-mail and password. Passwords are hashed with **Argon2id**; we never store the password itself.",
+            "**Google / Apple sign-in identifiers** — if you use social sign-in.",
+            "**Salon accounts:** salon name and, on paid plans, the logo or icon you upload."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "2.2 Face images and analysis results — sensitive data"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**Face and skin photos** you capture. A face image is **sensitive personal data and may be biometric data** (KVKK Art. 6, GDPR Art. 9).",
+            "**Analysis results**: overall score, metrics, diagnosis labels, AI recommendations and the session history derived from them.",
+            "**Salon accounts:** the client records you create (name and contact details you enter) and each client's analyses."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "2.3 Subscription and device"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Subscription status, plan and store transaction identifiers received from Apple, Google and our subscription infrastructure. **We never receive or store your card details.**",
+            "Push notification token and platform, only if you enable notifications.",
+            "Technical error and diagnostic data."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "3. Explicit consent — per analysed person"
+        },
+        {
+          "type": "p",
+          "text": "**A face image is processed only with the explicit consent of the person being analysed.**"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**Individual accounts:** the consent is yours, given in the app before your first analysis.",
+            "**Salon accounts:** the consent subject is the **client**. The salon must obtain the client's explicit consent before analysis; the app records consent per client. Without that consent the analysis is not run.",
+            "**Process-and-delete option:** if consent to storage is not given, the image is processed to produce the result and **is not stored**.",
+            "You can withdraw consent at any time; withdrawal does not affect processing already carried out."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "4. How we use it"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Purpose",
+            "Legal basis"
+          ],
+          "rows": [
+            [
+              "Analysing a face image and producing results",
+              "Explicit consent (KVKK Art. 6 / GDPR Art. 9(2)(a))"
+            ],
+            [
+              "Storing images and history so progress can be tracked",
+              "Explicit consent"
+            ],
+            [
+              "Account creation, verification, sign-in, service e-mails",
+              "Performance of a contract"
+            ],
+            [
+              "Enforcing plan quotas and subscriptions",
+              "Performance of a contract"
+            ],
+            [
+              "Security, abuse prevention, error diagnostics",
+              "Legitimate interest"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "We do **not** sell your data and we do **not** use your face images to train AI models."
+        },
+        {
+          "type": "h2",
+          "text": "5. Who we share it with"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Recipient",
+            "What they receive",
+            "Why"
+          ],
+          "rows": [
+            [
+              "**External AI skin-analysis service provider** (sub-processor)",
+              "The **face image** you submit",
+              "To compute the skin metrics. Sent for processing only."
+            ],
+            [
+              "**Object storage provider** (S3/R2-compatible)",
+              "Encrypted face images",
+              "Private storage; access only through short-lived signed URLs."
+            ],
+            [
+              "**Hosting and database provider**",
+              "Account and analysis data",
+              "To run the service."
+            ],
+            [
+              "**E-mail delivery provider**",
+              "Your e-mail address and message content",
+              "Verification and password-reset e-mails."
+            ],
+            [
+              "**Apple, Google and our subscription infrastructure**",
+              "Subscription events",
+              "To manage subscriptions."
+            ],
+            [
+              "**Error-monitoring provider**",
+              "Technical error data",
+              "To fix crashes."
+            ]
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "6. Retention"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**Face images and analyses are kept without a fixed time limit, until you delete them** or delete your account. There is no automatic age-based deletion.",
+            "**Deletion on request:** you can ask for any image, analysis, client record or your whole account to be deleted. For a salon client, the salon or the client may ask.",
+            "**No consent, no storage:** if you choose process-and-delete, the image is not stored at all.",
+            "Error reports and e-mail delivery logs may persist for a limited period at the relevant provider."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "7. International transfer to the AI sub-processor"
+        },
+        {
+          "type": "p",
+          "text": "Face images are sent to an external AI skin-analysis provider that **may be located outside Türkiye and the European Economic Area**. This is a cross-border transfer of sensitive data. We ask for your **separate explicit consent** for it before the first analysis, and we rely on appropriate safeguards — a data processing agreement and, where required, Standard Contractual Clauses (KVKK Art. 9, GDPR Arts. 44–49). Without this consent the analysis cannot be run, because the analysis itself is performed by that provider."
+        },
+        {
+          "type": "h2",
+          "text": "8. Your rights"
+        },
+        {
+          "type": "p",
+          "text": "Under KVKK and GDPR you may **access, correct, export and delete** your data, **withdraw consent**, object to processing based on legitimate interest, and complain to the Turkish Personal Data Protection Authority (KVKK) or your local supervisory authority. Write to **info-novadermiq@wowsyler.com**; we reply within the legal time limits."
+        },
+        {
+          "type": "h2",
+          "text": "9. Security"
+        },
+        {
+          "type": "p",
+          "text": "Data is encrypted in transit (TLS). Face images are **encrypted at rest** in private storage and are served only through **short-lived signed URLs**. Access tokens are short-lived. Quotas and permissions are enforced on our servers, and personal data is masked in logs."
+        },
+        {
+          "type": "p",
+          "text": "**Account protection:** e-mail sign-up requires **e-mail verification** before you can run analyses, and **disposable / temporary e-mail addresses are blocked**."
+        },
+        {
+          "type": "h2",
+          "text": "10. Age limit"
+        },
+        {
+          "type": "p",
+          "text": "NovaDermIQ is for people aged **18 or over**. You confirm your age when you sign up. In a Salon account, a client under 18 may not be analysed without the consent of a parent or legal guardian. We do not knowingly collect data from children."
+        },
+        {
+          "type": "h2",
+          "text": "11. Changes"
+        },
+        {
+          "type": "p",
+          "text": "We will announce material changes in the app before they take effect."
+        },
+        {
+          "type": "h2",
+          "text": "12. Contact"
+        },
+        {
+          "type": "p",
+          "text": "WowSyler Yazılım ve Teknoloji, İstanbul, Türkiye — info-novadermiq@wowsyler.com"
+        }
+      ]
+    },
+    "tr": {
+      "title": "NovaDermIQ — Gizlilik Politikası",
+      "updated": "22 Kasım 2026",
+      "party": "**Veri sorumlusu:** WowSyler Yazılım ve Teknoloji, İstanbul, Türkiye — info-novadermiq@wowsyler.com",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "1. NovaDermIQ ne yapar?"
+        },
+        {
+          "type": "p",
+          "text": "NovaDermIQ, iOS ve Android için yapay zekâ destekli yüz cildi analizi uygulamasıdır. İki hesap türü vardır: **Bireysel** (kendi yüzünüzü analiz edersiniz) ve **Salon** (bir güzellik işletmesi müşterilerini analiz eder). Bir yüz fotoğrafından genel skor (0–10), cilt metrikleri (nem eksikliği, gözenek genişliği, pigmentasyon, cilt tonu eşitsizliği ve ek ölçümler), yapay zekâ önerileri ve zaman içinde gelişimi izlemenizi sağlayan bir geçmiş üretir."
+        },
+        {
+          "type": "p",
+          "text": "**NovaDermIQ kozmetik ve bilgilendirme amaçlıdır. Tıbbi cihaz değildir ve tıbbi teşhis koymaz.** Herhangi bir cilt sorunu için bir hekime başvurun."
+        },
+        {
+          "type": "h2",
+          "text": "2. Hangi verileri topluyoruz?"
+        },
+        {
+          "type": "h3",
+          "text": "2.1 Hesap"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**E-posta adresi** — hesabınızı tanımlar; doğrulama ve parola sıfırlama için kullanılır.",
+            "**Hesap türü** (Bireysel veya Salon), görünen ad, tercih edilen dil.",
+            "**Parola özeti (hash)** — e-posta ve parola ile kaydolduysanız. Parolalar **Argon2id** ile özetlenir; parolanın kendisini asla saklamayız.",
+            "**Google / Apple oturum tanımlayıcıları** — sosyal giriş kullanıyorsanız.",
+            "**Salon hesapları:** salon adı ve ücretli planlarda yüklediğiniz logo veya ikon."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "2.2 Yüz görselleri ve analiz sonuçları — özel nitelikli veri"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Çektiğiniz **yüz ve cilt fotoğrafları**. Yüz görseli **özel nitelikli kişisel veridir ve biyometrik veri olabilir** (KVKK m.6, GDPR m.9).",
+            "**Analiz sonuçları**: genel skor, metrikler, teşhis etiketleri, yapay zekâ önerileri ve bunlardan türeyen seans geçmişi.",
+            "**Salon hesapları:** oluşturduğunuz müşteri kayıtları (girdiğiniz ad ve iletişim bilgileri) ve her müşterinin analizleri."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "2.3 Abonelik ve cihaz"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Apple, Google ve abonelik altyapımızdan alınan abonelik durumu, plan ve mağaza işlem tanımlayıcıları. **Kart bilgilerinizi asla almayız ve saklamayız.**",
+            "Yalnızca bildirimleri açarsanız push bildirim belirteci ve platform.",
+            "Teknik hata ve tanılama verileri."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "3. Açık rıza — analiz edilen kişi başına"
+        },
+        {
+          "type": "p",
+          "text": "**Yüz görseli yalnızca analiz edilen kişinin açık rızasıyla işlenir.**"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**Bireysel hesaplar:** rıza sizindir; ilk analizden önce uygulamada verilir.",
+            "**Salon hesapları:** rızanın öznesi **müşteridir**. Salon, analizden önce müşterinin açık rızasını almalıdır; uygulama rızayı müşteri bazında kaydeder. Bu rıza olmadan analiz çalıştırılmaz.",
+            "**İşle ve sil seçeneği:** saklamaya rıza verilmezse görsel sonucu üretmek için işlenir ve **saklanmaz**.",
+            "Rızanızı istediğiniz zaman geri çekebilirsiniz; geri çekme, daha önce yapılmış işlemeyi etkilemez."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "4. Verileri nasıl kullanıyoruz?"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Amaç",
+            "Hukuki sebep"
+          ],
+          "rows": [
+            [
+              "Yüz görselini analiz etmek ve sonuç üretmek",
+              "Açık rıza (KVKK m.6 / GDPR m.9/2-a)"
+            ],
+            [
+              "Gelişimin izlenebilmesi için görsel ve geçmişi saklamak",
+              "Açık rıza"
+            ],
+            [
+              "Hesap oluşturma, doğrulama, giriş, hizmet e-postaları",
+              "Sözleşmenin ifası"
+            ],
+            [
+              "Plan kotalarını ve abonelikleri uygulamak",
+              "Sözleşmenin ifası"
+            ],
+            [
+              "Güvenlik, kötüye kullanımı önleme, hata tanılama",
+              "Meşru menfaat"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Verilerinizi **satmıyoruz** ve yüz görsellerinizi yapay zekâ modellerini **eğitmek için kullanmıyoruz**."
+        },
+        {
+          "type": "h2",
+          "text": "5. Kimlerle paylaşıyoruz?"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Alıcı",
+            "Ne alır?",
+            "Neden?"
+          ],
+          "rows": [
+            [
+              "**Harici yapay zekâ cilt analizi hizmet sağlayıcısı** (alt işleyen)",
+              "Gönderdiğiniz **yüz görseli**",
+              "Cilt metriklerini hesaplamak için. Yalnızca işleme amacıyla gönderilir."
+            ],
+            [
+              "**Nesne depolama sağlayıcısı** (S3/R2 uyumlu)",
+              "Şifrelenmiş yüz görselleri",
+              "Özel depolama; erişim yalnızca kısa ömürlü imzalı URL'lerle."
+            ],
+            [
+              "**Barındırma ve veritabanı sağlayıcısı**",
+              "Hesap ve analiz verileri",
+              "Hizmeti çalıştırmak için."
+            ],
+            [
+              "**E-posta gönderim sağlayıcısı**",
+              "E-posta adresiniz ve ileti içeriği",
+              "Doğrulama ve parola sıfırlama e-postaları."
+            ],
+            [
+              "**Apple, Google ve abonelik altyapımız**",
+              "Abonelik olayları",
+              "Abonelikleri yönetmek için."
+            ],
+            [
+              "**Hata izleme sağlayıcısı**",
+              "Teknik hata verileri",
+              "Çökmeleri gidermek için."
+            ]
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "6. Saklama süresi"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**Yüz görselleri ve analizler sabit bir süre sınırı olmadan, siz silene kadar saklanır** veya hesabınızı silene kadar. Yaşa bağlı otomatik silme yoktur.",
+            "**Talep üzerine silme:** herhangi bir görselin, analizin, müşteri kaydının veya tüm hesabınızın silinmesini isteyebilirsiniz. Salon müşterisi için salon veya müşterinin kendisi talepte bulunabilir.",
+            "**Rıza yoksa saklama yok:** işle ve sil seçeneğini seçerseniz görsel hiç saklanmaz.",
+            "Hata raporları ve e-posta gönderim kayıtları ilgili sağlayıcıda sınırlı bir süre kalabilir."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "7. Yapay zekâ alt işleyenine yurt dışına aktarım"
+        },
+        {
+          "type": "p",
+          "text": "Yüz görselleri, **Türkiye ve Avrupa Ekonomik Alanı dışında bulunabilen** harici bir yapay zekâ cilt analizi sağlayıcısına gönderilir. Bu, özel nitelikli verinin yurt dışına aktarımıdır. İlk analizden önce bunun için **ayrı açık rızanızı** isteriz ve uygun güvencelere dayanırız: veri işleme sözleşmesi ve gerektiğinde Standart Sözleşme Maddeleri (KVKK m.9, GDPR m.44–49). Analizin kendisi bu sağlayıcı tarafından yapıldığından, bu rıza olmadan analiz çalıştırılamaz."
+        },
+        {
+          "type": "h2",
+          "text": "8. Haklarınız"
+        },
+        {
+          "type": "p",
+          "text": "KVKK ve GDPR kapsamında verilerinize **erişme, düzeltme, aktarma ve silme**, **rızayı geri çekme**, meşru menfaate dayalı işlemeye itiraz etme ve Kişisel Verileri Koruma Kurumu'na veya yerel denetim otoritenize şikâyet etme haklarına sahipsiniz. **info-novadermiq@wowsyler.com** adresine yazın; yasal süreler içinde yanıtlarız."
+        },
+        {
+          "type": "h2",
+          "text": "9. Güvenlik"
+        },
+        {
+          "type": "p",
+          "text": "Veriler aktarım sırasında şifrelenir (TLS). Yüz görselleri özel depolamada **bekleme halinde şifrelenir** ve yalnızca **kısa ömürlü imzalı URL'lerle** sunulur. Erişim belirteçleri kısa ömürlüdür. Kotalar ve yetkiler sunucularımızda uygulanır; günlüklerde kişisel veriler maskelenir."
+        },
+        {
+          "type": "p",
+          "text": "**Hesap koruması:** e-posta ile kayıtta analiz yapabilmeniz için **e-posta doğrulaması** gerekir ve **tek kullanımlık / geçici e-posta adresleri engellenir**."
+        },
+        {
+          "type": "h2",
+          "text": "10. Yaş sınırı"
+        },
+        {
+          "type": "p",
+          "text": "NovaDermIQ **18 yaş ve üzeri** kişiler içindir. Kayıt sırasında yaşınızı onaylarsınız. Salon hesabında, 18 yaşından küçük bir müşteri ebeveyn veya yasal vasinin rızası olmadan analiz edilemez. Çocuklara ait verileri bilerek toplamayız."
+        },
+        {
+          "type": "h2",
+          "text": "11. Değişiklikler"
+        },
+        {
+          "type": "p",
+          "text": "Önemli değişiklikleri yürürlüğe girmeden önce uygulama içinde duyururuz."
+        },
+        {
+          "type": "h2",
+          "text": "12. İletişim"
+        },
+        {
+          "type": "p",
+          "text": "WowSyler Yazılım ve Teknoloji, İstanbul, Türkiye — info-novadermiq@wowsyler.com"
+        }
+      ]
+    }
+  },
+  "terms": {
+    "en": {
+      "title": "NovaDermIQ — Terms of Use and Subscription",
+      "updated": "22 November 2026",
+      "party": "**Provider:** WowSyler Yazılım ve Teknoloji, İstanbul, Türkiye — info-novadermiq@wowsyler.com",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "1. The service"
+        },
+        {
+          "type": "p",
+          "text": "NovaDermIQ analyses a face photo with AI and returns a skin score, metrics and recommendations. **It is cosmetic and informational only, is not a medical device and is not a medical diagnosis or treatment advice.** Results can be inaccurate; do not rely on them for medical decisions."
+        },
+        {
+          "type": "p",
+          "text": "You must be **18 or over**. You must have the **explicit consent of every person you analyse**; in a Salon account the salon is responsible for obtaining it from each client. See the Privacy Policy."
+        },
+        {
+          "type": "h2",
+          "text": "2. No free plan — a paid subscription is required"
+        },
+        {
+          "type": "p",
+          "text": "**There is no free plan.** You need an active paid subscription to run analyses. Plans are monthly and renew automatically."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Account type",
+            "Plan",
+            "Price",
+            "Analyses per month"
+          ],
+          "rows": [
+            [
+              "Individual",
+              "**Plus**",
+              "**₺350 / month**",
+              "4"
+            ],
+            [
+              "Salon",
+              "**Pro**",
+              "**₺2,500 / month**",
+              "30"
+            ],
+            [
+              "Salon",
+              "**Business**",
+              "**₺6,000 / month**",
+              "75"
+            ],
+            [
+              "Salon",
+              "**Enterprise**",
+              "**₺12,000 / month**",
+              "150"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Salon features.** Salon plans include client management and branding (salon name and logo or icon). **Business and Enterprise** add the client notification system. **Enterprise** has the same features as Business with double the quota. Full history access is included in every plan. PDF reports are planned for a later release (v1.1)."
+        },
+        {
+          "type": "p",
+          "text": "**Quota.** The monthly quota is enforced on our servers and renews each billing month; unused analyses do not carry over. A failed analysis does not use quota."
+        },
+        {
+          "type": "p",
+          "text": "**Local pricing.** Prices are shown in Turkish lira. Apple and Google convert them to your local currency using their own price matrices, including applicable tax. **The price shown in the app at the moment of purchase is the price that applies.**"
+        },
+        {
+          "type": "h2",
+          "text": "3. Billing and automatic renewal"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Payment is charged to your **Apple ID** or **Google Play** account at confirmation of purchase.",
+            "**The subscription renews automatically** unless auto-renewal is turned off **at least 24 hours before the end of the current period**.",
+            "Your account is charged for renewal within 24 hours before the end of the current period, at the then-current price.",
+            "We never receive or store your payment details."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "4. Managing and cancelling"
+        },
+        {
+          "type": "p",
+          "text": "You cancel through the store, not through us:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**iOS:** Settings → [your name] → Subscriptions → NovaDermIQ",
+            "**Android:** Play Store → Profile → Payments & subscriptions → Subscriptions → NovaDermIQ"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Cancelling stops the **next** renewal. **Paid access continues until the end of the period you have already paid for.**"
+        },
+        {
+          "type": "h2",
+          "text": "5. Refunds"
+        },
+        {
+          "type": "p",
+          "text": "Refunds are handled **by the store**, under Apple's or Google's policies. We cannot issue refunds for store purchases. Consumer rights under applicable law are unaffected."
+        },
+        {
+          "type": "h2",
+          "text": "6. When a subscription ends"
+        },
+        {
+          "type": "p",
+          "text": "Your account and history are **not** deleted. You can still view and delete your past analyses, but running new analyses requires an active subscription. Deletion of your data is described in the Privacy Policy."
+        },
+        {
+          "type": "h2",
+          "text": "7. Plan changes and price changes"
+        },
+        {
+          "type": "p",
+          "text": "Plans in the same subscription group can be upgraded or downgraded in the store. Price changes will be announced in advance; under store rules, a price increase requires your consent before it can be charged, otherwise the subscription does not renew."
+        },
+        {
+          "type": "h2",
+          "text": "8. Acceptable use"
+        },
+        {
+          "type": "p",
+          "text": "Analyse only faces you are entitled to analyse. Do not upload images of people without their consent, of minors without guardian consent, or unlawful content. We may refuse or remove such content and suspend accounts that abuse the service."
+        },
+        {
+          "type": "h2",
+          "text": "9. Service availability"
+        },
+        {
+          "type": "p",
+          "text": "Analysis depends on a third-party AI provider and on your network. We aim for continuous availability but do not guarantee uninterrupted service. To the extent permitted by law, we are not liable for decisions made on the basis of the results."
+        },
+        {
+          "type": "h2",
+          "text": "10. Contact"
+        },
+        {
+          "type": "p",
+          "text": "WowSyler Yazılım ve Teknoloji, İstanbul, Türkiye — info-novadermiq@wowsyler.com"
+        }
+      ]
+    },
+    "tr": {
+      "title": "NovaDermIQ — Kullanım ve Abonelik Şartları",
+      "updated": "22 Kasım 2026",
+      "party": "**Hizmet sağlayıcı:** WowSyler Yazılım ve Teknoloji, İstanbul, Türkiye — info-novadermiq@wowsyler.com",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "1. Hizmet"
+        },
+        {
+          "type": "p",
+          "text": "NovaDermIQ, bir yüz fotoğrafını yapay zekâ ile analiz eder ve cilt skoru, metrikler ve öneriler sunar. **Yalnızca kozmetik ve bilgilendirme amaçlıdır; tıbbi cihaz değildir, tıbbi teşhis veya tedavi tavsiyesi değildir.** Sonuçlar hatalı olabilir; tıbbi kararlarda bunlara dayanmayın."
+        },
+        {
+          "type": "p",
+          "text": "**18 yaş ve üzeri** olmalısınız. Analiz ettiğiniz **her kişinin açık rızasına** sahip olmalısınız; Salon hesabında müşterinin rızasını almak salonun sorumluluğundadır. Gizlilik Politikası'na bakın."
+        },
+        {
+          "type": "h2",
+          "text": "2. Ücretsiz plan yoktur — ücretli abonelik gerekir"
+        },
+        {
+          "type": "p",
+          "text": "**Ücretsiz plan yoktur.** Analiz yapmak için etkin bir ücretli abonelik gerekir. Planlar aylıktır ve otomatik yenilenir."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Hesap türü",
+            "Plan",
+            "Fiyat",
+            "Aylık analiz"
+          ],
+          "rows": [
+            [
+              "Bireysel",
+              "**Plus**",
+              "**₺350 / ay**",
+              "4"
+            ],
+            [
+              "Salon",
+              "**Pro**",
+              "**₺2.500 / ay**",
+              "30"
+            ],
+            [
+              "Salon",
+              "**Business**",
+              "**₺6.000 / ay**",
+              "75"
+            ],
+            [
+              "Salon",
+              "**Enterprise**",
+              "**₺12.000 / ay**",
+              "150"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Salon özellikleri.** Salon planları müşteri yönetimi ve markalamayı (salon adı ve logo veya ikon) içerir. **Business ve Enterprise** ek olarak müşteri bildirim sistemini içerir. **Enterprise**, Business ile aynı özelliklere ve iki kat kotaya sahiptir. Tüm geçmişe erişim her planda dâhildir. PDF raporlar sonraki bir sürümde (v1.1) planlanmaktadır."
+        },
+        {
+          "type": "p",
+          "text": "**Kota.** Aylık kota sunucularımızda uygulanır ve her faturalama ayında yenilenir; kullanılmayan analizler devretmez. Başarısız analiz kotadan düşmez."
+        },
+        {
+          "type": "p",
+          "text": "**Yerel fiyat.** Fiyatlar Türk lirası olarak gösterilir. Apple ve Google bunları kendi fiyat matrisleriyle, geçerli vergiler dâhil yerel para biriminize çevirir. **Satın alma anında uygulamada gösterilen fiyat geçerli fiyattır.**"
+        },
+        {
+          "type": "h2",
+          "text": "3. Faturalama ve otomatik yenileme"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Ödeme, satın alma onayında **Apple ID** veya **Google Play** hesabınızdan tahsil edilir.",
+            "**Abonelik, mevcut dönemin bitiminden en az 24 saat önce otomatik yenileme kapatılmadıkça otomatik olarak yenilenir.**",
+            "Yenileme ücreti, mevcut dönemin bitiminden önceki 24 saat içinde, o andaki güncel fiyattan hesabınızdan tahsil edilir.",
+            "Ödeme bilgilerinizi asla almayız ve saklamayız."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "4. Yönetme ve iptal"
+        },
+        {
+          "type": "p",
+          "text": "İptali bizim üzerimizden değil, mağaza üzerinden yaparsınız:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**iOS:** Ayarlar → [adınız] → Abonelikler → NovaDermIQ",
+            "**Android:** Play Store → Profil → Ödemeler ve abonelikler → Abonelikler → NovaDermIQ"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "İptal, **bir sonraki** yenilemeyi durdurur. **Ücretli erişim, zaten ödediğiniz dönemin sonuna kadar devam eder.**"
+        },
+        {
+          "type": "h2",
+          "text": "5. İadeler"
+        },
+        {
+          "type": "p",
+          "text": "İadeler, Apple veya Google'ın politikalarına göre **mağaza tarafından** yürütülür. Mağaza satın alımları için iade yapamayız. Geçerli mevzuattan doğan tüketici haklarınız saklıdır."
+        },
+        {
+          "type": "h2",
+          "text": "6. Abonelik sona erdiğinde"
+        },
+        {
+          "type": "p",
+          "text": "Hesabınız ve geçmişiniz **silinmez**. Geçmiş analizlerinizi görüntülemeye ve silmeye devam edebilirsiniz; ancak yeni analiz için etkin abonelik gerekir. Verilerinizin silinmesi Gizlilik Politikası'nda anlatılmıştır."
+        },
+        {
+          "type": "h2",
+          "text": "7. Plan ve fiyat değişiklikleri"
+        },
+        {
+          "type": "p",
+          "text": "Aynı abonelik grubundaki planlar mağazadan yükseltilebilir veya düşürülebilir. Fiyat değişiklikleri önceden duyurulur; mağaza kuralları gereği fiyat artışı tahsil edilmeden önce onayınızı gerektirir, aksi hâlde abonelik yenilenmez."
+        },
+        {
+          "type": "h2",
+          "text": "8. Kabul edilebilir kullanım"
+        },
+        {
+          "type": "p",
+          "text": "Yalnızca analiz etmeye hakkınız olan yüzleri analiz edin. Rızası olmayan kişilerin, veli rızası olmayan reşit olmayanların veya yasa dışı içeriğin görsellerini yüklemeyin. Bu tür içeriği reddedebilir veya kaldırabilir, hizmeti kötüye kullanan hesapları askıya alabiliriz."
+        },
+        {
+          "type": "h2",
+          "text": "9. Hizmet sürekliliği"
+        },
+        {
+          "type": "p",
+          "text": "Analiz, üçüncü taraf bir yapay zekâ sağlayıcısına ve ağ bağlantınıza bağlıdır. Kesintisiz erişilebilirliği hedefleriz ancak garanti etmeyiz. Yasaların izin verdiği ölçüde, sonuçlara dayanılarak alınan kararlardan sorumlu değiliz."
+        },
+        {
+          "type": "h2",
+          "text": "10. İletişim"
+        },
+        {
+          "type": "p",
+          "text": "WowSyler Yazılım ve Teknoloji, İstanbul, Türkiye — info-novadermiq@wowsyler.com"
+        }
+      ]
+    }
+  }
+}

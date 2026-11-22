@@ -79,7 +79,7 @@
     "giderGelirTitle": "Fisly: Fiş Tarayıcı",
     "giderGelirDesc": "Fiş fotoğrafından tutarı, tarihi, satıcıyı ve KDV'yi AI ile okuyan; giderleri otomatik kategorileyen mobil gider takip uygulaması. Ay ve çeyrek bazında özet ile CSV/PDF dışa aktarım sunar. Serbest çalışanlar ve küçük esnaf için tasarlandı.",
     "giderGelirLong": "Expo tabanlı React Native mobil uygulama, katmanlı mimarideki .NET 10 API ile konuşur. OCR ve LLM birlikte fiş içeriğini yapılandırılmış veriye çevirir; PostgreSQL kalıcı depo, Hangfire arka plan işleri, expo-sqlite çevrimdışı yakalama kuyruğu olarak görev yapar. CI/CD GitHub Actions ve EAS ile yürütülür.",
-    "glowScanTitle": "GlowScan",
+    "glowScanTitle": "NovaDermIQ",
     "glowScanDesc": "Güzellik salonları (B2B) ve bireysel kullanıcılar (B2C) için yapay zeka destekli yüz/cilt analizi mobil uygulaması. Kamerayla çekilen yüz görselinden skor, teşhis ve nem, gözenek, pigmentasyon gibi metrikler üretir; gelişimi zaman içinde takip eder.",
     "glowScanLong": "React Native (Expo) ve TypeScript ile geliştirilen mobil istemci; Zustand ve TanStack Query ile durum yönetimi yapar. .NET 8 üzerinde DDD ve Clean Architecture backend'i PostgreSQL ve Redis kullanır; yüz görselleri imzalı URL'lerle S3/R2 uyumlu depolamada şifreli saklanır. Analizler uzman cilt-analizi AI API'si ile yapılır, monetizasyon Apple/Google uygulama içi satın alma üzerinden yürür.",
     "chassisTitle": "Chassis",
@@ -551,5 +551,115 @@
     "lastUpdatedLabel": "Son güncelleme",
     "backToApp": "Fisly'ye dön",
     "projectCta": "Uygulama sayfası"
+  },
+  "novadermiq": {
+    "eyebrow": "Mobil uygulama · iOS ve Android",
+    "title": "NovaDermIQ: Yapay Zekâ Cilt Analizi",
+    "tagline": "Yeni Nesil Cilt Zekâsı.",
+    "intro": "NovaDermIQ, yüz fotoğrafını yapay zekâ ile analiz eder; cilt skoru, ayrıntılı metrikler ve kişisel öneriler sunar. Kendi cildini takip eden bireyler ve müşterilerini analiz eden güzellik salonları için geliştirildi.",
+    "storeSoon": "Yakında App Store ve Google Play'de",
+    "featuresTitle": "NovaDermIQ ne yapar?",
+    "features": [
+      {
+        "title": "Yüz fotoğrafı analizi",
+        "text": "Kameranızla fotoğraf çekin; saniyeler içinde 0–10 arası genel cilt skorunu alın."
+      },
+      {
+        "title": "Ayrıntılı cilt metrikleri",
+        "text": "Nem eksikliği, gözenek genişliği, pigmentasyon ve cilt tonu eşitsizliği; ayrıca kırışıklık, akne ve kızarıklık gibi ek ölçümler."
+      },
+      {
+        "title": "Yapay zekâ önerileri",
+        "text": "Sonuçlarınıza göre öncelik sıralı, kişiselleştirilmiş bakım önerileri."
+      },
+      {
+        "title": "Tam geçmiş ve gelişim",
+        "text": "Her analiz kaydedilir. Cildinizin zaman içindeki değişimini izleyin; tam geçmiş her planda geçerlidir."
+      },
+      {
+        "title": "Salon müşteri yönetimi",
+        "text": "Salon hesapları müşteri ekler, onların rızasıyla analiz eder ve her müşterinin tüm geçmişini ve gelişimini görür."
+      },
+      {
+        "title": "Salonunuz, markanız",
+        "text": "Salon adınızı belirleyin, logo veya ikonunuzu yükleyin. Business ve Enterprise planları müşteri bildirim sistemini ekler. PDF raporlar v1.1 için planlanıyor."
+      }
+    ],
+    "plansTitle": "Planlar",
+    "plansNote": "Ücretsiz plan yoktur: analiz yapmak için ücretli abonelik gerekir. Planlar aylıktır ve otomatik yenilenir. Abonelikler App Store ve Google Play üzerinden satılır; Apple ve Google fiyatları yerel para biriminize çevirir, satın alma anında uygulamada gösterilen fiyat geçerlidir.",
+    "plans": [
+      {
+        "name": "Bireysel Plus",
+        "price": "₺350 / ay",
+        "points": [
+          "Ayda 4 analiz",
+          "Tam geçmiş ve gelişim takibi",
+          "Yapay zekâ önerileri"
+        ]
+      },
+      {
+        "name": "Salon Pro",
+        "price": "₺2.500 / ay",
+        "points": [
+          "Ayda 30 analiz",
+          "Müşteri yönetimi ve müşteri geçmişi",
+          "Salon adı ve logo veya ikon"
+        ]
+      },
+      {
+        "name": "Salon Business",
+        "price": "₺6.000 / ay",
+        "points": [
+          "Ayda 75 analiz",
+          "Pro'nun tüm özellikleri",
+          "Müşteri bildirim sistemi"
+        ]
+      },
+      {
+        "name": "Salon Enterprise",
+        "price": "₺12.000 / ay",
+        "points": [
+          "Ayda 150 analiz",
+          "Business'ın tüm özellikleri",
+          "İki kat kota"
+        ]
+      }
+    ],
+    "supportTitle": "Destek",
+    "supportText": "Sorunuz, probleminiz veya geri bildiriminiz mi var? Bize yazın; en kısa sürede, genellikle iki iş günü içinde yanıtlarız.",
+    "supportEmailLabel": "Destek e-postası",
+    "faqTitle": "Sık sorulan sorular",
+    "faq": [
+      {
+        "q": "NovaDermIQ tıbbi teşhis midir?",
+        "a": "Hayır. NovaDermIQ kozmetik ve bilgilendirme amaçlıdır. Tıbbi cihaz değildir ve cilt hastalıklarını teşhis etmez. Tıbbi bir endişeniz varsa bir hekime başvurun."
+      },
+      {
+        "q": "Aboneliğimi nasıl iptal ederim?",
+        "a": "Abonelikler mağaza tarafından yönetilir ve dönem bitiminden en az 24 saat önce otomatik yenileme kapatılmazsa abonelik kendiliğinden yenilenir. iPhone'da: Ayarlar → adınız → Abonelikler → NovaDermIQ. Android'de: Play Store → Profil → Ödemeler ve abonelikler → Abonelikler → NovaDermIQ. Erişim, ödenen dönemin sonuna kadar sürer."
+      },
+      {
+        "q": "Nasıl iade alırım?",
+        "a": "İadeler Apple veya Google tarafından kendi politikalarına göre yürütülür. iPhone'da reportaproblem.apple.com adresinden talep edebilirsiniz."
+      },
+      {
+        "q": "Yüz fotoğrafım nasıl korunuyor?",
+        "a": "Yüz fotoğrafı özel nitelikli veridir. Yalnızca analiz edilen kişinin açık rızasıyla analiz edilir, şifreli saklanır ve yalnızca kısa ömürlü imzalı bağlantılarla sunulur. Saklamaya rıza vermezseniz işlenir ve saklanmaz. Fotoğraflar, ayrı rızanızla, Türkiye dışında olabilen harici bir yapay zekâ cilt analizi sağlayıcısına gönderilir. Gizlilik Politikası'na bakın."
+      },
+      {
+        "q": "Fotoğraflarımı veya hesabımı nasıl silerim?",
+        "a": "Fotoğraflar siz silene kadar saklanır. Herhangi bir fotoğrafın, analizin, müşteri kaydının veya tüm hesabınızın silinmesini info-novadermiq@wowsyler.com adresinden isteyebilirsiniz."
+      },
+      {
+        "q": "Kimler kullanabilir?",
+        "a": "NovaDermIQ 18 yaş ve üzeri kişiler içindir. Salonda, her müşteriyi analiz etmeden önce onun açık rızasını almalısınız."
+      }
+    ],
+    "legalTitle": "Yasal",
+    "privacyLabel": "Gizlilik Politikası",
+    "termsLabel": "Kullanım ve Abonelik Şartları",
+    "providerLabel": "Hizmet sağlayıcı",
+    "lastUpdatedLabel": "Son güncelleme",
+    "backToApp": "NovaDermIQ'ya dön"
   }
 }

@@ -14,9 +14,14 @@ A bilingual (Turkish / English) corporate website built with **Next.js 16**, **T
 | `/fisly` | Fisly mobile app page: features, plans, support and FAQ (App Store support / marketing URL) |
 | `/fisly/privacy` | Fisly privacy policy (App Store privacy policy URL) |
 | `/fisly/terms` | Fisly subscription terms |
+| `/novadermiq` | NovaDermIQ mobile app page: features, plans, support and FAQ |
+| `/novadermiq/privacy` | NovaDermIQ privacy policy |
+| `/novadermiq/terms` | NovaDermIQ terms of use and subscription |
 
 Fisly legal texts in `src/content/fisly/legal.json` are generated from `docs/legal/*.md` in the app
 repository (`gider-gelir-takibi-app`); edit them there and regenerate, do not edit the JSON by hand.
+NovaDermIQ legal texts in `src/content/novadermiq/legal.json` are generated the same way from `docs/legal/*.md`
+in `face-analizy-app`.
 
 ## Tech Stack
 

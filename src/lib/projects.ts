@@ -153,6 +153,7 @@ export const PROJECTS: ProjectDefinition[] = [
   },
   {
     key: 'glowScan',
+    path: 'novadermiq',
     status: 'dev',
     tech: [
       'React Native',

@@ -79,7 +79,7 @@
     "giderGelirTitle": "Fisly: Receipt Scanner",
     "giderGelirDesc": "A mobile expense-tracking app that reads the amount, date, merchant, and VAT from a receipt photo using AI and categorizes expenses automatically. Provides monthly and quarterly summaries with CSV/PDF export. Built for freelancers and small businesses.",
     "giderGelirLong": "The Expo-based React Native mobile app talks to a layered .NET 10 API. OCR and an LLM together turn receipt content into structured data; PostgreSQL is the persistent store, Hangfire runs background jobs, and expo-sqlite serves as the offline capture queue. CI/CD runs on GitHub Actions and EAS.",
-    "glowScanTitle": "GlowScan",
+    "glowScanTitle": "NovaDermIQ",
     "glowScanDesc": "An AI-powered face and skin analysis mobile app for beauty salons (B2B) and individual users (B2C). From a camera-captured face image it produces a score, diagnosis, and metrics like hydration, pores, and pigmentation — and tracks progress over time.",
     "glowScanLong": "The mobile client is built with React Native (Expo) and TypeScript, using Zustand and TanStack Query for state. A .NET 8 backend following DDD and Clean Architecture uses PostgreSQL and Redis; face images are stored encrypted in S3/R2-compatible storage behind signed URLs. Analysis runs through a specialist skin-analysis AI API, with monetization via Apple/Google in-app purchases.",
     "chassisTitle": "Chassis",
@@ -551,5 +551,115 @@
     "lastUpdatedLabel": "Last updated",
     "backToApp": "Back to Fisly",
     "projectCta": "View app page"
+  },
+  "novadermiq": {
+    "eyebrow": "Mobile app · iOS & Android",
+    "title": "NovaDermIQ: AI Skin Analysis",
+    "tagline": "Next-Generation Skin Intelligence.",
+    "intro": "NovaDermIQ analyses a face photo with AI and returns a skin score, detailed metrics and personalised recommendations. Built for individuals who track their own skin and for beauty salons that analyse their clients.",
+    "storeSoon": "Coming soon to the App Store and Google Play",
+    "featuresTitle": "What NovaDermIQ does",
+    "features": [
+      {
+        "title": "Face photo analysis",
+        "text": "Take a photo with your camera and get an overall skin score from 0 to 10 within moments."
+      },
+      {
+        "title": "Detailed skin metrics",
+        "text": "Moisture deficiency, pore size, pigmentation and skin tone unevenness, plus additional measurements such as wrinkles, acne and redness."
+      },
+      {
+        "title": "AI recommendations",
+        "text": "Prioritised, personalised care suggestions based on your results."
+      },
+      {
+        "title": "Full history and progress",
+        "text": "Every analysis is saved. Follow how your skin changes over time, with full history on every plan."
+      },
+      {
+        "title": "Salon client management",
+        "text": "Salon accounts add clients, analyse them with their consent and see each client's full history and progress."
+      },
+      {
+        "title": "Your salon, your brand",
+        "text": "Set your salon name and upload your logo or icon. Business and Enterprise plans add a client notification system. PDF reports are planned for v1.1."
+      }
+    ],
+    "plansTitle": "Plans",
+    "plansNote": "There is no free plan: a paid subscription is required to run analyses. Plans are monthly and renew automatically. Subscriptions are sold through the App Store and Google Play; Apple and Google convert prices to your local currency, and the price shown in the app at purchase is the price that applies.",
+    "plans": [
+      {
+        "name": "Individual Plus",
+        "price": "₺350 / month",
+        "points": [
+          "4 analyses per month",
+          "Full history and progress tracking",
+          "AI recommendations"
+        ]
+      },
+      {
+        "name": "Salon Pro",
+        "price": "₺2,500 / month",
+        "points": [
+          "30 analyses per month",
+          "Client management and full client history",
+          "Salon name and logo or icon"
+        ]
+      },
+      {
+        "name": "Salon Business",
+        "price": "₺6,000 / month",
+        "points": [
+          "75 analyses per month",
+          "Everything in Pro",
+          "Client notification system"
+        ]
+      },
+      {
+        "name": "Salon Enterprise",
+        "price": "₺12,000 / month",
+        "points": [
+          "150 analyses per month",
+          "Everything in Business",
+          "Double the quota"
+        ]
+      }
+    ],
+    "supportTitle": "Support",
+    "supportText": "Questions, problems or feedback? Write to us and we will reply as soon as we can, usually within two business days.",
+    "supportEmailLabel": "Support e-mail",
+    "faqTitle": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "Is NovaDermIQ a medical diagnosis?",
+        "a": "No. NovaDermIQ is cosmetic and informational. It is not a medical device and does not diagnose skin conditions. See a doctor for any medical concern."
+      },
+      {
+        "q": "How do I cancel my subscription?",
+        "a": "Subscriptions are managed by the store, and the subscription renews automatically unless you turn off auto-renewal at least 24 hours before the end of the period. On iPhone: Settings → your name → Subscriptions → NovaDermIQ. On Android: Play Store → Profile → Payments & subscriptions → Subscriptions → NovaDermIQ. Access continues until the end of the paid period."
+      },
+      {
+        "q": "How do I get a refund?",
+        "a": "Refunds are handled by Apple or Google under their own policies. On iPhone, request one at reportaproblem.apple.com."
+      },
+      {
+        "q": "How is my face photo protected?",
+        "a": "A face photo is sensitive data. It is analysed only with the explicit consent of the person analysed, stored encrypted and served only through short-lived signed links. If you do not consent to storage, it is processed and not kept. Photos are sent to an external AI skin-analysis provider, which may be outside Türkiye, with your separate consent. See the Privacy Policy."
+      },
+      {
+        "q": "How do I delete my photos or account?",
+        "a": "Photos are kept until you delete them. You can request deletion of any photo, analysis, client record or your whole account at info-novadermiq@wowsyler.com."
+      },
+      {
+        "q": "Who can use it?",
+        "a": "NovaDermIQ is for people aged 18 or over. In a salon, you must have each client's explicit consent before analysing them."
+      }
+    ],
+    "legalTitle": "Legal",
+    "privacyLabel": "Privacy Policy",
+    "termsLabel": "Terms of Use and Subscription",
+    "providerLabel": "Provider",
+    "lastUpdatedLabel": "Last updated",
+    "backToApp": "Back to NovaDermIQ"
   }
 }

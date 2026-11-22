@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { BRAND_DISPLAY, BRAND_SHORT } from '@/lib/brand';
 import { getFislyHref } from '@/lib/fisly';
+import { getNovaDermIQHref } from '@/lib/novadermiq';
 import { LEGAL_PAGE_CONFIG } from '@/lib/legal';
 import { BASE_URL, getLocaleHomeHref, getMainPageHref } from '@/lib/routes';
 
@@ -52,6 +53,13 @@ export function GET() {
     `- Uygulama ve destek: ${toAbsoluteUrl(getFislyHref('tr'))}`,
     `- Privacy Policy: ${toAbsoluteUrl(getFislyHref('en', 'privacy'))}`,
     `- Subscription Terms: ${toAbsoluteUrl(getFislyHref('en', 'terms'))}`,
+    '',
+    '## NovaDermIQ (mobile app)',
+    '',
+    `- App and support: ${toAbsoluteUrl(getNovaDermIQHref('en'))}`,
+    `- Uygulama ve destek: ${toAbsoluteUrl(getNovaDermIQHref('tr'))}`,
+    `- Privacy Policy: ${toAbsoluteUrl(getNovaDermIQHref('en', 'privacy'))}`,
+    `- Terms of Use and Subscription: ${toAbsoluteUrl(getNovaDermIQHref('en', 'terms'))}`,
     '',
     '## Crawl References',
     '',
