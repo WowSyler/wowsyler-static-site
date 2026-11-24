@@ -185,8 +185,9 @@ export const PROJECTS: ProjectDefinition[] = [
   },
   {
     key: 'carParking',
+    path: 'carparking',
     status: 'dev',
-    tech: ['Unity', 'C#', 'Android', 'Vehicle Physics'],
+    tech: ['Unity', 'C#', 'URP', 'iOS', 'Android', 'Vehicle Physics'],
     color: '#0D9488',
   },
   {

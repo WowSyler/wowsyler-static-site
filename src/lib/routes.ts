@@ -1,5 +1,6 @@
 import { FISLY_PAGE_KEYS, getFislyHref } from './fisly';
 import { NOVADERMIQ_PAGE_KEYS, getNovaDermIQHref } from './novadermiq';
+import { CARPARKING_PAGE_KEYS, getCarParkingHref } from './carparking';
 import { LEGAL_PAGE_CONFIG } from './legal';
 import { BASE_URL, DEFAULT_LOCALE, LOCALES, type Locale } from './site-config';
 
@@ -165,6 +166,11 @@ const SITEMAP_GROUPS: SitemapGroup[] = [
   })),
   ...NOVADERMIQ_PAGE_KEYS.map((page) => ({
     paths: { en: getNovaDermIQHref('en', page), tr: getNovaDermIQHref('tr', page) },
+    changefreq: 'monthly' as const,
+    priority: page === 'app' ? 0.8 : 0.4,
+  })),
+  ...CARPARKING_PAGE_KEYS.map((page) => ({
+    paths: { en: getCarParkingHref('en', page), tr: getCarParkingHref('tr', page) },
     changefreq: 'monthly' as const,
     priority: page === 'app' ? 0.8 : 0.4,
   })),

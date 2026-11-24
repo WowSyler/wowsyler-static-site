@@ -85,9 +85,9 @@
     "chassisTitle": "Chassis",
     "chassisDesc": "2.5D yan görünüşlü, tek elle oynanan araç/robot auto-battler mobil oyunu. Asıl derinlik parça topla-birleştir-yükselt build sisteminde; dövüşler kısa birer testtir. Çevrimiçi taraf snapshot tabanlı asenkron PvP olarak çalışır.",
     "chassisLong": "Unity 6 (URP) istemcisi yalnızca sunum katmanıdır; deterministik combat simülasyonu UnityEngine bağımsız .NET Standard çekirdeğinde yaşar ve aynı girdi+seed her platformda birebir aynı sonucu üretir. .NET 10 Web API backend'i EF Core ile PostgreSQL'e yazar; Redis leaderboard, matchmaking ve snapshot havuzunu yönetir; ekonomi server-authoritative doğrulanır.",
-    "carParkingTitle": "Car Parking Game",
-    "carParkingDesc": "Gerçek hayatta park etmekte zorlanan insanlara park tekniklerini öğreten Unity tabanlı park simülasyonu/eğitim oyunu. Paralel, dikey ve açılı park senaryolarında doğru pozisyon, doğru açı ve çarpmadan tamamlama üzerine kuruludur. Öncelikli platform Android.",
-    "carParkingLong": "Unity ve C# ile geliştirilen oyun; arcade değil öğretici olacak şekilde gerçekçi araç fiziği, direksiyon davranışı, dönüş yarıçapı, ayna ve geri görüş mantığı ile ölü açı kavramlarını oyun mekaniğine taşır. Mobil odaklı performans optimizasyonu ile düşük donanımlı Android cihazları hedefler.",
+    "carParkingTitle": "Car Parking Trainer",
+    "carParkingDesc": "Gerçek park tekniklerini öğreten park simülasyonu ve eğitim oyunu: 50 seviye ve 4 araçla cep, dikey, açılı ve paralel park; pozisyon, açı, çarpma ve süreye göre puanlama.",
+    "carParkingLong": "Unity ve C# ile geliştirilen oyun; dorseli TIR dahil gerçekçi ama affedici araç fiziği, üstten, takip ve geri görüş kameraları ve tek elle dik ekran modlu dokunmatik kontroller sunar. Ücretsiz, reklamsız, hesapsız ve veri toplamaz.",
     "cryptoBotTitle": "CryptoBot",
     "cryptoBotDesc": "Otonom al-sat sistemi. İlk faz, Polymarket tahmin piyasalarında paper-trading öncelikli el yazımı stratejilerle çalışır; kontrollü küçük-canlı geçiş yolu ve uzun vadede çok piyasalı AI hedge-fund vizyonu üzerine kuruludur.",
     "cryptoBotLong": "Çok servisli mimaride Next.js dashboard, .NET Core API, Python strateji servisi ve Python emir yürütme servisi birlikte çalışır. PostgreSQL ve TimescaleDB zaman serisi piyasa verisini, RabbitMQ servisler arası event akışını, Redis cache ve hız limitlerini yönetir. Proje tasarım/dokümantasyon aşamasındadır.",
@@ -661,5 +661,80 @@
     "providerLabel": "Hizmet sağlayıcı",
     "lastUpdatedLabel": "Son güncelleme",
     "backToApp": "NovaDermIQ'ya dön"
+  },
+  "carparking": {
+    "eyebrow": "Mobil oyun · iOS",
+    "title": "Car Parking Trainer",
+    "tagline": "Park etmek doğal gelene kadar çalışın.",
+    "intro": "Car Parking Trainer, gerçek park tekniklerini öğreten bir park simülasyonudur: cep, dikey, açılı ve paralel park. Dört araçla 50 seviyede çalışın; ne kadar iyi park ettiğinize göre puan alın ve neyi geliştirmeniz gerektiğini görün.",
+    "storeSoon": "Yakında App Store'da",
+    "badges": [
+      "Ücretsiz",
+      "Reklamsız",
+      "Uygulama içi satın alma yok",
+      "Hesap ve giriş yok"
+    ],
+    "featuresTitle": "Car Parking Trainer neler sunar?",
+    "features": [
+      {
+        "title": "Dört gerçek park türü",
+        "text": "Cep, dikey, açılı ve paralel park; günlük sürüşte ihtiyaç duyduğunuz manevralar."
+      },
+      {
+        "title": "5 bölümde 50 seviye",
+        "text": "Geniş alanlardan dar ve kalabalık alanlara adım adım ilerleyen bir müfredat."
+      },
+      {
+        "title": "Dört araç",
+        "text": "Binek otomobil, SUV, kamyonet ve dorseli TIR; her birinin kendine özgü boyutu ve dönüş davranışı var."
+      },
+      {
+        "title": "Üç sürüş kamerası",
+        "text": "Manevra sırasında üstten görünüm, arkadan takip ve geri görüş kamerası arasında geçiş yapın."
+      },
+      {
+        "title": "Öğreten puanlama",
+        "text": "Her deneme pozisyon, açı, çarpma ve süreye göre puanlanır; 1–3 yıldız ve neyi düzeltmeniz gerektiğine dair geri bildirim alırsınız."
+      },
+      {
+        "title": "Size uygun kontroller",
+        "text": "Direksiyon, butonlar, joystick veya eğerek yönlendirme; ayrıca tek elle dik ekran modu. 7 dilde kullanılabilir."
+      }
+    ],
+    "supportTitle": "Destek",
+    "supportText": "Sorunuz, probleminiz veya geri bildiriminiz mi var? Bize yazın; en kısa sürede, genellikle iki iş günü içinde yanıtlarız.",
+    "supportEmailLabel": "Destek e-postası",
+    "faqTitle": "Sık sorulan sorular",
+    "faq": [
+      {
+        "q": "İlerlemem nasıl kaydediliyor?",
+        "a": "İlerlemeniz ve ayarlarınız (seviye yıldızları, seçili araç, ses düzeyi, dil ve kontrol şeması) yalnızca cihazınızda saklanır. Hesap yoktur ve hiçbir şey yüklenmez; bu nedenle ilerleme cihazlar arasında eşitlenmez."
+      },
+      {
+        "q": "Hangi diller destekleniyor?",
+        "a": "Türkçe, İngilizce, İspanyolca, Portekizce, Fransızca, Almanca ve İtalyanca. Dili Ayarlar'dan değiştirebilirsiniz."
+      },
+      {
+        "q": "Hangi kontrolleri kullanabilirim?",
+        "a": "Ekrandaki direksiyon, butonlar, joystick veya cihazı eğerek yönlendirebilir; İLERİ, GERİ ve FREN butonlarıyla sürebilirsiniz. Tek elle dik ekran modu da vardır. Şemayı Ayarlar'dan seçin."
+      },
+      {
+        "q": "İlerlememi nasıl sıfırlarım?",
+        "a": "Her şey yalnızca cihazınızda saklandığı için uygulamayı silmek tüm ilerlemeyi ve ayarları kaldırır. Baştan başlamak için yeniden yükleyin."
+      },
+      {
+        "q": "Ücretsiz mi? Reklam veya satın alma var mı?",
+        "a": "Car Parking Trainer ücretsizdir; reklam, uygulama içi satın alma ve giriş yoktur."
+      },
+      {
+        "q": "Uygulama verilerimi topluyor mu?",
+        "a": "Hayır. Uygulamada analitik, takip ve reklam yoktur; uygulama ağa erişmez. Gizlilik Politikası'na bakın."
+      }
+    ],
+    "legalTitle": "Yasal",
+    "privacyLabel": "Gizlilik Politikası",
+    "providerLabel": "Hizmet sağlayıcı",
+    "lastUpdatedLabel": "Son güncelleme",
+    "backToApp": "Car Parking Trainer'a dön"
   }
 }

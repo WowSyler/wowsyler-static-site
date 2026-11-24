@@ -1,0 +1,200 @@
+{
+  "privacy": {
+    "en": {
+      "title": "Car Parking Trainer — Privacy Policy",
+      "updated": "24 November 2026",
+      "party": "**Developer:** WowSyler Yazılım ve Teknoloji, İstanbul, Türkiye — info@wowsyler.com",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "1. Summary"
+        },
+        {
+          "type": "p",
+          "text": "**Car Parking Trainer does not collect any personal data or any other data.** The app has no analytics, no tracking, no advertising and no account or sign-in, and it does not access the network."
+        },
+        {
+          "type": "h2",
+          "text": "2. What the app does"
+        },
+        {
+          "type": "p",
+          "text": "Car Parking Trainer is a parking simulation and training game that teaches bay, perpendicular, angled and parallel parking. It is free, with no ads and no in-app purchases."
+        },
+        {
+          "type": "h2",
+          "text": "3. Data we do not collect"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**No personal data** — we do not ask for your name, e-mail address, phone number or any other identifier.",
+            "**No analytics or tracking** — the app does not measure how you use it and does not track you across apps or websites.",
+            "**No advertising** — the app contains no ads and no advertising SDK.",
+            "**No network access** — the app does not connect to the internet, so nothing is sent to us or to anyone else.",
+            "**No third-party SDKs that collect data** — no third-party code in the app collects or shares data.",
+            "**No location, camera, microphone, contacts or photos** — the app does not access them."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "4. Data stored on your device"
+        },
+        {
+          "type": "p",
+          "text": "To keep your progress, the app saves the following **only locally on your device**: level stars and progress, chosen vehicle, volume, language and control scheme. This information never leaves your device and we cannot access it."
+        },
+        {
+          "type": "p",
+          "text": "It is removed when you delete the app. Deleting the app is also how you reset your progress."
+        },
+        {
+          "type": "h2",
+          "text": "5. Sharing"
+        },
+        {
+          "type": "p",
+          "text": "Because we collect no data, we do not sell, share or transfer any data to anyone."
+        },
+        {
+          "type": "h2",
+          "text": "6. App Store"
+        },
+        {
+          "type": "p",
+          "text": "You download the app from Apple's App Store. Any information Apple processes in connection with the App Store is handled by Apple under its own privacy policy, not by us."
+        },
+        {
+          "type": "h2",
+          "text": "7. Children"
+        },
+        {
+          "type": "p",
+          "text": "Car Parking Trainer is not specifically directed at children. Because it collects no data at all, it is suitable for all ages and does not knowingly collect data from children or anyone else."
+        },
+        {
+          "type": "h2",
+          "text": "8. Your rights"
+        },
+        {
+          "type": "p",
+          "text": "Since we hold no data about you, there is nothing for us to access, correct or delete. You remain in full control of the data stored on your device and can remove it at any time by deleting the app. For any question, including under KVKK or GDPR, write to us."
+        },
+        {
+          "type": "h2",
+          "text": "9. Changes"
+        },
+        {
+          "type": "p",
+          "text": "If we change this policy, we will publish the updated version on this page with a new date before the change takes effect."
+        },
+        {
+          "type": "h2",
+          "text": "10. Contact"
+        },
+        {
+          "type": "p",
+          "text": "WowSyler Yazılım ve Teknoloji, İstanbul, Türkiye — info@wowsyler.com"
+        }
+      ]
+    },
+    "tr": {
+      "title": "Car Parking Trainer — Gizlilik Politikası",
+      "updated": "24 Kasım 2026",
+      "party": "**Geliştirici:** WowSyler Yazılım ve Teknoloji, İstanbul, Türkiye — info@wowsyler.com",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "1. Özet"
+        },
+        {
+          "type": "p",
+          "text": "**Car Parking Trainer hiçbir kişisel veri veya başka bir veri toplamaz.** Uygulamada analitik, takip, reklam, hesap veya giriş yoktur ve uygulama ağa erişmez."
+        },
+        {
+          "type": "h2",
+          "text": "2. Uygulama ne yapar?"
+        },
+        {
+          "type": "p",
+          "text": "Car Parking Trainer; cep, dikey, açılı ve paralel parkı öğreten bir park simülasyonu ve eğitim oyunudur. Ücretsizdir; reklam ve uygulama içi satın alma içermez."
+        },
+        {
+          "type": "h2",
+          "text": "3. Toplamadığımız veriler"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "**Kişisel veri yok** — adınızı, e-posta adresinizi, telefon numaranızı veya başka bir tanımlayıcıyı istemeyiz.",
+            "**Analitik veya takip yok** — uygulama, onu nasıl kullandığınızı ölçmez ve sizi uygulamalar ya da web siteleri arasında takip etmez.",
+            "**Reklam yok** — uygulamada reklam ve reklam SDK'sı yoktur.",
+            "**Ağ erişimi yok** — uygulama internete bağlanmaz; bu nedenle bize veya başka birine hiçbir şey gönderilmez.",
+            "**Veri toplayan üçüncü taraf SDK yok** — uygulamadaki hiçbir üçüncü taraf kod veri toplamaz veya paylaşmaz.",
+            "**Konum, kamera, mikrofon, kişiler veya fotoğraflar yok** — uygulama bunlara erişmez."
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "4. Cihazınızda saklanan veriler"
+        },
+        {
+          "type": "p",
+          "text": "İlerlemenizi korumak için uygulama şunları **yalnızca cihazınızda yerel olarak** saklar: seviye yıldızları ve ilerleme, seçili araç, ses düzeyi, dil ve kontrol şeması. Bu bilgiler cihazınızdan hiçbir zaman çıkmaz ve bizim bunlara erişimimiz yoktur."
+        },
+        {
+          "type": "p",
+          "text": "Uygulamayı sildiğinizde bu bilgiler de silinir. İlerlemenizi sıfırlamanın yolu da uygulamayı silmektir."
+        },
+        {
+          "type": "h2",
+          "text": "5. Paylaşım"
+        },
+        {
+          "type": "p",
+          "text": "Hiçbir veri toplamadığımız için hiç kimseye veri satmaz, paylaşmaz veya aktarmayız."
+        },
+        {
+          "type": "h2",
+          "text": "6. App Store"
+        },
+        {
+          "type": "p",
+          "text": "Uygulamayı Apple'ın App Store'undan indirirsiniz. Apple'ın App Store ile bağlantılı olarak işlediği bilgiler bizim tarafımızdan değil, Apple tarafından kendi gizlilik politikasına göre işlenir."
+        },
+        {
+          "type": "h2",
+          "text": "7. Çocuklar"
+        },
+        {
+          "type": "p",
+          "text": "Car Parking Trainer özellikle çocuklara yönelik değildir. Hiçbir veri toplamadığı için her yaşa uygundur ve çocuklardan ya da başka herhangi birinden bilerek veri toplamaz."
+        },
+        {
+          "type": "h2",
+          "text": "8. Haklarınız"
+        },
+        {
+          "type": "p",
+          "text": "Hakkınızda hiçbir veri tutmadığımız için erişilecek, düzeltilecek veya silinecek bir veri yoktur. Cihazınızda saklanan veriler tamamen sizin kontrolünüzdedir ve uygulamayı silerek dilediğiniz an kaldırabilirsiniz. KVKK veya GDPR kapsamındakiler dahil her türlü sorunuz için bize yazın."
+        },
+        {
+          "type": "h2",
+          "text": "9. Değişiklikler"
+        },
+        {
+          "type": "p",
+          "text": "Bu politikayı değiştirirsek güncel sürümü, değişiklik yürürlüğe girmeden önce yeni tarihiyle bu sayfada yayımlarız."
+        },
+        {
+          "type": "h2",
+          "text": "10. İletişim"
+        },
+        {
+          "type": "p",
+          "text": "WowSyler Yazılım ve Teknoloji, İstanbul, Türkiye — info@wowsyler.com"
+        }
+      ]
+    }
+  }
+}

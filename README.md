@@ -17,11 +17,15 @@ A bilingual (Turkish / English) corporate website built with **Next.js 16**, **T
 | `/novadermiq` | NovaDermIQ mobile app page: features, plans, support and FAQ |
 | `/novadermiq/privacy` | NovaDermIQ privacy policy |
 | `/novadermiq/terms` | NovaDermIQ terms of use and subscription |
+| `/carparking` | Car Parking Trainer mobile game page: features, support and FAQ (App Store support / marketing URL) |
+| `/carparking/privacy` | Car Parking Trainer privacy policy (App Store privacy policy URL) |
 
 Fisly legal texts in `src/content/fisly/legal.json` are generated from `docs/legal/*.md` in the app
 repository (`gider-gelir-takibi-app`); edit them there and regenerate, do not edit the JSON by hand.
 NovaDermIQ legal texts in `src/content/novadermiq/legal.json` are generated the same way from `docs/legal/*.md`
 in `face-analizy-app`.
+Car Parking Trainer has no purchases or subscriptions, so it has no terms page; its privacy policy in
+`src/content/carparking/legal.json` is maintained directly in this repository.
 
 ## Tech Stack
 

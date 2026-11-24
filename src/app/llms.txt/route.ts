@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { BRAND_DISPLAY, BRAND_SHORT } from '@/lib/brand';
 import { getFislyHref } from '@/lib/fisly';
 import { getNovaDermIQHref } from '@/lib/novadermiq';
+import { getCarParkingHref } from '@/lib/carparking';
 import { LEGAL_PAGE_CONFIG } from '@/lib/legal';
 import { BASE_URL, getLocaleHomeHref, getMainPageHref } from '@/lib/routes';
 
@@ -60,6 +61,12 @@ export function GET() {
     `- Uygulama ve destek: ${toAbsoluteUrl(getNovaDermIQHref('tr'))}`,
     `- Privacy Policy: ${toAbsoluteUrl(getNovaDermIQHref('en', 'privacy'))}`,
     `- Terms of Use and Subscription: ${toAbsoluteUrl(getNovaDermIQHref('en', 'terms'))}`,
+    '',
+    '## Car Parking Trainer (mobile game)',
+    '',
+    `- App and support: ${toAbsoluteUrl(getCarParkingHref('en'))}`,
+    `- Uygulama ve destek: ${toAbsoluteUrl(getCarParkingHref('tr'))}`,
+    `- Privacy Policy: ${toAbsoluteUrl(getCarParkingHref('en', 'privacy'))}`,
     '',
     '## Crawl References',
     '',
