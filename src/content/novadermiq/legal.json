@@ -2,7 +2,7 @@
   "privacy": {
     "en": {
       "title": "NovaDermIQ — Privacy Policy",
-      "updated": "22 November 2026",
+      "updated": "25 November 2026",
       "party": "**Controller:** WowSyler Yazılım ve Teknoloji, İstanbul, Türkiye — info-novadermiq@wowsyler.com",
       "blocks": [
         {
@@ -92,6 +92,10 @@
               "Explicit consent (KVKK Art. 6 / GDPR Art. 9(2)(a))"
             ],
             [
+              "Turning the numerical results into a written interpretation and recommendations",
+              "Explicit consent (part of the analysis you request)"
+            ],
+            [
               "Storing images and history so progress can be tracked",
               "Explicit consent"
             ],
@@ -118,6 +122,10 @@
           "text": "5. Who we share it with"
         },
         {
+          "type": "p",
+          "text": "We use the following service providers (sub-processors). Each acts on our instructions and receives only what it needs for its task."
+        },
+        {
           "type": "table",
           "head": [
             "Recipient",
@@ -126,14 +134,29 @@
           ],
           "rows": [
             [
-              "**External AI skin-analysis service provider** (sub-processor)",
+              "**Perfect Corp. (YouCam skin-analysis API)** — sub-processor",
               "The **face image** you submit",
-              "To compute the skin metrics. Sent for processing only."
+              "To compute the skin metrics and skin type. The image is sent only for this processing."
             ],
             [
-              "**Object storage provider** (S3/R2-compatible)",
-              "Encrypted face images",
+              "**OpenRouter, Inc.** (AI model routing service) and **Google (Gemini models)**, which OpenRouter routes the request to — sub-processors",
+              "**Only the numerical analysis results**: overall score, metric values, skin type, the skin condition label and the language for the answer. **No face image, no name, no e-mail address and no other account or client identifier.**",
+              "To write the plain-language interpretation and care recommendations shown with your result."
+            ],
+            [
+              "**Cloudflare (R2 object storage)**",
+              "Face images, stored encrypted",
               "Private storage; access only through short-lived signed URLs."
+            ],
+            [
+              "**Cloudflare (our e-mail gateway)** and the e-mail delivery service behind it",
+              "Your e-mail address and message content",
+              "Verification, password-reset and other service e-mails."
+            ],
+            [
+              "**RevenueCat, Inc.** (subscription infrastructure), **Apple** and **Google**",
+              "A pseudonymous internal account identifier (not your name or e-mail) and subscription / purchase events",
+              "To process in-app purchases and manage subscriptions. We never receive your card details."
             ],
             [
               "**Hosting and database provider**",
@@ -141,21 +164,15 @@
               "To run the service."
             ],
             [
-              "**E-mail delivery provider**",
-              "Your e-mail address and message content",
-              "Verification and password-reset e-mails."
-            ],
-            [
-              "**Apple, Google and our subscription infrastructure**",
-              "Subscription events",
-              "To manage subscriptions."
-            ],
-            [
-              "**Error-monitoring provider**",
+              "**Error monitoring** (GlitchTip, run on our own servers)",
               "Technical error data",
               "To fix crashes."
             ]
           ]
+        },
+        {
+          "type": "p",
+          "text": "**Daily tips** in the app are general skin-care tips generated with the same AI language model service; the request contains only the list of app languages and **no personal data**."
         },
         {
           "type": "h2",
@@ -172,11 +189,14 @@
         },
         {
           "type": "h2",
-          "text": "7. International transfer to the AI sub-processor"
+          "text": "7. International transfers to AI sub-processors"
         },
         {
-          "type": "p",
-          "text": "Face images are sent to an external AI skin-analysis provider that **may be located outside Türkiye and the European Economic Area**. This is a cross-border transfer of sensitive data. We ask for your **separate explicit consent** for it before the first analysis, and we rely on appropriate safeguards — a data processing agreement and, where required, Standard Contractual Clauses (KVKK Art. 9, GDPR Arts. 44–49). Without this consent the analysis cannot be run, because the analysis itself is performed by that provider."
+          "type": "ul",
+          "items": [
+            "**Face images** are sent to **Perfect Corp.**, our skin-analysis provider, which **may process them outside Türkiye and the European Economic Area**. This is a cross-border transfer of sensitive data. We ask for your **separate explicit consent** for it before the first analysis, and we rely on appropriate safeguards — a data processing agreement and, where required, Standard Contractual Clauses (KVKK Art. 9, GDPR Arts. 44–49). Without this consent the analysis cannot be run, because the analysis itself is performed by that provider.",
+            "**Numerical analysis results** (no image, no name or e-mail) are sent to **OpenRouter** and **Google Gemini** models, which may also be processed outside Türkiye and the EEA (for example in the United States), under the same kind of safeguards. Your face image is **not** sent to these services."
+          ]
         },
         {
           "type": "h2",
@@ -226,7 +246,7 @@
     },
     "tr": {
       "title": "NovaDermIQ — Gizlilik Politikası",
-      "updated": "22 Kasım 2026",
+      "updated": "25 Kasım 2026",
       "party": "**Veri sorumlusu:** WowSyler Yazılım ve Teknoloji, İstanbul, Türkiye — info-novadermiq@wowsyler.com",
       "blocks": [
         {
@@ -316,6 +336,10 @@
               "Açık rıza (KVKK m.6 / GDPR m.9/2-a)"
             ],
             [
+              "Sayısal sonuçları yazılı bir yoruma ve önerilere dönüştürmek",
+              "Açık rıza (talep ettiğiniz analizin parçası)"
+            ],
+            [
               "Gelişimin izlenebilmesi için görsel ve geçmişi saklamak",
               "Açık rıza"
             ],
@@ -342,6 +366,10 @@
           "text": "5. Kimlerle paylaşıyoruz?"
         },
         {
+          "type": "p",
+          "text": "Aşağıdaki hizmet sağlayıcıları (alt işleyenler) kullanırız. Her biri talimatlarımız doğrultusunda hareket eder ve yalnızca görevi için gereken veriyi alır."
+        },
+        {
           "type": "table",
           "head": [
             "Alıcı",
@@ -350,14 +378,29 @@
           ],
           "rows": [
             [
-              "**Harici yapay zekâ cilt analizi hizmet sağlayıcısı** (alt işleyen)",
+              "**Perfect Corp. (YouCam cilt analizi API'si)** — alt işleyen",
               "Gönderdiğiniz **yüz görseli**",
-              "Cilt metriklerini hesaplamak için. Yalnızca işleme amacıyla gönderilir."
+              "Cilt metriklerini ve cilt tipini hesaplamak için. Görsel yalnızca bu işleme amacıyla gönderilir."
             ],
             [
-              "**Nesne depolama sağlayıcısı** (S3/R2 uyumlu)",
-              "Şifrelenmiş yüz görselleri",
+              "**OpenRouter, Inc.** (yapay zekâ model yönlendirme hizmeti) ve OpenRouter'ın isteği yönlendirdiği **Google (Gemini modelleri)** — alt işleyenler",
+              "**Yalnızca sayısal analiz sonuçları**: genel skor, metrik değerleri, cilt tipi, cilt durumu etiketi ve yanıt dili. **Yüz görseli, ad, e-posta adresi veya başka bir hesap ya da müşteri tanımlayıcısı gönderilmez.**",
+              "Sonucunuzla birlikte gösterilen sade dilli yorumu ve bakım önerilerini yazmak için."
+            ],
+            [
+              "**Cloudflare (R2 nesne depolama)**",
+              "Şifrelenmiş olarak saklanan yüz görselleri",
               "Özel depolama; erişim yalnızca kısa ömürlü imzalı URL'lerle."
+            ],
+            [
+              "**Cloudflare (e-posta ağ geçidimiz)** ve arkasındaki e-posta gönderim hizmeti",
+              "E-posta adresiniz ve ileti içeriği",
+              "Doğrulama, parola sıfırlama ve diğer hizmet e-postaları."
+            ],
+            [
+              "**RevenueCat, Inc.** (abonelik altyapısı), **Apple** ve **Google**",
+              "Takma adlı dahili bir hesap tanımlayıcısı (adınız veya e-postanız değil) ve abonelik / satın alma olayları",
+              "Uygulama içi satın almaları işlemek ve abonelikleri yönetmek için. Kart bilgilerinizi asla almayız."
             ],
             [
               "**Barındırma ve veritabanı sağlayıcısı**",
@@ -365,21 +408,15 @@
               "Hizmeti çalıştırmak için."
             ],
             [
-              "**E-posta gönderim sağlayıcısı**",
-              "E-posta adresiniz ve ileti içeriği",
-              "Doğrulama ve parola sıfırlama e-postaları."
-            ],
-            [
-              "**Apple, Google ve abonelik altyapımız**",
-              "Abonelik olayları",
-              "Abonelikleri yönetmek için."
-            ],
-            [
-              "**Hata izleme sağlayıcısı**",
+              "**Hata izleme** (kendi sunucularımızda çalışan GlitchTip)",
               "Teknik hata verileri",
               "Çökmeleri gidermek için."
             ]
           ]
+        },
+        {
+          "type": "p",
+          "text": "Uygulamadaki **günün ipuçları**, aynı yapay zekâ dil modeli hizmetiyle üretilen genel cilt bakımı ipuçlarıdır; bu istek yalnızca uygulama dillerinin listesini içerir ve **hiçbir kişisel veri içermez**."
         },
         {
           "type": "h2",
@@ -396,11 +433,14 @@
         },
         {
           "type": "h2",
-          "text": "7. Yapay zekâ alt işleyenine yurt dışına aktarım"
+          "text": "7. Yapay zekâ alt işleyenlerine yurt dışına aktarım"
         },
         {
-          "type": "p",
-          "text": "Yüz görselleri, **Türkiye ve Avrupa Ekonomik Alanı dışında bulunabilen** harici bir yapay zekâ cilt analizi sağlayıcısına gönderilir. Bu, özel nitelikli verinin yurt dışına aktarımıdır. İlk analizden önce bunun için **ayrı açık rızanızı** isteriz ve uygun güvencelere dayanırız: veri işleme sözleşmesi ve gerektiğinde Standart Sözleşme Maddeleri (KVKK m.9, GDPR m.44–49). Analizin kendisi bu sağlayıcı tarafından yapıldığından, bu rıza olmadan analiz çalıştırılamaz."
+          "type": "ul",
+          "items": [
+            "**Yüz görselleri**, cilt analizi sağlayıcımız **Perfect Corp.**'a gönderilir; görseller **Türkiye ve Avrupa Ekonomik Alanı dışında işlenebilir**. Bu, özel nitelikli verinin yurt dışına aktarımıdır. İlk analizden önce bunun için **ayrı açık rızanızı** isteriz ve uygun güvencelere dayanırız: veri işleme sözleşmesi ve gerektiğinde Standart Sözleşme Maddeleri (KVKK m.9, GDPR m.44–49). Analizin kendisi bu sağlayıcı tarafından yapıldığından, bu rıza olmadan analiz çalıştırılamaz.",
+            "**Sayısal analiz sonuçları** (görsel, ad veya e-posta olmadan) **OpenRouter** ve **Google Gemini** modellerine gönderilir; bunlar da aynı türden güvencelerle Türkiye ve AEA dışında (örneğin Amerika Birleşik Devletleri'nde) işlenebilir. Yüz görseliniz bu hizmetlere **gönderilmez**."
+          ]
         },
         {
           "type": "h2",
