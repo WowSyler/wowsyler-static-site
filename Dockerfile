@@ -1,4 +1,4 @@
-FROM node:20-alpine AS base
+FROM node:24-alpine AS base
 
 WORKDIR /app
 ENV NEXT_TELEMETRY_DISABLED=1
@@ -22,7 +22,17 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
 
-FROM node:20-alpine AS runner
+FROM node:24-alpine AS runner
+
+# Taban imajdaki Alpine paketlerini (openssl, zlib, musl, busybox vb.) en
+# güncel güvenlik yamalarına çıkar; çalışma zamanında kullanılmayan paket
+# yöneticilerini (npm, npx, corepack, yarn) kaldırarak saldırı yüzeyini ve
+# tarama bulgularını azalt. busybox (wget) HEALTHCHECK için korunur.
+RUN apk upgrade --no-cache \
+    && rm -rf /usr/local/lib/node_modules/npm /usr/local/lib/node_modules/corepack \
+        /usr/local/bin/npm /usr/local/bin/npx /usr/local/bin/corepack \
+        /usr/local/bin/yarn /usr/local/bin/yarnpkg /opt/yarn-v* \
+        /root/.npm /tmp/*
 
 WORKDIR /app
 ENV NODE_ENV=production
